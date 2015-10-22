@@ -51,6 +51,10 @@ class APIClinet {
         
     }
     
+    func getAuthorizedUserInfo(token:AnyObject,success:(JSON)->Void,failure:(NSError)->Void){
+        let param = [AccessToken:token]
+        self.getJSONData("/open/user/getinfo.json", parameters: param, success: success, failure: failure)
+    }
     
     func isTokenLegal(uid:AnyObject,token:AnyObject,success:(JSON)->Void,failure:(NSError)->Void){
         let param = ["uid":uid,"token":token]

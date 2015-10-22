@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qEY-IM-emD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5dH-pd-VKw">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -174,30 +174,10 @@
             </objects>
             <point key="canvasLocation" x="1054" y="878"/>
         </scene>
-        <!--Item 1-->
-        <scene sceneID="uAj-XA-dzM">
-            <objects>
-                <viewController id="nP5-5e-pkN" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="9lN-OS-XZ9"/>
-                        <viewControllerLayoutGuide type="bottom" id="Vd7-2R-Yke"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="dA4-Hr-dgy">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="eQw-Co-h8C"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="16g-3f-keT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1038" y="-591"/>
-        </scene>
         <!--Oauth View Controller-->
         <scene sceneID="fkf-Xd-OwQ">
             <objects>
-                <viewController id="qEY-IM-emD" customClass="OauthViewController" customModule="BYR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OauthViewController" id="qEY-IM-emD" customClass="OauthViewController" customModule="BYR" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0P2-OA-x3J"/>
                         <viewControllerLayoutGuide type="bottom" id="uQt-6C-cfI"/>
@@ -217,22 +197,25 @@
                         <constraints>
                             <constraint firstItem="GOE-rh-9B3" firstAttribute="bottom" secondItem="uQt-6C-cfI" secondAttribute="top" id="1Q3-XJ-tFo"/>
                             <constraint firstAttribute="trailing" secondItem="GOE-rh-9B3" secondAttribute="trailing" id="3IH-oP-trS"/>
+                            <constraint firstItem="GOE-rh-9B3" firstAttribute="centerY" secondItem="Vow-Wm-LFm" secondAttribute="centerY" id="71Q-Rh-KYl"/>
                             <constraint firstItem="GOE-rh-9B3" firstAttribute="leading" secondItem="Vow-Wm-LFm" secondAttribute="leading" id="Awg-Js-fnX"/>
+                            <constraint firstItem="GOE-rh-9B3" firstAttribute="centerX" secondItem="Vow-Wm-LFm" secondAttribute="centerX" id="MZY-qI-ely"/>
                             <constraint firstItem="GOE-rh-9B3" firstAttribute="top" secondItem="Vow-Wm-LFm" secondAttribute="top" id="b7n-nv-66j"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="webview" destination="GOE-rh-9B3" id="Gso-X2-KO8"/>
+                        <segue destination="bwr-7u-Kad" kind="show" identifier="LoginSuccess" id="aCJ-xV-Jfb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iq2-Pg-Qx6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1236" y="194"/>
+            <point key="canvasLocation" x="-1312" y="-204"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Home Tab Bar Controller-->
         <scene sceneID="3WU-Fp-aO0">
             <objects>
-                <tabBarController storyboardIdentifier="TabBarController" id="bwr-7u-Kad" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" id="bwr-7u-Kad" customClass="HomeTabBarController" customModule="BYR" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="6zU-zD-lnR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -240,18 +223,91 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="nP5-5e-pkN" kind="relationship" relationship="viewControllers" id="QIW-7R-d3q"/>
+                        <segue destination="z6T-C6-rw7" kind="relationship" relationship="viewControllers" id="QIW-7R-d3q"/>
                         <segue destination="uLk-rh-yFE" kind="relationship" relationship="viewControllers" id="YyR-6X-vOs"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nkb-Gz-qVd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-514" y="387"/>
+            <point key="canvasLocation" x="-988" y="547"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="99g-HG-91e">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="z6T-C6-rw7" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="Home" id="eQw-Co-h8C"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7nt-6O-d1b">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5dH-pd-VKw" kind="relationship" relationship="rootViewController" id="emo-fO-Nwf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lm7-SO-Ow6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="150" y="-255"/>
+        </scene>
+        <!--Top Ten Hot Topic Table View Controller-->
+        <scene sceneID="GCU-gA-N4C">
+            <objects>
+                <tableViewController id="5dH-pd-VKw" customClass="TopTenHotTopicTableViewController" customModule="BYR" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="54" sectionHeaderHeight="28" sectionFooterHeight="28" id="lNa-un-12Q">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TopTenCell" id="LPB-EQ-7eD" customClass="TopTenTopicTableViewCell" customModule="BYR" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="54"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LPB-EQ-7eD" id="cMs-7r-lKe">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="53.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="69705-290x260" translatesAutoresizingMaskIntoConstraints="NO" id="2XC-rc-DUF" customClass="RoundImageView" customModule="BYR" customModuleProvider="target">
+                                            <rect key="frame" x="18" y="0.0" width="50" height="50"/>
+                                            <animations/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="25"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </imageView>
+                                    </subviews>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstItem="2XC-rc-DUF" firstAttribute="leading" secondItem="cMs-7r-lKe" secondAttribute="leadingMargin" constant="10" id="A2X-v5-jN7"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="2XC-rc-DUF" secondAttribute="bottom" constant="-4.5" id="BLb-iO-f2b"/>
+                                        <constraint firstItem="2XC-rc-DUF" firstAttribute="top" secondItem="cMs-7r-lKe" secondAttribute="topMargin" constant="-8" id="eyE-e5-QPK"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <connections>
+                                    <outlet property="avatar" destination="2XC-rc-DUF" id="F7R-MJ-oJ1"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="5dH-pd-VKw" id="2uu-g6-60E"/>
+                            <outlet property="delegate" destination="5dH-pd-VKw" id="nnn-AH-buP"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="TSJ-UC-G07"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ISh-pF-5Ym" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1310" y="-284"/>
         </scene>
     </scenes>
     <resources>
+        <image name="69705-290x260" width="290" height="260"/>
+        <image name="Home" width="26" height="25"/>
         <image name="LogBackground" width="600" height="600"/>
-        <image name="Logo" width="272" height="73"/>
+        <image name="Logo" width="816" height="219"/>
         <image name="passwordIcon" width="22" height="22"/>
         <image name="usernameIcon" width="22" height="22"/>
     </resources>

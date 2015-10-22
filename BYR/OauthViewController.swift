@@ -7,26 +7,23 @@
 //
 
 import UIKit
-import MBProgressHUD
+import JGProgressHUD
 import Alamofire
 
 class OauthViewController: UIViewController,UIWebViewDelegate {
 
-    var hub = MBProgressHUD()
+    var hud = JGProgressHUD()
     @IBOutlet weak var webview: UIWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         webview.delegate = self
-     webview.loadRequest(NSURLRequest(URL: NSURL(string: "http://bbs.byr.cn/oauth2/authorize?response_type=token&client_id=2a44821105d92482960593d94e4d042e&redirect_uri=http://bbs.byr.cn/oauth2/callback&state=2222")!))
-        APIClinet.sharedInstance.getACCESSToken({ (JSON) -> Void in
-            print(JSON)
-            }){
-                (Error) -> Void in
-                print(Error)
+        if  let url = NSURL(string: "http://bbs.byr.cn/oauth2/authorize?response_type=token&client_id=2a44821105d92482960593d94e4d042e&redirect_uri=http://bbs.byr.cn/oauth2/callback&state=2222"){
+             webview.loadRequest(NSURLRequest(URL:url))
+        }else {
+            
         }
-
-        // Do any additional setup after loading the view.
+    
     }
    
     override func didReceiveMemoryWarning() {
@@ -34,62 +31,66 @@ class OauthViewController: UIViewController,UIWebViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    func webViewDidStartLoad(webView: UIWebView) {
+        hud.textLabel.text = "Loading..."
+        hud.showInView(self.view, animated: true)
+    }
+    
     func webViewDidFinishLoad(webView: UIWebView) {
-        let requestURLString:NSString = (webView.request?.URL?.absoluteString)!
         
-        let seq = requestURLString.componentsSeparatedByString("?")
+        var access_token:String!
+        defer{
+             self.hud.dismiss()
+             NSUserDefaults.standardUserDefaults().setObject(access_token, forKey: AccessToken)
+        }
         
-        if requestURLString.containsString("access_token"){
-            let a = webView.request?.URL?.query
-            print("aaaaaaaa=\(a)")
+       if let requestURLString:NSString = webView.request?.URL?.absoluteString where requestURLString.containsString("access_token"){
             let   accessRange = requestURLString.rangeOfString("access_token")
-            let    substring = requestURLString.substringFromIndex(accessRange.location)
-            let access_token = substring.componentsSeparatedByString("&")[0].componentsSeparatedByString("=")[1]
-            AccessToken = access_token
-            
+            let   substring = requestURLString.substringFromIndex(accessRange.location)
+            let   access_token = substring.componentsSeparatedByString("&")[0].componentsSeparatedByString("=")[1]
+            //TODO:  use segue
+        
+        self.performSegueWithIdentifier(SEGUE_FROM_LOGIN_TO_TABBAR, sender: self)
             let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-            let start=storyboard.instantiateViewControllerWithIdentifier("TabBarController")
-                as! UITabBarController
-            
+            let start = storyboard.instantiateViewControllerWithIdentifier("TabBarController")
+                as? UITabBarController
             self.view.window?.rootViewController = start
-            print(AccessToken)
-            
-            //            http://bbs.byr.cn/oauth2/me
-            //            http://bbs.byr.cn/oauth2/me?response_type=token&client_id=2a44821105d92482960593d94e4d042e&redirect_uri=http://bbs.byr.cn/oauth2/callback&state=4d404f05d04eb891caacbc808ab45db1
-            
-            let param = ["oauth_token":AccessToken]
-            print("OK")
-            Alamofire.request(.GET, "http://bbs.byr.cn/open/user/getinfo.json", parameters: param).responseSwiftyJSON{
-                (request,response ,result ,error) in
-                if let err = error {
-                    print(err)
-                } else {
-                    print(request)
-                    print(result)
-                }
-            }
-            //            Alamofire.request(.GET, " http://bbs.byr.cn/open/user/getinfo.json?/oauth_token=\(AccessToken)").responseJSON(completionHandler: { (request, response, ressult) -> Void in
-            //                print(request)
-            //                print(response)
-            //                print(ressult)
-            //
-            //            })
+        
+        
+        
+        
+            //user info test
+            APIClinet.sharedInstance.getAuthorizedUserInfo(access_token, success: { (json) -> Void in
+                 //save user info
+                
+                  NSUserDefaults.standardUserDefaults().setObject(json.object, forKey: USER_INFO)
+//                print(json.object)
+//                print("json:")
+                  print(json.object)
+                
+                }, failure: { (error) -> Void in
+                   self.hud.textLabel.text = error.description
+            })
             
         }
-        //            http://bbs.byr.cn/open/user/getinfo.json?oauth_token=ddd06f3d6675fa948970dfe763e47f30
         
         
     }
     
 
-    /*
+
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if let identifier = segue.identifier where identifier == SEGUE_FROM_LOGIN_TO_TABBAR{
+            let vc = segue.destinationViewController as!  HomeTabBarController
+//            vc.tabBarItem
+        }
     }
-    */
+    
 
 }

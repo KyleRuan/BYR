@@ -3,4 +3,4 @@
 //
 
 
-#import <MBProgressHUD/MBProgressHUD.h>
+#import <JGProgressHUD/JGProgressHUD.h>

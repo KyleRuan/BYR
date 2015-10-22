@@ -32,7 +32,7 @@ class LoginViewController: UIViewController ,UIWebViewDelegate {
          let   accessRange = requestURLString.rangeOfString("access_token")
          let    substring = requestURLString.substringFromIndex(accessRange.location)
             let access_token = substring.componentsSeparatedByString("&")[0].componentsSeparatedByString("=")[1]
-             AccessToken = access_token
+//             AccessToken = access_token
             
             let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
             let start=storyboard.instantiateViewControllerWithIdentifier("TabBarController")
