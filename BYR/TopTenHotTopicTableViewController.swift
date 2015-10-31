@@ -7,18 +7,46 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class TopTenHotTopicTableViewController: UITableViewController {
-
+    var datasource:Array<JSON> = []
+    var arr:Array<AnyObject> = []
+    var isLoaded = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
+         self.loadDate()
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        
+//          NSUserDefaults.standardUserDefaults().setObject(access_token, forKey: AccessToken)
+    }
+    
+    
+    func loadDate(){
+        // if have network
+         
+        
+        APIClinet.sharedInstance.getTopTenTopics(NSUserDefaults.standardUserDefaults().objectForKey(AccessToken)!, success: { (json) -> Void in
+           
+            if json.type == Type.Dictionary{
+                if let article = json["article"] as? JSON{
+                    self.datasource =  article.arrayValue
+                    self.tableView.reloadData()
+                    print(self.datasource)
+                }
+            }
+            }) { (er) -> Void in
+                print(er)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,21 +58,55 @@ class TopTenHotTopicTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        
+        return datasource.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(REUSE_IDENTIFIER_FOR_TOPTEN_CELL, forIndexPath: indexPath) as? TopTenTopicTableViewCell ??  UITableViewCell()
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier(REUSE_IDENTIFIER_FOR_TOPTEN_CELL, forIndexPath: indexPath) as! TopTenTopicTableViewCell
        
+        if  !datasource.isEmpty{
+            let content = datasource[indexPath.row]
+            cell.title.text = content["title"].stringValue
+            cell.board.text = content["board_name"].stringValue
+            cell.userName.text = content["user"]["user_name"].stringValue
+            cell.reply_count.text = "评论：\(content["reply_count"].stringValue)"
+            cell.avatar.image = UIImage(named: "face")
+            cell.avatar.cornerRadius = cell.avatar.bounds.size.width/2
+            let dob = content["post_time"].stringValue
+            
+                  let rr = NSDate(timeIntervalSince1970: Double(dob)!)
+                let dateFormatter = NSDateFormatter()
+                //设定时间格式,这里可以设置成自己需要的格式
+                dateFormatter.dateFormat = "MM/dd/HH:mm"
+                
+                let currentDateStr = dateFormatter.stringFromDate(rr)
+                print(currentDateStr)
+                cell.post_time.text = currentDateStr
+            
+            
+          
+           
+           
 
+        }
+        
         return cell
     }
+    
+    
+    
+    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 50 
+    }
+    
     
 
     /*

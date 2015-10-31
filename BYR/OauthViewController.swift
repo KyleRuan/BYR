@@ -41,13 +41,14 @@ class OauthViewController: UIViewController,UIWebViewDelegate {
         var access_token:String!
         defer{
              self.hud.dismiss()
-             NSUserDefaults.standardUserDefaults().setObject(access_token, forKey: AccessToken)
+            
         }
-        
+
        if let requestURLString:NSString = webView.request?.URL?.absoluteString where requestURLString.containsString("access_token"){
             let   accessRange = requestURLString.rangeOfString("access_token")
             let   substring = requestURLString.substringFromIndex(accessRange.location)
             let   access_token = substring.componentsSeparatedByString("&")[0].componentsSeparatedByString("=")[1]
+           NSUserDefaults.standardUserDefaults().setObject(access_token, forKey: AccessToken)
             //TODO:  use segue
         
         self.performSegueWithIdentifier(SEGUE_FROM_LOGIN_TO_TABBAR, sender: self)
@@ -87,7 +88,7 @@ class OauthViewController: UIViewController,UIWebViewDelegate {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if let identifier = segue.identifier where identifier == SEGUE_FROM_LOGIN_TO_TABBAR{
-            let vc = segue.destinationViewController as!  HomeTabBarController
+//            let vc = segue.destinationViewController as!  HomeTabBarController
 //            vc.tabBarItem
         }
     }
