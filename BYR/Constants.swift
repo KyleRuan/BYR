@@ -8,7 +8,7 @@
 
 import Foundation
 
- let  AccessToken   = "oauth_token"
+ let  ACCESS_TOKEN   = "oauth_token"
  let Oauth_URL     = "http://bbs.byr.cn/oauth2/authorize"
  let RESPONSE_TYPE = "token"
  let CLIENT_ID     = "2a44821105d92482960593d94e4d042e"
@@ -22,7 +22,7 @@ import Foundation
 
 
 
-var TOKEN = NSUserDefaults.standardUserDefaults().objectForKey(AccessToken)
+
 
 
 let kLoginFeedbackJson = "kLoginFeedbackJson"
@@ -37,3 +37,5 @@ let TABAR_VIEW_CONTROLLER = "TabBarController"
 // Segue
 
 let  SEGUE_FROM_LOGIN_TO_TABBAR="LoginSuccess"
+
+

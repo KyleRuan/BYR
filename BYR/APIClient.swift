@@ -47,13 +47,13 @@ class APIClinet {
     
     func getTopTenTopics(token:AnyObject,success:(JSON)->Void,failure:(NSError)->Void){
 //        http://bbs.byr.cn/open/widget/topten.json?oauth_token=ddd06f3d6675fa948970dfe763e47f30
-        let param = [AccessToken:token]
+        let param = [ACCESS_TOKEN:token]
         self.getJSONData("/open/widget/topten.json", parameters: param, success: success, failure: failure)
     }
     
 
     func getAuthorizedUserInfo(token:AnyObject,success:(JSON)->Void,failure:(NSError)->Void){
-        let param = [AccessToken:token]
+        let param = [ACCESS_TOKEN:token]
         self.getJSONData("/open/user/getinfo.json", parameters: param, success: success, failure: failure)
     }
     

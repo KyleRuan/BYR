@@ -15,33 +15,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 //         Override point for customization after application launch.
-//         let isAuthorize = NSUserDefaults.standardUserDefaults().boolForKey(IS_AUTHORIZE)
-//        
-//        if !isAuthorize {
-//            // first Launch ,is not  Authorized
-//            NSUserDefaults.standardUserDefaults().setBool(true, forKey: IS_AUTHORIZE)
-//            let sb = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-//            let vc = sb.instantiateViewControllerWithIdentifier(OAUTH_VIEW_CONTROLLER)
-//            self.window?.rootViewController = vc
-//        }else{
-//            if (TOKEN != nil) {
-//                  let sb = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-//                  let vc = sb.instantiateViewControllerWithIdentifier(TABAR_VIEW_CONTROLLER)
-//                  self.window?.rootViewController = vc
-//            }else{
-////                let hud = JGProgressHUD()
-////                hud.textLabel.text = "Need to Authorize"
-////                hud.showInView(self.window?.rootViewController?.view)
-////                hud.dismissAfterDelay(2, animated: true)
-//                
-//                NSUserDefaults.standardUserDefaults().setBool(true, forKey: IS_AUTHORIZE)
-//                let sb = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-//                let vc = sb.instantiateViewControllerWithIdentifier(OAUTH_VIEW_CONTROLLER)
-//                self.window?.rootViewController = vc
-//
-//            }
-//                      
-//        }
+         let isAuthorize = UserAngent.sharedInstance.getIsAuthorized()
+        
+        if !isAuthorize {
+            // first Launch ,is not  Authorized
+            UserAngent.sharedInstance.setIsAuthorized(true)
+            SegueToViewController.sharedInstance.implementationSegue(self, segueTo: OAUTH_VIEW_CONTROLLER)
+        }else{
+            if (UserAngent.sharedInstance.getAccessToken() != nil) {
+                SegueToViewController.sharedInstance.implementationSegue(self, segueTo: TABAR_VIEW_CONTROLLER)
+            }else{
+                UserAngent.sharedInstance.setIsAuthorized(true)
+                SegueToViewController.sharedInstance.implementationSegue(self, segueTo: OAUTH_VIEW_CONTROLLER)
+
+
+            }
+                      
+        }
         return true
     }
 

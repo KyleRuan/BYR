@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import Kingfisher
 
 class TopTenHotTopicTableViewController: UITableViewController {
     var datasource:Array<JSON> = []
@@ -35,17 +36,18 @@ class TopTenHotTopicTableViewController: UITableViewController {
         // if have network
          
         
-        APIClinet.sharedInstance.getTopTenTopics(NSUserDefaults.standardUserDefaults().objectForKey(AccessToken)!, success: { (json) -> Void in
+        APIClinet.sharedInstance.getTopTenTopics(NSUserDefaults.standardUserDefaults().objectForKey(ACCESS_TOKEN)!, success: { (json) -> Void in
            
             if json.type == Type.Dictionary{
                 if let article = json["article"] as? JSON{
                     self.datasource =  article.arrayValue
+                    self.title = json["title"].stringValue
                     self.tableView.reloadData()
                     print(self.datasource)
                 }
             }
             }) { (er) -> Void in
-                print(er)
+                print(er) 
         }
     }
 
@@ -69,39 +71,52 @@ class TopTenHotTopicTableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCellWithIdentifier(REUSE_IDENTIFIER_FOR_TOPTEN_CELL, forIndexPath: indexPath) as! TopTenTopicTableViewCell
-       
-        if  !datasource.isEmpty{
-            let content = datasource[indexPath.row]
-            cell.title.text = content["title"].stringValue
-            cell.board.text = content["board_name"].stringValue
-            cell.userName.text = content["user"]["user_name"].stringValue
-            cell.reply_count.text = "评论：\(content["reply_count"].stringValue)"
-            cell.avatar.image = UIImage(named: "face")
-            cell.avatar.cornerRadius = cell.avatar.bounds.size.width/2
-            let dob = content["post_time"].stringValue
-            
-                  let rr = NSDate(timeIntervalSince1970: Double(dob)!)
-                let dateFormatter = NSDateFormatter()
-                //设定时间格式,这里可以设置成自己需要的格式
-                dateFormatter.dateFormat = "MM/dd/HH:mm"
-                
-                let currentDateStr = dateFormatter.stringFromDate(rr)
-                print(currentDateStr)
-                cell.post_time.text = currentDateStr
-            
-            
-          
-           
-           
-
-        }
+        var  cell = tableView.dequeueReusableCellWithIdentifier(REUSE_IDENTIFIER_FOR_TOPTEN_CELL, forIndexPath: indexPath) as! TopTenTopicTableViewCell
+            cellInit(&cell, row: indexPath.row)
         
         return cell
     }
     
-    
+    func cellInit(inout cell:TopTenTopicTableViewCell,row:Int){
+        
+        if  !datasource.isEmpty{
+            let content = datasource[row]
+            cell.title.text = content["title"].stringValue
+            cell.board.text = content["board_name"].stringValue
+            cell.userName.text = content["user"]["user_name"].stringValue
+            cell.reply_count.text = "评论：\(content["reply_count"].stringValue)"
+            
+            let string_time = content["post_time"].stringValue
+//            
+//            let double_time = NSDate(timeIntervalSince1970: Double(string_time)!)
+//            let dateFormatter = NSDateFormatter()
+//            //设定时间格式,这里可以设置成自己需要的格式
+//            dateFormatter.dateFormat = "MM/dd/HH:mm"
+//            
+//            let currentDateStr = dateFormatter.stringFromDate(double_time)
+            
+            let Format = "MM/dd/HH:mm"
+            cell.post_time.text = FormmatterTime.NomalTime(string_time,Format: Format)
+            
+            let faceurl =  content["user"]["face_url"].stringValue
+            let gender = content["user"]["gender"].stringValue
+            let  id = content["user"]["id"].stringValue
+            
+            
+            if let url = NSURL(string: faceurl) {
+
+             if gender == "m" {
+                cell.avatar.kf_setImageWithURL(url, placeholderImage: UIImage(named: "face_default_m"))
+            } else{
+//                cell.avatar.kf_setImageWithURL(NSURL(string: faceurl)!, placeholderImage: UIImage(named: "face_default_f"))
+                cell.avatar.kf_setImageWithURL(url, placeholderImage: UIImage(named: "face_default_m"))
+            }
+            
+            cell.avatar.cornerRadius = cell.avatar.bounds.size.width/2
+           }
+        }
+        
+    }
     
     override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 50 

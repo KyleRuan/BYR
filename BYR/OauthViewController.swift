@@ -41,33 +41,26 @@ class OauthViewController: UIViewController,UIWebViewDelegate {
         var access_token:String!
         defer{
              self.hud.dismiss()
-            
         }
 
        if let requestURLString:NSString = webView.request?.URL?.absoluteString where requestURLString.containsString("access_token"){
             let   accessRange = requestURLString.rangeOfString("access_token")
             let   substring = requestURLString.substringFromIndex(accessRange.location)
             let   access_token = substring.componentsSeparatedByString("&")[0].componentsSeparatedByString("=")[1]
-           NSUserDefaults.standardUserDefaults().setObject(access_token, forKey: AccessToken)
-            //TODO:  use segue
         
-        self.performSegueWithIdentifier(SEGUE_FROM_LOGIN_TO_TABBAR, sender: self)
-            let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-            let start = storyboard.instantiateViewControllerWithIdentifier("TabBarController")
-                as? UITabBarController
-            self.view.window?.rootViewController = start
+        
+          UserAngent.sharedInstance.setAccessToken(access_token)
+        
+         self.performSegueWithIdentifier(SEGUE_FROM_LOGIN_TO_TABBAR, sender: self)
+
         
         
         
-        
-            //user info test
+            //get User Info
             APIClinet.sharedInstance.getAuthorizedUserInfo(access_token, success: { (json) -> Void in
                  //save user info
-                
-                  NSUserDefaults.standardUserDefaults().setObject(json.object, forKey: USER_INFO)
-//                print(json.object)
-//                print("json:")
-                  print(json.object)
+           
+               UserAngent.sharedInstance.setUserInfo(json.object)
                 
                 }, failure: { (error) -> Void in
                    self.hud.textLabel.text = error.description
