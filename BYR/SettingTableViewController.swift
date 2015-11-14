@@ -27,14 +27,24 @@ class SettingTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.toolbarHidden = true
+    }
     func  initUserInfo() {
         APIClinet.sharedInstance.getAuthorizedUserInfo(UserAngent.sharedInstance.getAccessToken()! , success: { (userInfo) -> Void in
             UserAngent.sharedInstance.removeObjectForKey(USER_INFO)
             UserAngent.sharedInstance.setUserInfo(userInfo.object)
         
-            let rect = CGRect(x: 0, y: 0, width: self.tableView.bounds.width, height: self.tableView.bounds.height/4)
+            let rect = CGRect(x: 0, y: 0, width: self.tableView.bounds.width, height: self.tableView.bounds.height/5)
+            print(rect)
             self.head = XHPathCover(frame: rect)
-            self.head.setBackgroundImage(UIImage(named: "face"))
+          
+            self.head.backgroundColor = UIColor.yellowColor()
+            
+            
             let url = NSURL(string: userInfo["face_url"].stringValue)
             
             self.head.avatarButton.kf_setImageWithURL(url!, forState: UIControlState.Normal)

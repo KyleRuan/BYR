@@ -34,11 +34,13 @@ class OauthViewController: UIViewController,UIWebViewDelegate {
     func webViewDidStartLoad(webView: UIWebView) {
         hud.textLabel.text = "Loading..."
         hud.showInView(self.view, animated: true)
+        print(webView.request?.URL?.absoluteString)
+        
     }
     
+    
+    
     func webViewDidFinishLoad(webView: UIWebView) {
-        
-        var access_token:String!
         defer{
              self.hud.dismiss()
         }
@@ -58,9 +60,7 @@ class OauthViewController: UIViewController,UIWebViewDelegate {
         
             //get User Info
             APIClinet.sharedInstance.getAuthorizedUserInfo(access_token, success: { (json) -> Void in
-                 //save user info
-           
-               UserAngent.sharedInstance.setUserInfo(json.object)
+                  UserAngent.sharedInstance.setUserInfo(json.object)
                 
                 }, failure: { (error) -> Void in
                    self.hud.textLabel.text = error.description

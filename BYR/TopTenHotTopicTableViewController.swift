@@ -10,29 +10,29 @@ import UIKit
 import SwiftyJSON
 import Kingfisher
 
-class TopTenHotTopicTableViewController: UITableViewController {
+class TopTenHotTopicTableViewController: UITableViewController,TYAttributedLabelDelegate{
     var datasource:Array<JSON> = []
     var arr:Array<AnyObject> = []
     var isLoaded = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
-         self.loadDate()
+         self.loadData()
         self.tableView.dataSource = self
         self.tableView.delegate = self
-
+         let header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: "loadData")
+       self.tableView.header = header;
+       self.tableView.header.beginRefreshing()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-        
-//          NSUserDefaults.standardUserDefaults().setObject(access_token, forKey: AccessToken)
+
     }
     
     
-    func loadDate(){
+    func loadData(){
         // if have network
          
         
@@ -43,7 +43,7 @@ class TopTenHotTopicTableViewController: UITableViewController {
                     self.datasource =  article.arrayValue
                     self.title = json["title"].stringValue
                     self.tableView.reloadData()
-                    print(self.datasource)
+                    self.tableView.header.endRefreshing()
                 }
             }
             }) { (er) -> Void in
@@ -83,28 +83,17 @@ class TopTenHotTopicTableViewController: UITableViewController {
             let content = datasource[row]
             cell.title.text = content["title"].stringValue
             cell.board.text = content["board_name"].stringValue
-            cell.userName.text = content["user"]["user_name"].stringValue
+            cell.userName.text = content["user"]["id"].stringValue
             cell.reply_count.text = "评论：\(content["reply_count"].stringValue)"
             
             let string_time = content["post_time"].stringValue
-//            
-//            let double_time = NSDate(timeIntervalSince1970: Double(string_time)!)
-//            let dateFormatter = NSDateFormatter()
-//            //设定时间格式,这里可以设置成自己需要的格式
-//            dateFormatter.dateFormat = "MM/dd/HH:mm"
-//            
-//            let currentDateStr = dateFormatter.stringFromDate(double_time)
-            
             let Format = "MM/dd/HH:mm"
             cell.post_time.text = FormmatterTime.NomalTime(string_time,Format: Format)
             
             let faceurl =  content["user"]["face_url"].stringValue
             let gender = content["user"]["gender"].stringValue
-            let  id = content["user"]["id"].stringValue
-            
             
             if let url = NSURL(string: faceurl) {
-
              if gender == "m" {
                 cell.avatar.kf_setImageWithURL(url, placeholderImage: UIImage(named: "face_default_m"))
             } else{
@@ -123,6 +112,12 @@ class TopTenHotTopicTableViewController: UITableViewController {
     }
     
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        
+//        let vc
+    }
+ 
 
     /*
     // Override to support conditional editing of the table view.
@@ -159,14 +154,33 @@ class TopTenHotTopicTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == SEGUE_FROM_TOPTEN_TO_TOPICDETAIL {
+            let vc = segue.destinationViewController as! TopicDetailViewController
+            let indexPath = tableView.indexPathForCell(sender as! TopTenTopicTableViewCell)
+            let id =   datasource[indexPath!.row]["id"].stringValue
+            let boardName = datasource[indexPath!.row]["board_name"].stringValue
+            let title = datasource[indexPath!.row]["title"].stringValue
+    
+            vc.topicId = id
+            vc.boardName = boardName
+            vc.title = title
+            vc.tableView = UITableView(frame: CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height))
+           
+
+//            vc.topicId = 
+//            vc.boardName = ""
+            
+        }
+//        TOPICDETAIL
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }

@@ -12,8 +12,11 @@ import SwiftyJSON
 
  let baseurl = "http:bbs.byr.cn"
 
+// 	"http:bbs.byr.cn/open/thread/Basketball/592235.json"
+//http://bbs.byr.cn/open/thread/Basketball/592235.json?oauth_token=ad08d2625604277508767f3f45ce06fc
+//http://bbs.byr.cn/open/threads/Basketball/592235.json?oauth_token=ddd06f3d6675fa948970dfe763e47f30
 
-
+// http://bbs.byr.cn/open/attachment/Photo/253920/1216?oauth_token=ddd06f3d6675fa948970dfe763e47f30
 class APIClinet {
     static let sharedInstance = APIClinet()
     
@@ -56,6 +59,17 @@ class APIClinet {
         let param = [ACCESS_TOKEN:token]
         self.getJSONData("/open/user/getinfo.json", parameters: param, success: success, failure: failure)
     }
+    
+    func getOneTopicDetail(token:AnyObject,path:String,page:Int,success:(JSON)->Void,failure:(NSError)->Void){
+        let param = [ACCESS_TOKEN:token,"page":page]
+//
+        self.getJSONData("/open/threads/\(path).json", parameters: param, success:success, failure: failure)
+    }
+    
+    
+    
+    
+    
     
     func isTokenLegal(uid:AnyObject,token:AnyObject,success:(JSON)->Void,failure:(NSError)->Void){
         let param = ["uid":uid,"token":token]

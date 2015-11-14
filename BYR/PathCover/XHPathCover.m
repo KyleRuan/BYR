@@ -192,6 +192,7 @@ NSString *const XHBirthdayKey = @"XHBirthday";
     if (backgroundImage) {
         _bannerImageView.image = backgroundImage;
         _bannerImageViewWithImageEffects.image = [backgroundImage applyLightEffect];
+
     }
 }
 
@@ -312,7 +313,7 @@ NSString *const XHBirthdayKey = @"XHBirthday";
         
         if (self.isZoomingEffect) {
             _bannerImageView.center = center;
-            CGFloat scale = fabsf(y) / self.parallaxHeight;
+            CGFloat scale = fabs(y) / self.parallaxHeight;
             _bannerImageView.transform = CGAffineTransformMakeScale(1+scale, 1+scale);
         }
     } else {

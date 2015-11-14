@@ -33,9 +33,13 @@ let TABAR_VIEW_CONTROLLER = "TabBarController"
 
 //tableViewCell for REUSE
 
-   let REUSE_IDENTIFIER_FOR_TOPTEN_CELL = "TopTenCell"
+let REUSE_IDENTIFIER_FOR_TOPTEN_CELL = "TopTenCell"
+let  REUSE_IDENTIFIER_FOR_TOPIC_DETAIL_CELL = "detailcell"
+
+
 // Segue
 
-let  SEGUE_FROM_LOGIN_TO_TABBAR="LoginSuccess"
+let  SEGUE_FROM_LOGIN_TO_TABBAR = "LoginSuccess"
+let  SEGUE_FROM_TOPTEN_TO_TOPICDETAIL = "TOPICDETAIL"
 
 
