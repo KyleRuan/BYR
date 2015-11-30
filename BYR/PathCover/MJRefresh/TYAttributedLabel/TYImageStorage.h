@@ -17,6 +17,7 @@
 @property (nonatomic, strong) NSURL     *imageURL;
 
 @property (nonatomic, strong) NSString  *placeholdImageName;
+@property (nonatomic, weak) UIView *ownerView;
 
 @property (nonatomic, assign) BOOL cacheImageOnMemory; // default NO ,if YES can improve performance，but increase memory
 @end

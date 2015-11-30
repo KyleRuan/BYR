@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct RecordTopic{
+class RecordTopic:NSObject{
     var createdTime:String? //添加时间
     var title:String?   // 主题名称
     var poster:String?   //作者

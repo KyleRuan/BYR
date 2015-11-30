@@ -9,10 +9,10 @@
 import Foundation
 
 
-struct Topics{
-    var ID:Int? //	文章id
-    var group_id:Int? //该文章所属主题的id
-    var reply_id:Int? //该文章回复文章的id
+class Topics:NSObject{
+    var id:NSNumber! //	文章id
+    var group_id:NSNumber! //该文章所属主题的id
+    var reply_id:CInt? //该文章回复文章的id
     var flag:String? //文章标记 分别是m g ; b u o 8
     var position:Int?//文章所在主题的位置或文章在默写浏览模式下的位置
     var is_top:Bool? //文章是否置顶

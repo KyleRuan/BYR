@@ -45,4 +45,27 @@ class TopicModelEnity{
         
         
     }
+    
+    class  func initDataSource(json:JSON,inout dataEntityArray:[TopicModelEnity])->(Int,Int){
+      let  MaxPage = json["pagination"]["page_all_count"].intValue
+      let   currentPage =  json["pagination"]["page_current_count"].intValue
+      let articles = json["article"].arrayValue
+//      var dataEntityArray:Array<TopicModelEnity> = []
+        for article in  articles{
+            
+            let userName = article["user"]["id"].stringValue
+            let postTime =  FormmatterTime.NomalTime(article["post_time"].stringValue, Format: "MM-dd-HH:mm")
+            let number = article["position"].stringValue
+            let content = article["content"].stringValue
+            let avatarURL = article["user"]["face_url"].stringValue
+            let has_attachment = article["has_attachment"].boolValue
+            let attachment = article["attachment"]["file"].arrayValue
+            let entity = TopicModelEnity(url: avatarURL, name: userName, time: postTime, content: content, number: number,has_attachment:has_attachment,attachment: attachment)
+            dataEntityArray.append(entity)
+        }
+        
+        return (MaxPage,currentPage)
+        
+        
+    }
 }

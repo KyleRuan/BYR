@@ -8,10 +8,10 @@
 
 import Foundation
 
-struct Board {
+class Board:NSObject {
     var name:String?  //版面名称
     var maneger:String?  //版主列表，以空格分隔各个id
-    var description:String? //版面描述
+    var descriptions:String? //版面描述
     var board_class:String? //版面所属类别
     var section:String?  //版面所属分区号
     var post_today_count:Int? //今日发文总数

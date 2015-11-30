@@ -34,46 +34,39 @@ class SettingTableViewController: UITableViewController {
         self.navigationController?.toolbarHidden = true
     }
     func  initUserInfo() {
-        APIClinet.sharedInstance.getAuthorizedUserInfo(UserAngent.sharedInstance.getAccessToken()! , success: { (userInfo) -> Void in
-            UserAngent.sharedInstance.removeObjectForKey(USER_INFO)
-            UserAngent.sharedInstance.setUserInfo(userInfo.object)
+       //
+       let userInfo = JSON(UserAngent.sharedInstance.getUserInfo()!)
         
-            let rect = CGRect(x: 0, y: 0, width: self.tableView.bounds.width, height: self.tableView.bounds.height/5)
-            print(rect)
-            self.head = XHPathCover(frame: rect)
-          
-            self.head.backgroundColor = UIColor.yellowColor()
-            
-            
-            let url = NSURL(string: userInfo["face_url"].stringValue)
-            
-            self.head.avatarButton.kf_setImageWithURL(url!, forState: UIControlState.Normal)
-            let info = [XHUserNameKey:userInfo["user_name"].stringValue,XHBirthdayKey:userInfo["role"].stringValue]
-            self.head.setInfo(info)
-            self.tableView.tableHeaderView = self.head
-            
-            let attribute = PersonalAttributes()
-            let (keyArray,valueArray) = attribute.keyValuePairs(userInfo)
-            
-            for value in valueArray {
-                if !value.isEmpty {
-                    let index = valueArray.indexOf(value)
-                    self.keys.append(keyArray[index!])
-                    self.values.append(value)
-                    
-                }
-                 self.tableView.reloadData()
+        let rect = CGRect(x: 0, y: 0, width: self.tableView.bounds.width, height: self.tableView.bounds.height/5)
+        print(rect)
+        self.head = XHPathCover(frame: rect)
+        
+        
+        let url = NSURL(string: userInfo["face_url"].stringValue)
+        
+        self.head.avatarButton.kf_setImageWithURL(url!, forState: UIControlState.Normal)
+        let color = UIColor(colorLiteralRed: 0, green: 0.3, blue: 0.5, alpha: 0.5)
+        self.head.backgroundColor =  color
+        let info = [XHUserNameKey:userInfo["user_name"].stringValue,XHBirthdayKey:userInfo["role"].stringValue]
+        self.head.setInfo(info)
+        self.tableView.tableHeaderView = self.head
+        
+        let attribute = PersonalAttributes()
+        let (keyArray,valueArray) = attribute.keyValuePairs(userInfo)
+        
+        for value in valueArray {
+            if !value.isEmpty {
+                let index = valueArray.indexOf(value)
+                self.keys.append(keyArray[index!])
+                self.values.append(value)
+                
             }
-            
-            
-            }) { (error) -> Void in
-                print(error)
+            self.tableView.reloadData()
         }
-
         
         
-        
-    }
+}
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -93,9 +86,27 @@ class SettingTableViewController: UITableViewController {
     }
     
     @IBAction func exitToLogin() {
-        UserAngent.sharedInstance.removeObjectForKey(USER_INFO)
-        UserAngent.sharedInstance.removeObjectForKey(ACCESS_TOKEN)
-        SegueToViewController.sharedInstance.implementationSegue(self, segueTo: OAUTH_VIEW_CONTROLLER)
+        let sheet = UIAlertController(title: "退出当前用户", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        
+        let action = UIAlertAction(title: "退出当前用户", style: UIAlertActionStyle.Destructive) { (exit) -> Void in
+            UserAngent.sharedInstance.removeObjectForKey(USER_INFO)
+            UserAngent.sharedInstance.removeObjectForKey(ACCESS_TOKEN)
+            SegueToViewController.sharedInstance.implementationSegue(self, segueTo: OAUTH_VIEW_CONTROLLER)
+
+        }
+        sheet.addAction(action)
+        sheet.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: { (_) -> Void in
+            
+        }))
+        presentViewController(sheet, animated: true, completion: nil)
+        
+//        
+        
+//        let alert = UIActionSheet(title: "退出当前用户", delegate: nil, cancelButtonTitle:"取消", destructiveButtonTitle: "退出登入")
+//        self.view.addSubview(alert)
+//        UserAngent.sharedInstance.removeObjectForKey(USER_INFO)
+//        UserAngent.sharedInstance.removeObjectForKey(ACCESS_TOKEN)
+//        SegueToViewController.sharedInstance.implementationSegue(self, segueTo: OAUTH_VIEW_CONTROLLER)
         
     }
     

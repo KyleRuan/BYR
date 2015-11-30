@@ -10,7 +10,7 @@ import Foundation
 //var Users:[String:AnyObject!] = ["id":"用户信息","user_name":"昵称","gender":"性别","astro":"星座","life":"生命值","qq":"QQ","msn":"MSN","home_page":"个人主页","is_online":"是否在线","level":"身份","post_count":"发文数量","last_login_time":"上次登录时间","last_login_ip":"上次登录IP","login_count":"登陆次数","stay_count":"挂站时间","first_login_time":"注册时间"]
 
 //用户元数据
-struct User{
+class User:NSObject{
    
     var id:String?  = nil//用户ID 用户信息
     var user_name:String?  = nil  //用户中文昵称

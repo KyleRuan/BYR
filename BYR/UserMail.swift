@@ -12,7 +12,7 @@ import Foundation
 *  用户信箱元数据
 */
 
-struct UserMail{
+class UserMail:NSObject{
     var new_mail:Bool?  //是否有新邮件
     var full_mail:Bool?  //信箱是否已满
     var space_used:String?  //信箱已用空间

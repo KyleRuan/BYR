@@ -10,7 +10,7 @@
 #import "TYImageCache.h"
 
 @interface TYImageStorage ()
-@property (nonatomic, weak) UIView *ownerView;
+
 @property (nonatomic, assign) BOOL isNeedUpdateFrame;
 @end
 

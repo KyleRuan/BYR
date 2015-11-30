@@ -6,11 +6,10 @@
 #import <JGProgressHUD/JGProgressHUD.h>
 
 
-#import "ImageTextViewController.h"
 
 #import "XHPathCover.h"
 #import "MJRefresh.h"
 #import "TYAttributedLabel.h"
-
+#import "MJExtension.h"
 
 
