@@ -12,4 +12,5 @@ import Foundation
 enum RKRichTextRunType:Int{
     case RKRichTextRunTypeImage = 1
     case RKRichTextRunTypeURL
+    case RKRichTextRunTypeEmoji
 }

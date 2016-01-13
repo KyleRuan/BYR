@@ -37,10 +37,7 @@ class TopicDetailTableViewCell: UITableViewCell {
     
     
   class func prepareForCell(inout cell:TopicDetailTableViewCell,entity:TopicModelEnity){
-//        if dataEntityArray.count == 0 {
-//            return
-//        }
-//        let entity = dataEntityArray[row]
+
         if entity.number == "0" {
             cell.number.text = "楼主"
         }else{
@@ -51,23 +48,16 @@ class TopicDetailTableViewCell: UITableViewCell {
         cell.avatar.kf_setImageWithURL(avatarURL!)
         cell.userName.text = entity.userName
         cell.postTime.text = entity.postTime
-        
-        let label = RichTextHandle.textAddToRichTextViewWithRegex(cell, entity: entity)
-        
-        label.sizeToFit()
-        //        let aa =  attributedString.addAttributeFont(UIFont.systemFontOfSize(24))
-        cell.bounds = CGRectMake(cell.bounds.origin.x, cell.bounds.origin.y, label.bounds.width, label.bounds.height+cell.avatar.bounds.height+cell.LIKE.bounds.height+30)
-        
-        let zz = label as! TYAttributedLabel
-//        zz.delegate = self
-//        
-//        cell.view.delegate = self
+    
+//    
+    let  label = RichTextView(cell: cell, entity: entity)
+    label.sizeToFit()
+    
+    let richview = label.Draw() as!  TYAttributedLabel
+    cell.bounds = CGRectMake(cell.bounds.origin.x, cell.bounds.origin.y, richview.bounds.width, richview.bounds.height+cell.avatar.bounds.height+cell.LIKE.bounds.height+30)
         cell.view.subviews.last?.removeFromSuperview()
-        cell.view.addSubview(zz)
-        
-        
-        
-        
+        cell.view.addSubview(richview)
+    
     }
 
     

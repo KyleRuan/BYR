@@ -10,8 +10,13 @@ import Foundation
 
 
 struct RKBaseAnalysedResult{
-    var  range:NSRange!
-    var data:NSData!
-    var text:NSString!
+    var  range:NSRange?
+    var data:AnyObject?
+    var type:RKRichTextRunType!
+    init(type:RKRichTextRunType){
+        self.type = type
+    
+    }
+//    var text:NSString?
     
 }

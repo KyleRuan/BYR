@@ -12,6 +12,8 @@ import Foundation
 class UserAngent{
     static let sharedInstance = UserAngent()
     
+    private init () {
+    }
     
     func setUserInfo(userInfo:AnyObject?) {
         

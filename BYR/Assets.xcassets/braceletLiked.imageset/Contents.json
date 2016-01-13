@@ -2,7 +2,8 @@
   "images" : [
     {
       "idiom" : "iphone",
-      "scale" : "1x"
+      "scale" : "1x",
+      "filename" : "braceletLiked.png"
     },
     {
       "idiom" : "iphone",
@@ -11,7 +12,8 @@
     },
     {
       "idiom" : "iphone",
-      "scale" : "3x"
+      "scale" : "3x",
+      "filename" : "braceletLiked@3x.png"
     },
     {
       "idiom" : "ipad",
@@ -19,7 +21,7 @@
     },
     {
       "idiom" : "ipad",
-      "filename" : "braceletLiked@2x~ipad.png",
+      "filename" : "braceletLiked~ipad@2x.png",
       "scale" : "2x"
     }
   ],

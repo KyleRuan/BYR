@@ -8,9 +8,8 @@
 
 import Foundation
 
-
-protocol RKBaseRichTextRun{
-    func analyseText(text:NSString)->RKBaseAnalysedResult
-    func drawRichText(analysed:RKBaseAnalysedResult)
+ protocol RKBaseRichTextRun{
     
+    func analyseText(text:NSString,entity:TopicModelEnity?)
+    func drawRichText(size:CGSize)->[AnyObject]
 }

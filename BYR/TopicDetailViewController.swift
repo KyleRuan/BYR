@@ -43,6 +43,12 @@ class TopicDetailViewController: UIViewController ,UITableViewDelegate, UITableV
         self.tableView.header.beginRefreshing()
     }
 
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.hidden =  true
+    }
     func reLoadData(){
         currentPage = 0
         self.loadData()
@@ -53,6 +59,7 @@ class TopicDetailViewController: UIViewController ,UITableViewDelegate, UITableV
         if  nextPage <= MaxPage{
             APIClinet.sharedInstance.getOneTopicDetail(UserAngent.sharedInstance.getAccessToken()!, path: "\(boardName)/\(self.topicId)", page:self.nextPage,success: { (json) -> Void in
 //                self.datasource = json
+               
                 self.initDataSource(json)
                 self.tableView.footer.endRefreshing()
                 self.tableView.reloadData()
