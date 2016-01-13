@@ -9,7 +9,7 @@
 import Foundation
 
 //投票元数据
-struct Vote {
+class Vote:NSObject {
     var vid:Int? //投票标识id
     var title:String?  //投票标题
     var start:NSDate?  //投票发起时间戳

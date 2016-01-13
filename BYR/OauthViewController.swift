@@ -18,6 +18,7 @@ class OauthViewController: UIViewController,UIWebViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         webview.delegate = self
+        webview.contentMode = UIViewContentMode.Center
         if  let url = NSURL(string: "http://bbs.byr.cn/oauth2/authorize?response_type=token&client_id=2a44821105d92482960593d94e4d042e&redirect_uri=http://bbs.byr.cn/oauth2/callback&state=2222"){
              webview.loadRequest(NSURLRequest(URL:url))
         }else {
@@ -34,34 +35,32 @@ class OauthViewController: UIViewController,UIWebViewDelegate {
     func webViewDidStartLoad(webView: UIWebView) {
         hud.textLabel.text = "Loading..."
         hud.showInView(self.view, animated: true)
+      
+        
     }
     
+    
+    
     func webViewDidFinishLoad(webView: UIWebView) {
-        
-        var access_token:String!
         defer{
              self.hud.dismiss()
         }
 
        if let requestURLString:NSString = webView.request?.URL?.absoluteString where requestURLString.containsString("access_token"){
-            let   accessRange = requestURLString.rangeOfString("access_token")
-            let   substring = requestURLString.substringFromIndex(accessRange.location)
-            let   access_token = substring.componentsSeparatedByString("&")[0].componentsSeparatedByString("=")[1]
+        let access_token = NSURLComponents(string: requestURLString as String)?.fragment?.componentsSeparatedByString("&")[0].componentsSeparatedByString("=")[1]
         
         
           UserAngent.sharedInstance.setAccessToken(access_token)
-        
-         self.performSegueWithIdentifier(SEGUE_FROM_LOGIN_TO_TABBAR, sender: self)
+            webview.backgroundColor = UIColor.blueColor()
+          self.performSegueWithIdentifier(SEGUE_FROM_LOGIN_TO_TABBAR, sender: self)
 
         
         
         
             //get User Info
-            APIClinet.sharedInstance.getAuthorizedUserInfo(access_token, success: { (json) -> Void in
-                 //save user info
-           
-               UserAngent.sharedInstance.setUserInfo(json.object)
-                
+            APIClinet.sharedInstance.getAuthorizedUserInfo(access_token!, success: { (json) -> Void in
+                  UserAngent.sharedInstance.setUserInfo(json.object)
+             
                 }, failure: { (error) -> Void in
                    self.hud.textLabel.text = error.description
             })

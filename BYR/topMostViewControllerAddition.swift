@@ -9,15 +9,8 @@
 
 import UIKit
 
-
-
-
-
-
-
 extension UIApplication {
-    
-    class func topMostViewController() -> UIViewController?{
+        class func topMostViewController() -> UIViewController?{
         var  topController = UIApplication.sharedApplication().keyWindow?.rootViewController
         while topController?.presentedViewController != nil {
             topController = topController?.presentedViewController

@@ -12,12 +12,14 @@ import SwiftyJSON
 
  let baseurl = "http:bbs.byr.cn"
 
+// 	"http:bbs.byr.cn/open/thread/Basketball/592235.json"
 
 
+// http://bbs.byr.cn/open/attachment/Photo/253920/1216?oauth_token=3140fd026627ac9fba09e638794c4dc4
 class APIClinet {
     static let sharedInstance = APIClinet()
     
-    func getJSONData(path:String,parameters:[String:AnyObject]?, success: (JSON) -> Void, failure: (NSError) -> Void){
+  private  func getJSONData(path:String,parameters:[String:AnyObject]?, success: (JSON) -> Void, failure: (NSError) -> Void){
         
         Alamofire.request(.GET, baseurl+path, parameters: parameters).responseSwiftyJSON{
             (request,response ,result ,error) in
@@ -31,7 +33,7 @@ class APIClinet {
     }
     
     //可以在这个添加token是否是合适
-    func postJSONData(path:String,parameter:[String:AnyObject]?,success:(JSON) -> Void,failure:(NSError)->Void){
+  private func postJSONData(path:String,parameter:[String:AnyObject]?,success:(JSON) -> Void,failure:(NSError)->Void){
         Alamofire.request(.POST, baseurl, parameters: parameter).responseSwiftyJSON{
             (request,response ,result ,error) in
             if let err = error {
@@ -44,11 +46,38 @@ class APIClinet {
     }
     
     
+//    BBSLOG
+//         http://bbs.byr.cn/open/section/0/BBSLOG.json?oauth_token=3140fd026627ac9fba09e638794c4dc4
+    func getSectionInfo(token:AnyObject,name:String,success:((JSON)->Void),failure:((NSError)->Void)){
+//     http://bbs.byr.cn/open/section.json?oauth_token=3140fd026627ac9fba09e638794c4dc4
+    
+    let param = [ACCESS_TOKEN:token]
+        self.getJSONData("/open/section/\(name).json", parameters: param, success: success, failure: failure)
+    
+    }
+    
     
     func getTopTenTopics(token:AnyObject,success:(JSON)->Void,failure:(NSError)->Void){
 //        http://bbs.byr.cn/open/widget/topten.json?oauth_token=ddd06f3d6675fa948970dfe763e47f30
         let param = [ACCESS_TOKEN:token]
         self.getJSONData("/open/widget/topten.json", parameters: param, success: success, failure: failure)
+    }
+//    /board/:name.(xml|json)
+
+//    mode	false	int 最小0 最大6 默认2	表示版面文章列表的模式，分别是
+//    = 0 以id为顺序列表
+//    = 1 文摘区列表
+//    = 2 同主题(web顺序)列表
+//    = 3 精华区列表
+//    = 4 回收站列表
+//    = 5 废纸篓列表
+//    = 6 同主题(发表顺序)列表
+//    count	false	int 最小1 最大50 默认30	每页文章的数量
+//    page	false	int 默认1
+    func getTopicList(token:AnyObject,name:String,mode:Int = 2,page:Int,success:(JSON)->Void,failure:(NSError)->Void){
+//                http://bbs.byr.cn/open//board/bbs.json?oauth_token=ddd06f3d6675fa948970dfe763e47f30
+        let param = [ACCESS_TOKEN:token,"mode":mode,"page":page]
+         self.getJSONData("/open/board/\(name).json", parameters: param, success: success, failure: failure)
     }
     
 
@@ -56,6 +85,17 @@ class APIClinet {
         let param = [ACCESS_TOKEN:token]
         self.getJSONData("/open/user/getinfo.json", parameters: param, success: success, failure: failure)
     }
+    
+    func getOneTopicDetail(token:AnyObject,path:String,page:Int,success:(JSON)->Void,failure:(NSError)->Void){
+        let param = [ACCESS_TOKEN:token,"page":page]
+//
+        self.getJSONData("/open/threads/\(path).json", parameters: param, success:success, failure: failure)
+    }
+    
+    
+    
+    
+    
     
     func isTokenLegal(uid:AnyObject,token:AnyObject,success:(JSON)->Void,failure:(NSError)->Void){
         let param = ["uid":uid,"token":token]
@@ -69,21 +109,7 @@ class APIClinet {
         
     }
     
-//    func readMessage(uid: AnyObject, token: AnyObject, msgID: AnyObject, success: (JSON) -> Void, failure: (NSError) -> Void) {
-//        let dict = ["uid": uid, "token": token, "msg_id": msgID]
-//        self.getJSONData("read_message", parameters: dict , success: success, failure: failure)
-//    }
-//    
-//    func getMessages(userID: AnyObject, token: AnyObject, success: (JSON) -> Void, failure: (NSError) -> Void) {
-//        let dict = ["uid": userID, "token": token]
-//        self.getJSONData("messages", parameters: dict, success: success, failure: failure)
-//    }
-//    
-//    func sendMessage(uid: AnyObject, token: AnyObject, receiver_uid: AnyObject,title: AnyObject, content: AnyObject, success: (JSON) -> Void, failure: (NSError) -> Void) {
-//        let dict = ["uid": uid, "send_to": receiver_uid,"title": title, "content": content, "token": token]
-//        self.postJSONData("send_message", parameter: dict, success: success, failure: failure)
-//    }
-    
+ 
     
 
     

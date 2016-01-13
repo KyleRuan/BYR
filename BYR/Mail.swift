@@ -4,12 +4,12 @@
 //
 //  Created by Jason on 15/5/26.
 //  Copyright (c) 2015年 KyleRuan. All rights reserved.
+////
 //
-
 import Foundation
 
 //信件元数据
-struct Mail{
+class Mail:NSObject{
     var mail_index:Int? //信件编号，此编号为/mail/:box/:num中的num
     var is_m:Bool?  //是否标记为m
     var is_read:Bool?  //是否已读

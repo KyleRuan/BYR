@@ -33,9 +33,23 @@ let TABAR_VIEW_CONTROLLER = "TabBarController"
 
 //tableViewCell for REUSE
 
-   let REUSE_IDENTIFIER_FOR_TOPTEN_CELL = "TopTenCell"
+let REUSE_IDENTIFIER_FOR_TOPTEN_CELL = "TopTenCell"
+let  REUSE_IDENTIFIER_FOR_TOPIC_DETAIL_CELL = "detailcell"
+let REUSE_IDENTIFIER_FOR_BOARD_CELL = "BoardCell"
+let REUSE_IDENTIFIER_FOR_BOARDLIST_CELL  = "BoardListCells"
+
+
 // Segue
 
-let  SEGUE_FROM_LOGIN_TO_TABBAR="LoginSuccess"
+let  SEGUE_FROM_LOGIN_TO_TABBAR = "LoginSuccess"
+let  SEGUE_FROM_TOPTEN_TO_TOPICDETAIL = "TOPICDETAIL"
+let   SEGUE_FROM_SECTION_TO_BOARDLIST  =  "SegueFromSectionToBoardTableView"
+let   SEGUE_FROM_SECTION_TO_SUBSECTION = "toSubSection"
+let  SEGUE_FROM_SECTION_T0_TOPICLIST = "toTopicList"
+
+
+//Color
+
+//let backgroundColor = UIColor(red: 100, green: 127, blue: 127, alpha: 1)
 
 

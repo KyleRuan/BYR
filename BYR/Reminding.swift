@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct Reminding {
+class Reminding:NSObject {
     var reminding_index:Int? //提醒编号，此编号用于提醒的相关操作
     var id:String?  // 提醒文章的id
     var group_id:Int? // 提醒文章的group id

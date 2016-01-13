@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -15,8 +16,41 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogBackground" translatesAutoresizingMaskIntoConstraints="NO" id="5JB-os-6vw">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoadIN" translatesAutoresizingMaskIntoConstraints="NO" id="ESX-OV-ygg">
+                                <rect key="frame" x="240" y="240" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="Wr9-P2-IXW"/>
+                                    <constraint firstAttribute="height" constant="120" id="wAL-cO-ehw"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ESX-OV-ygg" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="3UK-0L-QF6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5JB-os-6vw" secondAttribute="trailing" constant="-20" id="5bG-JJ-x7N"/>
+                            <constraint firstItem="5JB-os-6vw" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="91t-sH-fwI"/>
+                            <constraint firstItem="5JB-os-6vw" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="MdA-za-H3p"/>
+                            <constraint firstItem="5JB-os-6vw" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="-20" id="QZ4-6V-c1A"/>
+                            <constraint firstItem="ESX-OV-ygg" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="XVM-Zb-YSe"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="5JB-os-6vw" secondAttribute="bottom" id="Xv2-CS-l5r"/>
+                            <constraint firstItem="5JB-os-6vw" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="-20" id="ZP6-i9-38o"/>
+                            <constraint firstItem="5JB-os-6vw" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="cR1-PT-q82"/>
+                            <constraint firstItem="ESX-OV-ygg" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="i9A-Mh-qG1"/>
+                            <constraint firstItem="ESX-OV-ygg" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="jLx-qN-fiX"/>
+                            <constraint firstItem="5JB-os-6vw" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="vb1-Qp-dQV"/>
+                            <constraint firstItem="5JB-os-6vw" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="wCv-Y2-GCB"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="MdA-za-H3p"/>
+                                <exclude reference="ZP6-i9-38o"/>
+                                <exclude reference="cR1-PT-q82"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -24,4 +58,8 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="LoadIN" width="500" height="500"/>
+        <image name="LogBackground" width="600" height="600"/>
+    </resources>
 </document>

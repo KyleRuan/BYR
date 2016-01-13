@@ -16,7 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 //         Override point for customization after application launch.
          let isAuthorize = UserAngent.sharedInstance.getIsAuthorized()
-        
+//        self.window?.makeKeyAndVisible()
+//      
         if !isAuthorize {
             // first Launch ,is not  Authorized
             UserAngent.sharedInstance.setIsAuthorized(true)
@@ -24,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }else{
             if (UserAngent.sharedInstance.getAccessToken() != nil) {
                 SegueToViewController.sharedInstance.implementationSegue(self, segueTo: TABAR_VIEW_CONTROLLER)
+                
             }else{
                 UserAngent.sharedInstance.setIsAuthorized(true)
                 SegueToViewController.sharedInstance.implementationSegue(self, segueTo: OAUTH_VIEW_CONTROLLER)

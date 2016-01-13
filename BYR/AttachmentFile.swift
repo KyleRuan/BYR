@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct AttachmentFile{
+class AttachmentFile:NSObject{
     var name:String? //文件名
     var url:String?  //文件链接，在用户空间的文件，该值为空
     var size:String? //文件大小
