@@ -299,6 +299,8 @@
 		B78773EF1BE9E2EC004566D5 /* PersonalAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78773EE1BE9E2EC004566D5 /* PersonalAttributes.swift */; };
 		B793C56A1C033AE60067A94F /* BoardListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B793C5691C033AE60067A94F /* BoardListViewController.swift */; };
 		B793C5701C0340680067A94F /* BoardListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B793C56F1C0340680067A94F /* BoardListTableViewCell.swift */; };
+		B79D04D51C4A57F500631725 /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B79D04D11C4A57F500631725 /* NSObject+YYModel.m */; };
+		B79D04D61C4A57F500631725 /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B79D04D31C4A57F500631725 /* YYClassInfo.m */; };
 		B7A874401BFEF4A3001F1D11 /* BoardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A8743F1BFEF4A3001F1D11 /* BoardCollectionViewCell.swift */; };
 		B7A874421BFF0B2C001F1D11 /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A874411BFF0B2C001F1D11 /* BoardViewController.swift */; };
 		B7AF265E1BD7F4CC000E9448 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AF26581BD7F4CC000E9448 /* APIClient.swift */; };
@@ -656,6 +658,11 @@
 		B78773EE1BE9E2EC004566D5 /* PersonalAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalAttributes.swift; sourceTree = "<group>"; };
 		B793C5691C033AE60067A94F /* BoardListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardListViewController.swift; sourceTree = "<group>"; };
 		B793C56F1C0340680067A94F /* BoardListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardListTableViewCell.swift; sourceTree = "<group>"; };
+		B79D04D01C4A57F500631725 /* NSObject+YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YYModel.h"; sourceTree = "<group>"; };
+		B79D04D11C4A57F500631725 /* NSObject+YYModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YYModel.m"; sourceTree = "<group>"; };
+		B79D04D21C4A57F500631725 /* YYClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYClassInfo.h; sourceTree = "<group>"; };
+		B79D04D31C4A57F500631725 /* YYClassInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYClassInfo.m; sourceTree = "<group>"; };
+		B79D04D41C4A57F500631725 /* YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYModel.h; sourceTree = "<group>"; };
 		B7A8743F1BFEF4A3001F1D11 /* BoardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardCollectionViewCell.swift; sourceTree = "<group>"; };
 		B7A874411BFF0B2C001F1D11 /* BoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
 		B7AF26541BD7F48C000E9448 /* BYR-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BYR-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -1161,6 +1168,7 @@
 		B77606EA1BD7EF9E003B3801 /* BYR */ = {
 			isa = PBXGroup;
 			children = (
+				B79D04CF1C4A57F500631725 /* YYModel */,
 				B7FD030E1C4386FC00D68D77 /* Animation */,
 				B75B19A11C0A197A00FD5CE6 /* MJExtension */,
 				B74326C01BED06C000BC686E /* TYAttributedLabel */,
@@ -1223,6 +1231,18 @@
 				B75B19C61C0A2A3D00FD5CE6 /* widget.swift */,
 			);
 			name = "Data Model";
+			sourceTree = "<group>";
+		};
+		B79D04CF1C4A57F500631725 /* YYModel */ = {
+			isa = PBXGroup;
+			children = (
+				B79D04D01C4A57F500631725 /* NSObject+YYModel.h */,
+				B79D04D11C4A57F500631725 /* NSObject+YYModel.m */,
+				B79D04D21C4A57F500631725 /* YYClassInfo.h */,
+				B79D04D31C4A57F500631725 /* YYClassInfo.m */,
+				B79D04D41C4A57F500631725 /* YYModel.h */,
+			);
+			path = YYModel;
 			sourceTree = "<group>";
 		};
 		B7D574031BE74C8F00D7D725 /* Controller */ = {
@@ -1618,6 +1638,7 @@
 				B74326D71BED06C000BC686E /* TYDrawStorage.m in Sources */,
 				B75BF0EC1BE7C83200A4820C /* SettingTableViewCell.swift in Sources */,
 				B7D7EEA51BF0A12500D2981C /* TopicModelEntity.swift in Sources */,
+				B79D04D61C4A57F500631725 /* YYClassInfo.m in Sources */,
 				B77607151BD7EFDB003B3801 /* Board.swift in Sources */,
 				B77276E61C156F3A00A34927 /* RichTextRunFactory.swift in Sources */,
 				B711A7711BEC5C2600368B6C /* MJRefreshBackNormalFooter.m in Sources */,
@@ -1643,6 +1664,7 @@
 				B77607111BD7EFDB003B3801 /* UserMail.swift in Sources */,
 				B711A7791BEC5C2600368B6C /* UIScrollView+MJRefresh.m in Sources */,
 				B74326D51BED06C000BC686E /* NSMutableAttributedString+TY.m in Sources */,
+				B79D04D51C4A57F500631725 /* NSObject+YYModel.m in Sources */,
 				B7A874421BFF0B2C001F1D11 /* BoardViewController.swift in Sources */,
 				B74326DD1BED06C000BC686E /* TYTextStorage.m in Sources */,
 				B74326D91BED06C000BC686E /* TYImageStorage.m in Sources */,

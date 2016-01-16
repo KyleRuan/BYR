@@ -11,5 +11,6 @@
 #import "MJRefresh.h"
 #import "TYAttributedLabel.h"
 #import "MJExtension.h"
+#import "YYModel.h"
 
 
