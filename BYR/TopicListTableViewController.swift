@@ -205,9 +205,11 @@ class TopicListTableViewController:UITableViewController,TYAttributedLabelDelega
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     
-
+    override func performSegueWithIdentifier(identifier: String, sender: AnyObject?) {
+        print("performSegueWithIdentifier")
+    }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
+         print("prepareForSegue")
         if segue.identifier == SEGUE_FROM_TOPTEN_TO_TOPICDETAIL {
             let vc = segue.destinationViewController as! TopicDetailViewController
             let indexPath = tableView.indexPathForCell(sender as! TopTenTopicTableViewCell)
