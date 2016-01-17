@@ -10,7 +10,8 @@ import Foundation
 
 
 class FormmatterTime{
-    static func NomalTime(unix:String,Format:String)->String{
+ 
+    static func NomalTime(unix:String,Format:String = "MM/dd/HH:mm")->String{
         
         let double_time = NSDate(timeIntervalSince1970: Double(unix)!)
         let dateFormatter = NSDateFormatter()

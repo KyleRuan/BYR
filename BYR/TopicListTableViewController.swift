@@ -11,10 +11,15 @@ import SwiftyJSON
 import Kingfisher
 
 class TopicListTableViewController:UITableViewController,TYAttributedLabelDelegate,UINavigationControllerDelegate{
-    var datasource:Array<JSON> = []
+//    var datasource:Array<JSON> = [] 
     var arr:Array<AnyObject> = []
     var isLoaded = false
     var type = "topten"
+    var cells:Array<TopTenTopicTableViewCell> = []
+    let  modelEnity = TopicListModelEnity()
+    
+    var viewModel:TopicListViewModel!
+    
     
     
     var currentPage = 1 {
@@ -32,106 +37,37 @@ class TopicListTableViewController:UITableViewController,TYAttributedLabelDelega
     var backgroundImageView = UIImageView()
     override func viewDidLoad() {
         super.viewDidLoad()
-//         self.loadData()
+        viewModel = TopicListViewModel(tableView: self.tableView)
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        
-
-        let footer = MJRefreshFooter(refreshingTarget: self, refreshingAction: "loadMore")
-        self.tableView.footer = footer
+//        let footer = MJRefreshFooter(refreshingTarget: self, refreshingAction: "loadMore")
+//        self.tableView.footer = footer
          let header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: "loadData")
        self.tableView.header = header;
        self.tableView.header.beginRefreshing()
         navigationController?.delegate = self
-        
-//        self.view.backgroundColor = backgroundColor
         setUpAnimation()
      
 
     }
-    
-    
-    func loadMore(){
-        
-         let token = UserAngent.sharedInstance.getAccessToken()
-        if type != "topten"{
-           tableView.footer.beginRefreshing()
-        APIClinet.sharedInstance.getTopicList(token!, name: type,page:currentPage, success: { (json) -> Void in
-            print(json)
-            if json.type == Type.Dictionary{
-                let article = json["article"]
-                if article != nil{
-                    
-                    self.datasource.appendContentsOf(article.arrayValue )
-                    self.title = json["title"].stringValue
-                    self.tableView.reloadData()
-                    self.currentPage++
-                    self.tableView.footer.endRefreshing()
-                    
-                }
-            }
-            }, failure: { (error) -> Void in
-                print(error)
-        })
-        }
-    }
+
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         self.view.layer.mask = nil
-//        self.view.subviews.first?.removeFromSuperview()
+
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.hidden =  false
     }
     
-    var articles:Array<Topics> = []
+    
     func loadData(){
         // if have network
-        let token = UserAngent.sharedInstance.getAccessToken()
-         
-        if type == "topten" {
-            APIClinet.sharedInstance.getTopTenTopics(token!, success: { (json) -> Void in
-        
-                if json.type == Type.Dictionary{
-                    let article = json["article"]
-                    if  article != nil{
-                        self.datasource.appendContentsOf(article.arrayValue )
-                        self.title = json["title"].stringValue
-                        self.tableView.reloadData()
-                        self.tableView.header.endRefreshing()
-                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                            self.animationPop()
-                        })
-                    }
-                }
-                }) { (er) -> Void in
-                    print(er) 
-            }
-        }else {
-            APIClinet.sharedInstance.getTopicList(token!, name: type,page:currentPage, success: { (json) -> Void in
-                print(json)
-                if json.type == Type.Dictionary{
-                    let article = json["article"]
-                    if  article != nil{
-//                        let kk = json.object
-//                        let zz = Topics.mj_objectWithKeyValues(kk)
-                        
-                        self.datasource.appendContentsOf(article.arrayValue )
-                        self.title = json["title"].stringValue
-                        self.tableView.reloadData()
-                        self.tableView.header.endRefreshing()
-                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                            self.animationPop()
-                        })
-                    }
-                }
-                }, failure: { (error) -> Void in
-                    print(error)
-            })
+        viewModel.loadData { () -> Void in
+            self.animationPop()
         }
-            
      
     }
 
@@ -150,83 +86,51 @@ class TopicListTableViewController:UITableViewController,TYAttributedLabelDelega
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         
-        return datasource.count
+        return viewModel.datasource.count
     }
 
-    var cells:Array<UITableViewCell> = []
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-       
         
-
-               var  cell = tableView.dequeueReusableCellWithIdentifier(REUSE_IDENTIFIER_FOR_TOPTEN_CELL, forIndexPath: indexPath) as! TopTenTopicTableViewCell
-        cellInit(&cell, row: indexPath.row)
+      
+        var  cell = tableView.dequeueReusableCellWithIdentifier(REUSE_IDENTIFIER_FOR_TOPTEN_CELL, forIndexPath: indexPath) as! TopTenTopicTableViewCell
+        
+        if cells.count > indexPath.row {
+            return cells[indexPath.row]
+        }
+        
+        modelEnity.cellInit(&cell, datasource: viewModel.datasource[indexPath.row])
         cells.append(cell)
+
   return cell
     }
     
-    func cellInit(inout cell:TopTenTopicTableViewCell,row:Int){
-        
-        if  !datasource.isEmpty{
-            let content = datasource[row]
-            cell.title.text = content["title"].stringValue
-            cell.board.text = content["board_name"].stringValue
-            cell.userName.text = content["user"]["id"].stringValue
-            cell.reply_count.text = "评论：\(content["reply_count"].stringValue)"
-            
-            let string_time = content["post_time"].stringValue
-            let Format = "MM/dd/HH:mm"
-            cell.post_time.text = FormmatterTime.NomalTime(string_time,Format: Format)
-            
-            let faceurl =  content["user"]["face_url"].stringValue
-            let gender = content["user"]["gender"].stringValue
-            
-            if let url = NSURL(string: faceurl) {
-             if gender == "m" {
-                cell.avatar.kf_setImageWithURL(url, placeholderImage: UIImage(named: "face_default_m"))
-            } else{
-//                cell.avatar.kf_setImageWithURL(NSURL(string: faceurl)!, placeholderImage: UIImage(named: "face_default_f"))
-                cell.avatar.kf_setImageWithURL(url, placeholderImage: UIImage(named: "face_default_m"))
-            }
-            
-            cell.avatar.cornerRadius = cell.avatar.bounds.size.width/2
-           }
-        }
-        
-    }
+    
     
     override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 50 
     }
     
-
-    
-    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     
-    override func performSegueWithIdentifier(identifier: String, sender: AnyObject?) {
-        print("performSegueWithIdentifier")
-    }
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
          print("prepareForSegue")
         if segue.identifier == SEGUE_FROM_TOPTEN_TO_TOPICDETAIL {
             let vc = segue.destinationViewController as! TopicDetailViewController
             let indexPath = tableView.indexPathForCell(sender as! TopTenTopicTableViewCell)
-            let id =   datasource[indexPath!.row]["id"].stringValue
-            let boardName = datasource[indexPath!.row]["board_name"].stringValue
-            let title = datasource[indexPath!.row]["title"].stringValue
-    
-            vc.topicId = id
-            vc.boardName = boardName
-            vc.title = title
+            
+    let article  = modelEnity.articles[indexPath!.row]
+            vc.topicId = article.id.stringValue
+            vc.boardName = article.board_name
+            vc.title = article.title
         
             vc.tableView = UITableView(frame: CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height))
         }
     
 
-//            vc.topicId = 
-//            vc.boardName = ""
             
         }
 //        TOPICDETAIL
@@ -253,15 +157,12 @@ class TopicListTableViewController:UITableViewController,TYAttributedLabelDelega
         frontView?.bringSubviewToFront(backgroundView)
         
         let  window =  UIApplication.sharedApplication().windows.last!
-     backgroundImageView = UIImageView(frame: (self.view.frame))
+      backgroundImageView = UIImageView(frame: (self.view.frame))
         backgroundImageView.contentMode = .ScaleAspectFill
         backgroundImageView.image = UIImage(named: "LogBackground")
         window.insertSubview(backgroundImageView, belowSubview: frontView)
         
-        
-        
         //Animation
-        
         
         transformAnimation.duration = 1
         transformAnimation.beginTime = CACurrentMediaTime() + 1
@@ -329,5 +230,15 @@ class TopicListTableViewController:UITableViewController,TYAttributedLabelDelega
     }
     
     
+}
+
+extension String{
+   func StringToBool()->Bool {
+        if self == "1"{
+            return true
+        }else{
+            return false
+        }
+}
 }
 

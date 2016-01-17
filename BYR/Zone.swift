@@ -11,6 +11,7 @@ import Foundation
 struct Zone {
     var name:String?  //分区名称
     var description:String?//分区表述
-    var is_root:Bool? //是否是根分区
+ /// "1"true
+    var is_root:String? //是否是根分区
     var parent:String? //该分区所属根分区名称
 }

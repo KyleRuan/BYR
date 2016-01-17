@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4DD660FFE5F5452C27D9CB99 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D20BE0ED24ACC701A254FF3 /* Pods.framework */; };
+		B70B69921C4BF7DB00373971 /* TopicListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70B69911C4BF7DB00373971 /* TopicListViewModel.swift */; };
+		B70B69951C4BFC2500373971 /* LauchToTopicListAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70B69941C4BFC2500373971 /* LauchToTopicListAnimation.swift */; };
 		B711A7681BEC5C2600368B6C /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = B711A73E1BEC5C2600368B6C /* MJRefreshAutoFooter.m */; };
 		B711A7691BEC5C2600368B6C /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = B711A7401BEC5C2600368B6C /* MJRefreshBackFooter.m */; };
 		B711A76A1BEC5C2600368B6C /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = B711A7421BEC5C2600368B6C /* MJRefreshComponent.m */; };
@@ -248,17 +250,6 @@
 		B75B199C1C09D31700FD5CE6 /* RKBaseAnalysedResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75B199B1C09D31700FD5CE6 /* RKBaseAnalysedResult.swift */; };
 		B75B199E1C09D3FC00FD5CE6 /* RKImageRichTextRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75B199D1C09D3FC00FD5CE6 /* RKImageRichTextRun.swift */; };
 		B75B19A01C09D53D00FD5CE6 /* RKRichTextRunType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75B199F1C09D53D00FD5CE6 /* RKRichTextRunType.swift */; };
-		B75B19B91C0A197A00FD5CE6 /* MJDictionaryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B75B19A31C0A197A00FD5CE6 /* MJDictionaryCache.m */; };
-		B75B19BA1C0A197A00FD5CE6 /* MJExtensionConst.m in Sources */ = {isa = PBXBuildFile; fileRef = B75B19A61C0A197A00FD5CE6 /* MJExtensionConst.m */; };
-		B75B19BB1C0A197A00FD5CE6 /* MJFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = B75B19A81C0A197A00FD5CE6 /* MJFoundation.m */; };
-		B75B19BC1C0A197A00FD5CE6 /* MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = B75B19AA1C0A197A00FD5CE6 /* MJProperty.m */; };
-		B75B19BD1C0A197A00FD5CE6 /* MJPropertyKey.m in Sources */ = {isa = PBXBuildFile; fileRef = B75B19AC1C0A197A00FD5CE6 /* MJPropertyKey.m */; };
-		B75B19BE1C0A197A00FD5CE6 /* MJPropertyType.m in Sources */ = {isa = PBXBuildFile; fileRef = B75B19AE1C0A197A00FD5CE6 /* MJPropertyType.m */; };
-		B75B19BF1C0A197A00FD5CE6 /* NSObject+MJClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B75B19B01C0A197A00FD5CE6 /* NSObject+MJClass.m */; };
-		B75B19C01C0A197A00FD5CE6 /* NSObject+MJCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = B75B19B21C0A197A00FD5CE6 /* NSObject+MJCoding.m */; };
-		B75B19C11C0A197A00FD5CE6 /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = B75B19B41C0A197A00FD5CE6 /* NSObject+MJKeyValue.m */; };
-		B75B19C21C0A197A00FD5CE6 /* NSObject+MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = B75B19B61C0A197A00FD5CE6 /* NSObject+MJProperty.m */; };
-		B75B19C31C0A197A00FD5CE6 /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B75B19B81C0A197A00FD5CE6 /* NSString+MJExtension.m */; };
 		B75B19C51C0A287000FD5CE6 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75B19C41C0A287000FD5CE6 /* Section.swift */; };
 		B75B19C71C0A2A3D00FD5CE6 /* widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75B19C61C0A2A3D00FD5CE6 /* widget.swift */; };
 		B75BF0E31BE79CCB00A4820C /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = B75BF0D81BE79CCB00A4820C /* circle.png */; };
@@ -321,6 +312,8 @@
 		0D20BE0ED24ACC701A254FF3 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A106F2EAE456E8AFDF2A1D2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		3B43955F829EAD6159AE1184 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		B70B69911C4BF7DB00373971 /* TopicListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListViewModel.swift; sourceTree = "<group>"; };
+		B70B69941C4BFC2500373971 /* LauchToTopicListAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LauchToTopicListAnimation.swift; sourceTree = "<group>"; };
 		B711A73D1BEC5C2600368B6C /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		B711A73E1BEC5C2600368B6C /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
 		B711A73F1BEC5C2600368B6C /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
@@ -590,29 +583,6 @@
 		B75B199B1C09D31700FD5CE6 /* RKBaseAnalysedResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKBaseAnalysedResult.swift; sourceTree = "<group>"; };
 		B75B199D1C09D3FC00FD5CE6 /* RKImageRichTextRun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKImageRichTextRun.swift; sourceTree = "<group>"; };
 		B75B199F1C09D53D00FD5CE6 /* RKRichTextRunType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKRichTextRunType.swift; sourceTree = "<group>"; };
-		B75B19A21C0A197A00FD5CE6 /* MJDictionaryCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJDictionaryCache.h; sourceTree = "<group>"; };
-		B75B19A31C0A197A00FD5CE6 /* MJDictionaryCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJDictionaryCache.m; sourceTree = "<group>"; };
-		B75B19A41C0A197A00FD5CE6 /* MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtension.h; sourceTree = "<group>"; };
-		B75B19A51C0A197A00FD5CE6 /* MJExtensionConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtensionConst.h; sourceTree = "<group>"; };
-		B75B19A61C0A197A00FD5CE6 /* MJExtensionConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJExtensionConst.m; sourceTree = "<group>"; };
-		B75B19A71C0A197A00FD5CE6 /* MJFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJFoundation.h; sourceTree = "<group>"; };
-		B75B19A81C0A197A00FD5CE6 /* MJFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJFoundation.m; sourceTree = "<group>"; };
-		B75B19A91C0A197A00FD5CE6 /* MJProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJProperty.h; sourceTree = "<group>"; };
-		B75B19AA1C0A197A00FD5CE6 /* MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJProperty.m; sourceTree = "<group>"; };
-		B75B19AB1C0A197A00FD5CE6 /* MJPropertyKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPropertyKey.h; sourceTree = "<group>"; };
-		B75B19AC1C0A197A00FD5CE6 /* MJPropertyKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPropertyKey.m; sourceTree = "<group>"; };
-		B75B19AD1C0A197A00FD5CE6 /* MJPropertyType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPropertyType.h; sourceTree = "<group>"; };
-		B75B19AE1C0A197A00FD5CE6 /* MJPropertyType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPropertyType.m; sourceTree = "<group>"; };
-		B75B19AF1C0A197A00FD5CE6 /* NSObject+MJClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJClass.h"; sourceTree = "<group>"; };
-		B75B19B01C0A197A00FD5CE6 /* NSObject+MJClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJClass.m"; sourceTree = "<group>"; };
-		B75B19B11C0A197A00FD5CE6 /* NSObject+MJCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJCoding.h"; sourceTree = "<group>"; };
-		B75B19B21C0A197A00FD5CE6 /* NSObject+MJCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJCoding.m"; sourceTree = "<group>"; };
-		B75B19B31C0A197A00FD5CE6 /* NSObject+MJKeyValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJKeyValue.h"; sourceTree = "<group>"; };
-		B75B19B41C0A197A00FD5CE6 /* NSObject+MJKeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJKeyValue.m"; sourceTree = "<group>"; };
-		B75B19B51C0A197A00FD5CE6 /* NSObject+MJProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJProperty.h"; sourceTree = "<group>"; };
-		B75B19B61C0A197A00FD5CE6 /* NSObject+MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJProperty.m"; sourceTree = "<group>"; };
-		B75B19B71C0A197A00FD5CE6 /* NSString+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MJExtension.h"; sourceTree = "<group>"; };
-		B75B19B81C0A197A00FD5CE6 /* NSString+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MJExtension.m"; sourceTree = "<group>"; };
 		B75B19C41C0A287000FD5CE6 /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		B75B19C61C0A2A3D00FD5CE6 /* widget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = widget.swift; sourceTree = "<group>"; };
 		B75BF0D81BE79CCB00A4820C /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
@@ -707,6 +677,14 @@
 				0D20BE0ED24ACC701A254FF3 /* Pods.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B70B69931C4BFBD000373971 /* CustomAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				B70B69941C4BFC2500373971 /* LauchToTopicListAnimation.swift */,
+			);
+			name = CustomAnimation;
 			sourceTree = "<group>";
 		};
 		B711A73B1BEC5C2600368B6C /* MJRefresh */ = {
@@ -1090,36 +1068,6 @@
 			name = RichTextRun;
 			sourceTree = "<group>";
 		};
-		B75B19A11C0A197A00FD5CE6 /* MJExtension */ = {
-			isa = PBXGroup;
-			children = (
-				B75B19A21C0A197A00FD5CE6 /* MJDictionaryCache.h */,
-				B75B19A31C0A197A00FD5CE6 /* MJDictionaryCache.m */,
-				B75B19A41C0A197A00FD5CE6 /* MJExtension.h */,
-				B75B19A51C0A197A00FD5CE6 /* MJExtensionConst.h */,
-				B75B19A61C0A197A00FD5CE6 /* MJExtensionConst.m */,
-				B75B19A71C0A197A00FD5CE6 /* MJFoundation.h */,
-				B75B19A81C0A197A00FD5CE6 /* MJFoundation.m */,
-				B75B19A91C0A197A00FD5CE6 /* MJProperty.h */,
-				B75B19AA1C0A197A00FD5CE6 /* MJProperty.m */,
-				B75B19AB1C0A197A00FD5CE6 /* MJPropertyKey.h */,
-				B75B19AC1C0A197A00FD5CE6 /* MJPropertyKey.m */,
-				B75B19AD1C0A197A00FD5CE6 /* MJPropertyType.h */,
-				B75B19AE1C0A197A00FD5CE6 /* MJPropertyType.m */,
-				B75B19AF1C0A197A00FD5CE6 /* NSObject+MJClass.h */,
-				B75B19B01C0A197A00FD5CE6 /* NSObject+MJClass.m */,
-				B75B19B11C0A197A00FD5CE6 /* NSObject+MJCoding.h */,
-				B75B19B21C0A197A00FD5CE6 /* NSObject+MJCoding.m */,
-				B75B19B31C0A197A00FD5CE6 /* NSObject+MJKeyValue.h */,
-				B75B19B41C0A197A00FD5CE6 /* NSObject+MJKeyValue.m */,
-				B75B19B51C0A197A00FD5CE6 /* NSObject+MJProperty.h */,
-				B75B19B61C0A197A00FD5CE6 /* NSObject+MJProperty.m */,
-				B75B19B71C0A197A00FD5CE6 /* NSString+MJExtension.h */,
-				B75B19B81C0A197A00FD5CE6 /* NSString+MJExtension.m */,
-			);
-			path = MJExtension;
-			sourceTree = "<group>";
-		};
 		B75BF0D61BE79CCB00A4820C /* PathCover */ = {
 			isa = PBXGroup;
 			children = (
@@ -1168,9 +1116,9 @@
 		B77606EA1BD7EF9E003B3801 /* BYR */ = {
 			isa = PBXGroup;
 			children = (
+				B70B69931C4BFBD000373971 /* CustomAnimation */,
 				B79D04CF1C4A57F500631725 /* YYModel */,
 				B7FD030E1C4386FC00D68D77 /* Animation */,
-				B75B19A11C0A197A00FD5CE6 /* MJExtension */,
 				B74326C01BED06C000BC686E /* TYAttributedLabel */,
 				B711A77B1BEC665200368B6C /* Resource */,
 				B711A73B1BEC5C2600368B6C /* MJRefresh */,
@@ -1205,6 +1153,7 @@
 				B7AF265C1BD7F4CC000E9448 /* Constants.swift */,
 				B7D7EEA41BF0A12500D2981C /* TopicModelEntity.swift */,
 				B749001D1C2830CF004BDE37 /* TopicListModelEnity.swift */,
+				B70B69911C4BF7DB00373971 /* TopicListViewModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1625,12 +1574,9 @@
 				B711A76C1BEC5C2600368B6C /* MJRefreshHeader.m in Sources */,
 				B77C6BC61BE9040A00F36E95 /* FormatterTime.swift in Sources */,
 				B75B19C71C0A2A3D00FD5CE6 /* widget.swift in Sources */,
-				B75B19BF1C0A197A00FD5CE6 /* NSObject+MJClass.m in Sources */,
-				B75B19C31C0A197A00FD5CE6 /* NSString+MJExtension.m in Sources */,
 				B711A7701BEC5C2600368B6C /* MJRefreshBackGifFooter.m in Sources */,
 				B776070F1BD7EFDB003B3801 /* Mail.swift in Sources */,
 				B711A76A1BEC5C2600368B6C /* MJRefreshComponent.m in Sources */,
-				B75B19BA1C0A197A00FD5CE6 /* MJExtensionConst.m in Sources */,
 				B711A76D1BEC5C2600368B6C /* MJRefreshAutoGifFooter.m in Sources */,
 				B75B19981C09D23C00FD5CE6 /* RichTextView.swift in Sources */,
 				B711A76F1BEC5C2600368B6C /* MJRefreshAutoStateFooter.m in Sources */,
@@ -1653,7 +1599,6 @@
 				B7C97C591BD8F80B00E0B103 /* TopTenTopicTableViewCell.swift in Sources */,
 				B711A7771BEC5C2600368B6C /* MJRefreshConst.m in Sources */,
 				B711A7781BEC5C2600368B6C /* UIScrollView+MJExtension.m in Sources */,
-				B75B19BE1C0A197A00FD5CE6 /* MJPropertyType.m in Sources */,
 				B749001E1C2830CF004BDE37 /* TopicListModelEnity.swift in Sources */,
 				B77607181BD7EFDB003B3801 /* Favorites.swift in Sources */,
 				B711A76B1BEC5C2600368B6C /* MJRefreshFooter.m in Sources */,
@@ -1667,23 +1612,19 @@
 				B79D04D51C4A57F500631725 /* NSObject+YYModel.m in Sources */,
 				B7A874421BFF0B2C001F1D11 /* BoardViewController.swift in Sources */,
 				B74326DD1BED06C000BC686E /* TYTextStorage.m in Sources */,
+				B70B69921C4BF7DB00373971 /* TopicListViewModel.swift in Sources */,
 				B74326D91BED06C000BC686E /* TYImageStorage.m in Sources */,
 				B711A76E1BEC5C2600368B6C /* MJRefreshAutoNormalFooter.m in Sources */,
 				B77607131BD7EFDB003B3801 /* VoteOption.swift in Sources */,
-				B75B19BD1C0A197A00FD5CE6 /* MJPropertyKey.m in Sources */,
 				B776071A1BD7EFDB003B3801 /* Reminding.swift in Sources */,
 				B711A7751BEC5C2600368B6C /* MJRefreshStateHeader.m in Sources */,
-				B75B19C11C0A197A00FD5CE6 /* NSObject+MJKeyValue.m in Sources */,
 				B7AF265E1BD7F4CC000E9448 /* APIClient.swift in Sources */,
-				B75B19BB1C0A197A00FD5CE6 /* MJFoundation.m in Sources */,
 				B77607171BD7EFDB003B3801 /* AttachmentFile.swift in Sources */,
 				B75BF0EA1BE79CCB00A4820C /* XHWaterDropRefresh.m in Sources */,
 				B711A77A1BEC5C2600368B6C /* UIView+MJExtension.m in Sources */,
 				B793C5701C0340680067A94F /* BoardListTableViewCell.swift in Sources */,
 				B74326DE1BED06C000BC686E /* TYViewStorage.m in Sources */,
-				B75B19BC1C0A197A00FD5CE6 /* MJProperty.m in Sources */,
 				B75B19C51C0A287000FD5CE6 /* Section.swift in Sources */,
-				B75B19C21C0A197A00FD5CE6 /* NSObject+MJProperty.m in Sources */,
 				B776070C1BD7EFDB003B3801 /* Attachment.swift in Sources */,
 				B711A7681BEC5C2600368B6C /* MJRefreshAutoFooter.m in Sources */,
 				B77607141BD7EFDB003B3801 /* Memo.swift in Sources */,
@@ -1697,18 +1638,17 @@
 				B75B199E1C09D3FC00FD5CE6 /* RKImageRichTextRun.swift in Sources */,
 				B75B199A1C09D27C00FD5CE6 /* RKBaseRichTextRun.swift in Sources */,
 				B731FD721BD8E3650050F215 /* RoundImageView.swift in Sources */,
-				B75B19B91C0A197A00FD5CE6 /* MJDictionaryCache.m in Sources */,
 				B7D574171BE790D000D7D725 /* SettingTableViewController.swift in Sources */,
 				B7AF265F1BD7F4CC000E9448 /* Alamofire-SwiftyJSON.swift in Sources */,
 				B7FD03111C43872A00D68D77 /* CustomInteractionController.swift in Sources */,
 				B72459151BE9CED200F2C1C1 /* UserAngent.swift in Sources */,
+				B70B69951C4BFC2500373971 /* LauchToTopicListAnimation.swift in Sources */,
 				B74326D81BED06C000BC686E /* TYImageCache.m in Sources */,
 				B75AAF9C1BD89EAF002011DF /* topMostViewControllerAddition.swift in Sources */,
 				B75B199C1C09D31700FD5CE6 /* RKBaseAnalysedResult.swift in Sources */,
 				B7C97C571BD8F73B00E0B103 /* TopicListTableViewController.swift in Sources */,
 				B7FD03121C43872A00D68D77 /* CustomNavigationAnimationController.swift in Sources */,
 				B77607121BD7EFDB003B3801 /* Vote.swift in Sources */,
-				B75B19C01C0A197A00FD5CE6 /* NSObject+MJCoding.m in Sources */,
 				B77607191BD7EFDB003B3801 /* Paging.swift in Sources */,
 				B77606EC1BD7EF9E003B3801 /* AppDelegate.swift in Sources */,
 				B77607201BD7F094003B3801 /* OauthViewController.swift in Sources */,

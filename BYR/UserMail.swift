@@ -13,10 +13,13 @@ import Foundation
 */
 
 class UserMail:NSObject{
-    var new_mail:Bool?  //是否有新邮件
-    var full_mail:Bool?  //信箱是否已满
+ /// "1"true有新邮件
+    var new_mail:String?  //是否有新邮件
+ /// "1"true
+    var full_mail:String?  //信箱是否已满
     var space_used:String?  //信箱已用空间
-    var can_send:Bool?  //当前用户是否能发信
+ /// "1"true
+    var can_send:String?  //当前用户是否能发信
 }
 
 

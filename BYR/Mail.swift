@@ -11,12 +11,16 @@ import Foundation
 //信件元数据
 class Mail:NSObject{
     var mail_index:Int? //信件编号，此编号为/mail/:box/:num中的num
-    var is_m:Bool?  //是否标记为m
-    var is_read:Bool?  //是否已读
-    var is_reply:Bool?  //是否回复
-    var has_attachment:Bool? //是否有附件
+ /// 是否标记为m "1"true
+    var is_m:String?  //是否标记为m
+ /// "1"true
+    var is_read:String?  //是否已读
+ /// "1"true
+    var is_reply:String?  //是否回复
+ /// "1"true
+    var has_attachment:String? //是否有附件
     var title:String?   //信件标题
-    var user:User?     //发信人
+    var user:User!     //发信人
     var post_time:Int?  //发信时间
     var box_name:String?  //所属信箱名
     var content:String?  //信件内容

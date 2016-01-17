@@ -12,29 +12,30 @@ import Foundation
 //用户元数据
 class User:NSObject{
    
-    var id:String?  = nil//用户ID 用户信息
-    var user_name:String?  = nil  //用户中文昵称
-    var face_url:String? = nil//用户头像地址
-    var face_width:Int? = nil//用户头像宽度
-    var face_height:Int? = nil //用户头像高度
-    var gender:String?   = nil //用户性别：m表示男性，f表示女性，n表示隐藏性别
+    var id:String!//用户ID 用户信息
+    var user_name:String!  //用户中文昵称
+    var face_url:String! //用户头像地址
+    var face_width:NSNumber? = nil//用户头像宽度
+    var face_height:NSNumber? = nil //用户头像高度
+    var gender:String? //用户性别：m表示男性，f表示女性，n表示隐藏性别
     var astro:String?  = nil// 用户星座 若隐藏星座则为空
-    var life:Int? = nil//	用户生命值
+    var life:NSNumber? = nil//	用户生命值
     var qq:String?  = nil//用户QQ
     var msn:String?  = nil//用户msn
     var home_page:String? = nil //用户个人主页
     var level:String? = nil//等级称谓 用户身份
-    var is_online:Bool? = nil//用户是否在线
-    var post_count:Int? = nil//用户发文数量
+ /// 用户是否在线 "1"true
+    var is_online:String!
+    var post_count:NSNumber? = nil//用户发文数量
     var last_login_time:String? = nil//上次登录时间
     var last_login_ip: String? = nil//用户上次登录
     var is_hide:Bool? = nil//用户是否隐藏性别和星座
     var is_register:Bool? = nil//用户是否通过注册审批
-    var first_login_time:Int? = nil //int	用户注册时间，unixtimestamp	当前登陆用户为 自己或是当前用户具有管理权限
-    var login_count:Int? = nil//用户登陆次数	当前登陆用户为 自己或是当前用户具有管理权限
-    var is_admin:Bool? = nil//用户是否为管理员	当前登陆用户为 自己或是当前用户具有管理权限
-    var stay_count:Int? = nil //int	用户挂站时间，以秒为单位	当前登陆用户为 自己或是当前用户具有管理权限
-    
+    var first_login_time:NSNumber? = nil //NSNumber	用户注册时间，unixtimestamp	当前登陆用户为 自己或是当前用户具有管理权限
+    var login_count:NSNumber? = nil//用户登陆次数	当前登陆用户为 自己或是当前用户具有管理权限
+    var is_admin:String!//用户是否为管理员	当前登陆用户为 自己或是当前用户具有管理权限
+    var stay_count:NSNumber? = nil //NSNumber	用户挂站时间，以秒为单位	当前登陆用户为 自己或是当前用户具有管理权限
+
 }
 
 
