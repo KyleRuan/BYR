@@ -23,28 +23,36 @@ class RKImageRichTextRun:RKBaseRichTextRun{
 
             var imageText = RKBaseAnalysedResult(type: RKRichTextRunType.RKRichTextRunTypeImage)
             let substring = (text as NSString).substringFromIndex(imageInfo.range.location+8).componentsSeparatedByString("]").first
-
+//            let file = 
             //num 文件的下标
             if let num = Int(substring!){
                 //大图: "url"//小图//中图:"thumbnail_middle"
                 //附件为只有url
-                if num > entity!.attachment!.count{
+                if num > entity!.attachment!.file?.count{
                     break
                 }
                 
-                let urlStrig = entity!.attachment![num-1]["url"].stringValue
-                if urlStrig.isEmpty {
+                let attachmentfileDictionary = (entity!.attachment!.file as! NSArray).objectAtIndex(num-1) as! NSDictionary
+                let file = AttachmentFile(dictionary: attachmentfileDictionary)
+                
+                let urlStrig = file.url //.stringValue
+                if urlStrig!.isEmpty {
                     print("附件")
                     continue
                 }
-                if let url = NSURL(string:"\(urlStrig)?oauth_token=\(token!)"){
-                    if  RKImageRichTextRun.caches.objectForKey(urlStrig) != nil {
-                         imageText.data = RKImageRichTextRun.caches.objectForKey(urlStrig)
+//                imageText
+                
+                
+                imageText.file = file
+                
+                if let url = NSURL(string:"\(urlStrig!)?oauth_token=\(token!)"){
+                    if  RKImageRichTextRun.caches.objectForKey(urlStrig!) != nil {
+                         imageText.data = RKImageRichTextRun.caches.objectForKey(urlStrig!)
                         print("cache")
                     }else{
                         let data = NSData(contentsOfURL: url)!
                         imageText.data = data
-                        RKImageRichTextRun.caches.setObject(data, forKey: urlStrig)
+                        RKImageRichTextRun.caches.setObject(data, forKey: urlStrig!)
                         print("network")
                     }
                 }
@@ -69,11 +77,6 @@ class RKImageRichTextRun:RKBaseRichTextRun{
             imageStorage.range = drawText.range!
             print( imageStorage.range)
             let image = UIImage(data: (drawText.data as! NSData))
-            
-            
-            
-           
-//            let height = CGFloat(CGImageGetHeight(image?.CGImage)) > size.height ? size.height:CGFloat(CGImageGetHeight(image?.CGImage))
             imageStorage.image = image
               imageStorage.size = CGSizeMake(size.width,size.width)
 //            imageStorage.size = size

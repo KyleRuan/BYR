@@ -37,7 +37,7 @@ class TopicListViewModel {
         
         if type == "topten" {
             APIClinet.sharedInstance.getTopTenTopics(token!, success: { (json) -> Void in
-                print(json)
+//                print(json)
                 if json.type == Type.Dictionary{
                     let article = json["article"]
                     if  article != nil{
@@ -55,7 +55,7 @@ class TopicListViewModel {
             }
         }else {
             APIClinet.sharedInstance.getTopicList(token!, name: type,page:currentPage, success: { (json) -> Void in
-                print(json)
+         
                 if json.type == Type.Dictionary{
                     let article = json["article"]
                     if  article != nil{

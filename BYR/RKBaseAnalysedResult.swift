@@ -13,6 +13,7 @@ struct RKBaseAnalysedResult{
     var  range:NSRange?
     var data:AnyObject?
     var type:RKRichTextRunType!
+    var file :AttachmentFile?
     init(type:RKRichTextRunType){
         self.type = type
     

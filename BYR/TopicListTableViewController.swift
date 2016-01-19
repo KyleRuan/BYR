@@ -117,7 +117,7 @@ class TopicListTableViewController:UITableViewController,TYAttributedLabelDelega
     
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-         print("prepareForSegue")
+//         print("prepareForSegue")
         if segue.identifier == SEGUE_FROM_TOPTEN_TO_TOPICDETAIL {
             let vc = segue.destinationViewController as! TopicDetailViewController
             let indexPath = tableView.indexPathForCell(sender as! TopTenTopicTableViewCell)

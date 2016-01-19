@@ -32,6 +32,10 @@ class Topics:NSObject{
     var reply_count:NSNumber! // 该主题回复文章数
     var last_reply_user_id:String?//该文章最后回复者的id
     var last_reply_time:NSNumber?//该文章最后回复的时间 unxitmestamp
+    
+ /// 处理的是当前文章的分页信息
+    var pagination:Pagination?  //分页信息
+   
 }
 
 

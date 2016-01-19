@@ -15,6 +15,7 @@ class TopicDetailViewController: UIViewController ,UITableViewDelegate, UITableV
     var boardName:String!
     var heights:[String:CGFloat?]  = [:]
     var dataEntityArray:Array<TopicModelEnity> = []
+    var topicEnity:TopicModelEnity!
     var currentPage = 1 {
         didSet{
             nextPage = currentPage + 1
@@ -58,8 +59,8 @@ class TopicDetailViewController: UIViewController ,UITableViewDelegate, UITableV
     func loadData(){
         if  nextPage <= MaxPage{
             APIClinet.sharedInstance.getOneTopicDetail(UserAngent.sharedInstance.getAccessToken()!, path: "\(boardName)/\(self.topicId)", page:self.nextPage,success: { (json) -> Void in
-//                self.datasource = json
-               
+
+
                 self.initDataSource(json)
                 self.tableView.footer.endRefreshing()
                 self.tableView.reloadData()

@@ -366,50 +366,22 @@
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         BreakpointExtensionID = "Xcode.Breakpoint.SymbolicBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BYR/TopicListViewModel.swift"
-            timestampString = "474748975.140012"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "loadData(_:)"
-            landmarkType = "5">
+            continueAfterRunningActions = "Yes"
+            symbolName = "print()"
+            moduleName = "">
+            <Actions>
+               <BreakpointActionProxy
+                  ActionExtensionID = "Xcode.BreakpointAction.DebuggerCommand">
+                  <ActionContent
+                     consoleCommand = "">
+                  </ActionContent>
+               </BreakpointActionProxy>
+            </Actions>
             <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BYR.TopicListViewModel.(loadData (BYR.TopicListViewModel) -&gt; (() -&gt; ()) -&gt; ()).(closure #3)"
-                  moduleName = "BYR"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/TopicListViewModel.swift"
-                  timestampString = "474748241.426518"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "72"
-                  endingLineNumber = "72"
-                  offsetFromSymbolStart = "4072">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BYR.TopicListViewModel.(loadData (BYR.TopicListViewModel) -&gt; (() -&gt; ()) -&gt; ()).(closure #3).(closure #1)"
-                  moduleName = "BYR"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/TopicListViewModel.swift"
-                  timestampString = "474748241.426673"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "72"
-                  endingLineNumber = "72"
-                  offsetFromSymbolStart = "38">
-               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -419,13 +391,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BYR/TopicListTableViewController.swift"
-            timestampString = "474748241.24139"
+            filePath = "BYR/RKImageRichTextRun.swift"
+            timestampString = "474893799.759381"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "drawRichText(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
