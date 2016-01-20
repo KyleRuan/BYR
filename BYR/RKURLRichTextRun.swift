@@ -22,16 +22,27 @@ class RKURLRichTextRun:RKBaseRichTextRun{
      
         for url in arrayOfAllMathchedURL {
             var urlText = RKBaseAnalysedResult(type: RKRichTextRunType.RKRichTextRunTypeURL)
+            
+            
+            //[url=http://guiyou.wangx.in]发自「贵邮」[/url]"
+            
             let urlString = text.substringWithRange(url.range) as NSString
+            //
+            
+           
             let tempRange = urlString.rangeOfString("[url=")
+            //urls = http://guiyou.wangx.in
             let urls = urlString.substringFromIndex(tempRange.location+tempRange.length).componentsSeparatedByString("]")[0]
+            
+            text.stringByReplacingCharactersInRange(url.range, withString: urls)
+            
+            
+//
             let contentURL = urlString.substringFromIndex(tempRange.location+tempRange.length).componentsSeparatedByString("]")[1].componentsSeparatedByString("[")[0]
             
-              urlText.range = text.rangeOfString(contentURL)
+              urlText.range = text.rangeOfString(urls)
               urlText.data = urls
-//            linkTextStorage.font = UIFont.systemFontOfSize(18)
-//            linkTextStorage.textColor = UIColor.blueColor()
-//            linkTextStorage.linkData = urls
+
             result.append(urlText)
             
         }

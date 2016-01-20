@@ -28,7 +28,7 @@ class RKImageRichTextRun:RKBaseRichTextRun{
             if let num = Int(substring!){
                 //大图: "url"//小图//中图:"thumbnail_middle"
                 //附件为只有url
-                if num > entity!.attachment!.file?.count{
+                if num > entity!.attachment?.file?.count{
                     break
                 }
                 
