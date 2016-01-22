@@ -11,7 +11,7 @@ import Foundation
 
 class RKEmojiRichTextRun:RKBaseRichTextRun{
       var  result:Array<RKBaseAnalysedResult>! = []
-    func analyseText(text: NSString,entity json:TopicModelEnity? = nil ){
+    func analyseText(inout text: NSString,entity json:TopicModelEnity? = nil ){
         //查找表情
         let  regexStr  = "\\[em[a,b,c]{0,1}\\d+\\]"
         let   regex = try! NSRegularExpression(pattern: regexStr, options: [])

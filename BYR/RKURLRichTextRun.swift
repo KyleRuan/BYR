@@ -12,7 +12,7 @@ import Foundation
 class RKURLRichTextRun:RKBaseRichTextRun{
     
     var  result:Array<RKBaseAnalysedResult>! = []
-    func analyseText(text: NSString, entity: TopicModelEnity?) {
+    func analyseText(inout text: NSString, entity: TopicModelEnity?) {
         //查找表情
        let  regexStr = "\\[url=[a-zA-z]+://[^\\s]*\\[/url\\]"
        let regex = try! NSRegularExpression(pattern: regexStr, options: [])
@@ -29,18 +29,24 @@ class RKURLRichTextRun:RKBaseRichTextRun{
             let urlString = text.substringWithRange(url.range) as NSString
             //
             
-           
+          
             let tempRange = urlString.rangeOfString("[url=")
             //urls = http://guiyou.wangx.in
+            //应该是「贵邮」
             let urls = urlString.substringFromIndex(tempRange.location+tempRange.length).componentsSeparatedByString("]")[0]
             
-            text.stringByReplacingCharactersInRange(url.range, withString: urls)
+            
+             let contentString = urlString.substringFromIndex(tempRange.location+tempRange.length).componentsSeparatedByString("]")[1].componentsSeparatedByString("[")[0]
+            
+            
+            
+           text = text.stringByReplacingCharactersInRange(url.range, withString: contentString)
             
             
 //
             let contentURL = urlString.substringFromIndex(tempRange.location+tempRange.length).componentsSeparatedByString("]")[1].componentsSeparatedByString("[")[0]
             
-              urlText.range = text.rangeOfString(urls)
+              urlText.range = text.rangeOfString(contentString)
               urlText.data = urls
 
             result.append(urlText)

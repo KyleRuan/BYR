@@ -22,10 +22,10 @@ class RichTextRunList:RKBaseRichTextRun{
         runList.append(run)
     }
   
-    func analyseText(text: NSString, entity: TopicModelEnity?) {
+    func analyseText(inout text: NSString, entity: TopicModelEnity?) {
         
         for run in runList {
-           run.analyseText(text, entity: entity)
+           run.analyseText(&text, entity: entity)
         }
     
         

@@ -13,7 +13,7 @@ class RKImageRichTextRun:RKBaseRichTextRun{
 
     static  var  caches = NSCache()
     var  result:Array<RKBaseAnalysedResult>! = []
-    func analyseText(text:NSString,entity: TopicModelEnity?){
+    func analyseText( inout text:NSString,entity: TopicModelEnity?){
                 let token = UserAngent.sharedInstance.getAccessToken()
       //主要是图片
       let   regexStr = "\\[upload=\\w*\\]\\[/upload\\]"

@@ -10,6 +10,6 @@ import Foundation
 
  protocol RKBaseRichTextRun{
     
-    func analyseText(text:NSString,entity:TopicModelEnity?)
+    func analyseText(inout text:NSString,entity:TopicModelEnity?)
     func drawRichText(size:CGSize)->[AnyObject]
 }

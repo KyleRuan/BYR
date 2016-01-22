@@ -19,8 +19,9 @@ class RichTextView: UIView {
         self.cell = cell
         self.entity = entity
         self.text = entity.content as NSString
+         bsRun.add(RichTextRunFactory().createUrlRun())
         bsRun.add(RichTextRunFactory().createImageRun())
-        bsRun.add(RichTextRunFactory().createUrlRun())
+    
         bsRun.add(RichTextRunFactory().createEmojiRun())
     }
     
@@ -34,7 +35,7 @@ class RichTextView: UIView {
         let size = CGSizeMake(UIScreen.mainScreen().bounds.width-5,378*(cell.bounds.width)/600)
         
         
-        bsRun.analyseText(text, entity: entity)
+        bsRun.analyseText( &text!, entity: entity)
         var tmpArray = bsRun.drawRichText(size)
         
         let  attStringCreater = TYTextContainer()

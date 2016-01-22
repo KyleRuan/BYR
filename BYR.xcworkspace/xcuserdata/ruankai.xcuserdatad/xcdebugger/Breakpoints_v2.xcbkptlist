@@ -408,22 +408,6 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BYR/RKURLRichTextRun.swift"
-            timestampString = "474913938.489751"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "analyseText(_:entity:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BYR/RKURLRichTextRun.swift"
             timestampString = "474914624.610894"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -440,12 +424,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BYR/RKURLRichTextRun.swift"
-            timestampString = "474915085.545451"
+            timestampString = "475174409.613851"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "drawRichText(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BYR/RKURLRichTextRun.swift"
+            timestampString = "475174409.613851"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "analyseText(_:entity:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
