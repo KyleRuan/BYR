@@ -9,7 +9,7 @@
 
 import UIKit
 
-class RichTextView: UIView {
+class RichTextView: UIView ,TYAttributedLabelDelegate{
     var text:NSString!
     var entity:TopicModelEnity!
     var cell:TopicDetailTableViewCell!
@@ -41,16 +41,28 @@ class RichTextView: UIView {
         let  attStringCreater = TYTextContainer()
         attStringCreater.lineBreakMode = CTLineBreakMode.ByCharWrapping
         attStringCreater.text = text as String
-        let label = TYAttributedLabel(frame: CGRectMake(0,0,CGRectGetWidth(cell.bounds)-5,0))
         
+        let  label2 = RKAttributedlabel(frame: CGRectMake(0,0,CGRectGetWidth(cell.bounds)-5,0))
+        label2.type  = RKRichTextRunType.RKRichTextRunTypeURL
+        
+        
+        let label = TYAttributedLabel(frame: CGRectMake(0,0,CGRectGetWidth(cell.bounds)-5,0))
+//        label.delegate = self
         attStringCreater.addTextStorageArray(tmpArray)
         attStringCreater.createTextContainerWithTextWidth(UIScreen.mainScreen().bounds.width-5)
-        label.textContainer = attStringCreater
-        label.sizeToFit()
+//        label.textContainer = attStringCreater
+//        label.sizeToFit()
+        label2.textContainer = attStringCreater
+        label2.sizeToFit()
+        return label2
         tmpArray.removeAll()
         return label
         
     }
+    
+    
+
+
     
     
     
