@@ -243,7 +243,6 @@
 		B74326DC1BED06C000BC686E /* TYTextContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = B74326CF1BED06C000BC686E /* TYTextContainer.m */; };
 		B74326DD1BED06C000BC686E /* TYTextStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = B74326D11BED06C000BC686E /* TYTextStorage.m */; };
 		B74326DE1BED06C000BC686E /* TYViewStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = B74326D41BED06C000BC686E /* TYViewStorage.m */; };
-		B7459F351C5630EF000012D3 /* RKAttributedlabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7459F341C5630EF000012D3 /* RKAttributedlabel.swift */; };
 		B749001E1C2830CF004BDE37 /* TopicListModelEnity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B749001D1C2830CF004BDE37 /* TopicListModelEnity.swift */; };
 		B75AAF9C1BD89EAF002011DF /* topMostViewControllerAddition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75AAF9B1BD89EAF002011DF /* topMostViewControllerAddition.swift */; };
 		B75B19981C09D23C00FD5CE6 /* RichTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75B19971C09D23C00FD5CE6 /* RichTextView.swift */; };
@@ -577,7 +576,6 @@
 		B74326D21BED06C000BC686E /* TYTextStorageProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYTextStorageProtocol.h; sourceTree = "<group>"; };
 		B74326D31BED06C000BC686E /* TYViewStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYViewStorage.h; sourceTree = "<group>"; };
 		B74326D41BED06C000BC686E /* TYViewStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYViewStorage.m; sourceTree = "<group>"; };
-		B7459F341C5630EF000012D3 /* RKAttributedlabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKAttributedlabel.swift; sourceTree = "<group>"; };
 		B749001D1C2830CF004BDE37 /* TopicListModelEnity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListModelEnity.swift; sourceTree = "<group>"; };
 		B75AAF9B1BD89EAF002011DF /* topMostViewControllerAddition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = topMostViewControllerAddition.swift; sourceTree = "<group>"; };
 		B75B19971C09D23C00FD5CE6 /* RichTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RichTextView.swift; sourceTree = "<group>"; };
@@ -1066,7 +1064,6 @@
 				B7767B911C10358A00E0D9D2 /* RKURLRichTextRun.swift */,
 				B77276E31C1565C300A34927 /* RichTextRunList.swift */,
 				B77276E51C156F3A00A34927 /* RichTextRunFactory.swift */,
-				B7459F341C5630EF000012D3 /* RKAttributedlabel.swift */,
 			);
 			name = RichTextRun;
 			sourceTree = "<group>";
@@ -1619,7 +1616,6 @@
 				B74326D91BED06C000BC686E /* TYImageStorage.m in Sources */,
 				B711A76E1BEC5C2600368B6C /* MJRefreshAutoNormalFooter.m in Sources */,
 				B77607131BD7EFDB003B3801 /* VoteOption.swift in Sources */,
-				B7459F351C5630EF000012D3 /* RKAttributedlabel.swift in Sources */,
 				B776071A1BD7EFDB003B3801 /* Reminding.swift in Sources */,
 				B711A7751BEC5C2600368B6C /* MJRefreshStateHeader.m in Sources */,
 				B7AF265E1BD7F4CC000E9448 /* APIClient.swift in Sources */,

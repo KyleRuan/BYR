@@ -408,11 +408,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BYR/RKURLRichTextRun.swift"
-            timestampString = "475174409.613851"
+            timestampString = "476117870.489455"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "drawRichText(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -424,11 +424,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BYR/TopicDetailViewController.swift"
-            timestampString = "475411503.20615"
+            timestampString = "476117621.994079"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
             landmarkName = "attributedLabel(_:textStorageClicked:atPoint:)"
             landmarkType = "5">
          </BreakpointContent>

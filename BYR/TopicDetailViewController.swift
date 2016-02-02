@@ -115,12 +115,12 @@ class TopicDetailViewController: UIViewController ,UITableViewDelegate, UITableV
     
     //TODO: 添加跳转
     func attributedLabel(attributedLabel: TYAttributedLabel!, textStorageClicked textStorage: TYTextStorageProtocol!, atPoint point: CGPoint) {
-//        if 
-     let label =  attributedLabel as? RKAttributedlabel
-        if  label?.type == RKRichTextRunType.RKRichTextRunTypeURL{
-//           let data  =  label
+
+        if   let storage = textStorage as? TYLinkTextStorage {
+            let link = storage.linkData as! String
+            UIApplication.sharedApplication().openURL(NSURL(string: link)!)
+       
         }
-        
         
         print("Clicked at:\(point)")
         

@@ -37,15 +37,8 @@ class RKURLRichTextRun:RKBaseRichTextRun{
             
             
              let contentString = urlString.substringFromIndex(tempRange.location+tempRange.length).componentsSeparatedByString("]")[1].componentsSeparatedByString("[")[0]
-            
-            
-            
            text = text.stringByReplacingCharactersInRange(url.range, withString: contentString)
-            
-            
-//
             let contentURL = urlString.substringFromIndex(tempRange.location+tempRange.length).componentsSeparatedByString("]")[1].componentsSeparatedByString("[")[0]
-            
               urlText.range = text.rangeOfString(contentString)
               urlText.data = urls
 
