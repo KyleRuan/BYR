@@ -116,10 +116,22 @@ class TopicDetailViewController: UIViewController ,UITableViewDelegate, UITableV
     //TODO: 添加跳转
     func attributedLabel(attributedLabel: TYAttributedLabel!, textStorageClicked textStorage: TYTextStorageProtocol!, atPoint point: CGPoint) {
 
-        if   let storage = textStorage as? TYLinkTextStorage {
+        if  let storage = textStorage as? TYLinkTextStorage {
             let link = storage.linkData as! String
             UIApplication.sharedApplication().openURL(NSURL(string: link)!)
        
+        }
+        
+        if let  storage = textStorage as? TYImageStorage{
+            
+            
+            let imageVC = ShowImageDetailViewController()
+
+            imageVC.imageView = ImageDisplayView(frame: CGRectInset(self.view.frame, 0.9, 0.7), image: storage.image)
+            
+            
+            self.navigationController?.pushViewController(imageVC, animated: true)
+             
         }
         
         print("Clicked at:\(point)")

@@ -285,6 +285,8 @@
 		B77607201BD7F094003B3801 /* OauthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B776071F1BD7F094003B3801 /* OauthViewController.swift */; };
 		B7767B901C10205800E0D9D2 /* RKEmojiRichTextRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7767B8F1C10205800E0D9D2 /* RKEmojiRichTextRun.swift */; };
 		B7767B921C10358A00E0D9D2 /* RKURLRichTextRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7767B911C10358A00E0D9D2 /* RKURLRichTextRun.swift */; };
+		B77B0E3C1C65E4AF001FDEC2 /* ImageDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B0E3B1C65E4AF001FDEC2 /* ImageDisplayView.swift */; };
+		B77B0E3E1C65E75C001FDEC2 /* ShowImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B0E3D1C65E75C001FDEC2 /* ShowImageDetailViewController.swift */; };
 		B77C6BC61BE9040A00F36E95 /* FormatterTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C6BC51BE9040A00F36E95 /* FormatterTime.swift */; };
 		B77C6BC81BE9C93700F36E95 /* SegueToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C6BC71BE9C93700F36E95 /* SegueToViewController.swift */; };
 		B78773EF1BE9E2EC004566D5 /* PersonalAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78773EE1BE9E2EC004566D5 /* PersonalAttributes.swift */; };
@@ -623,6 +625,8 @@
 		B776071F1BD7F094003B3801 /* OauthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OauthViewController.swift; sourceTree = "<group>"; };
 		B7767B8F1C10205800E0D9D2 /* RKEmojiRichTextRun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKEmojiRichTextRun.swift; sourceTree = "<group>"; };
 		B7767B911C10358A00E0D9D2 /* RKURLRichTextRun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKURLRichTextRun.swift; sourceTree = "<group>"; };
+		B77B0E3B1C65E4AF001FDEC2 /* ImageDisplayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDisplayView.swift; sourceTree = "<group>"; };
+		B77B0E3D1C65E75C001FDEC2 /* ShowImageDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowImageDetailViewController.swift; sourceTree = "<group>"; };
 		B77C6BC51BE9040A00F36E95 /* FormatterTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatterTime.swift; sourceTree = "<group>"; };
 		B77C6BC71BE9C93700F36E95 /* SegueToViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueToViewController.swift; sourceTree = "<group>"; };
 		B78773EE1BE9E2EC004566D5 /* PersonalAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalAttributes.swift; sourceTree = "<group>"; };
@@ -1204,6 +1208,7 @@
 				B7A874411BFF0B2C001F1D11 /* BoardViewController.swift */,
 				B793C5691C033AE60067A94F /* BoardListViewController.swift */,
 				B742F9781C32C4BE0071885D /* setupLoadingView.swift */,
+				B77B0E3D1C65E75C001FDEC2 /* ShowImageDetailViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1212,6 +1217,7 @@
 			isa = PBXGroup;
 			children = (
 				B7D574131BE77FB600D7D725 /* Cell */,
+				B77B0E3B1C65E4AF001FDEC2 /* ImageDisplayView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1618,6 +1624,7 @@
 				B77607131BD7EFDB003B3801 /* VoteOption.swift in Sources */,
 				B776071A1BD7EFDB003B3801 /* Reminding.swift in Sources */,
 				B711A7751BEC5C2600368B6C /* MJRefreshStateHeader.m in Sources */,
+				B77B0E3C1C65E4AF001FDEC2 /* ImageDisplayView.swift in Sources */,
 				B7AF265E1BD7F4CC000E9448 /* APIClient.swift in Sources */,
 				B77607171BD7EFDB003B3801 /* AttachmentFile.swift in Sources */,
 				B75BF0EA1BE79CCB00A4820C /* XHWaterDropRefresh.m in Sources */,
@@ -1647,6 +1654,7 @@
 				B75AAF9C1BD89EAF002011DF /* topMostViewControllerAddition.swift in Sources */,
 				B75B199C1C09D31700FD5CE6 /* RKBaseAnalysedResult.swift in Sources */,
 				B7C97C571BD8F73B00E0B103 /* TopicListTableViewController.swift in Sources */,
+				B77B0E3E1C65E75C001FDEC2 /* ShowImageDetailViewController.swift in Sources */,
 				B7FD03121C43872A00D68D77 /* CustomNavigationAnimationController.swift in Sources */,
 				B77607121BD7EFDB003B3801 /* Vote.swift in Sources */,
 				B77607191BD7EFDB003B3801 /* Paging.swift in Sources */,

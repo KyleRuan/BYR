@@ -19,14 +19,15 @@ class RKURLRichTextRun:RKBaseRichTextRun{
        let arrayOfAllMathchedURL = regex.matchesInString(text as String, options: [], range: NSMakeRange(0, text.length))
         
         
-     
-        for url in arrayOfAllMathchedURL {
+     var offset = 0
+        for var url in arrayOfAllMathchedURL {
             var urlText = RKBaseAnalysedResult(type: RKRichTextRunType.RKRichTextRunTypeURL)
             
             
             //[url=http://guiyou.wangx.in]发自「贵邮」[/url]"
             
-            let urlString = text.substringWithRange(url.range) as NSString
+            let urlr = NSMakeRange(url.range.location-offset, url.range.length)
+            let urlString = text.substringWithRange(urlr) as NSString
             //
             
           
@@ -37,8 +38,11 @@ class RKURLRichTextRun:RKBaseRichTextRun{
             
             
              let contentString = urlString.substringFromIndex(tempRange.location+tempRange.length).componentsSeparatedByString("]")[1].componentsSeparatedByString("[")[0]
-           text = text.stringByReplacingCharactersInRange(url.range, withString: contentString)
-            let contentURL = urlString.substringFromIndex(tempRange.location+tempRange.length).componentsSeparatedByString("]")[1].componentsSeparatedByString("[")[0]
+            let length = text.length
+            text = text.stringByReplacingCharactersInRange(urlr, withString: contentString)
+            offset += length - text.length
+
+//            let contentURL = urlString.substringFromIndex(tempRange.location+tempRange.length).componentsSeparatedByString("]")[1].componentsSeparatedByString("[")[0]
               urlText.range = text.rangeOfString(contentString)
               urlText.data = urls
 
