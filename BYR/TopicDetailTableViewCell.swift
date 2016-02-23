@@ -43,17 +43,22 @@ class TopicDetailTableViewCell: UITableViewCell {
         }else{
             cell.number.text = "\(entity.number)楼"
         }
-        
-        let avatarURL = NSURL(string:entity.avatarUrl!)
-        cell.avatar.kf_setImageWithURL(avatarURL!)
-        cell.userName.text = entity.userName
-        cell.postTime.text = entity.postTime
+    
+    
+    cell.userName.text = entity.userName
+    cell.postTime.text = entity.postTime
+    if let  url  = entity.avatarUrl {
+    cell.avatar.kf_setImageWithURL(NSURL(string: url)!)
+    }else{
+        cell.avatar.image = UIImage(named: "face_default_m")
+    }
     
 //    
     let  label = RichTextView(cell: cell, entity: entity)
     label.sizeToFit()
     
     let richview = label.Draw() as!  TYAttributedLabel
+    
     cell.bounds = CGRectMake(cell.bounds.origin.x, cell.bounds.origin.y, richview.bounds.width, richview.bounds.height+cell.avatar.bounds.height+cell.LIKE.bounds.height+30)
         cell.view.subviews.last?.removeFromSuperview()
         cell.view.addSubview(richview)

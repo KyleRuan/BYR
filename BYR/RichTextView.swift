@@ -29,32 +29,28 @@ class RichTextView: UIView ,TYAttributedLabelDelegate{
         fatalError("init(coder:) has not been implemented")
     }
     
-    //这里应该放入一个数组
+
     func Draw()->UIView{
         
-        let size = CGSizeMake(UIScreen.mainScreen().bounds.width-5,378*(cell.bounds.width)/600)
+//        let size = CGSizeMake(UIScreen.mainScreen().bounds.width-5,378*(cell.bounds.width)/600)
+        let size = CGSizeMake(375*self.cell.frame.width/600, self.cell.frame.height/2)
         
-        
-        bsRun.analyseText( &text!, entity: entity)
+        bsRun.analyseText(&text!, entity: entity)
         var tmpArray = bsRun.drawRichText(size)
         
         let  attStringCreater = TYTextContainer()
         attStringCreater.lineBreakMode = CTLineBreakMode.ByCharWrapping
         attStringCreater.text = text as String
         
-        let  label2 = RKAttributedlabel(frame: CGRectMake(0,0,CGRectGetWidth(cell.bounds)-5,0))
-        label2.type  = RKRichTextRunType.RKRichTextRunTypeURL
-        
-        
-        let label = TYAttributedLabel(frame: CGRectMake(0,0,CGRectGetWidth(cell.bounds)-5,0))
+        let label = TYAttributedLabel(frame: CGRectMake(0,0,CGRectGetWidth(cell.frame),0))
 //        label.delegate = self
         attStringCreater.addTextStorageArray(tmpArray)
         attStringCreater.createTextContainerWithTextWidth(UIScreen.mainScreen().bounds.width-5)
-//        label.textContainer = attStringCreater
-//        label.sizeToFit()
-        label2.textContainer = attStringCreater
-        label2.sizeToFit()
-        return label2
+        label.textContainer = attStringCreater
+        label.sizeToFit()
+//        label2.textContainer = attStringCreater
+//        label2.sizeToFit()
+//        return label2
         tmpArray.removeAll()
         return label
         

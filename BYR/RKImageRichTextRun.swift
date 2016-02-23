@@ -34,7 +34,6 @@ class RKImageRichTextRun:RKBaseRichTextRun{
                 
                 let attachmentfileDictionary = (entity!.attachment!.file as! NSArray).objectAtIndex(num-1) as! NSDictionary
                 let file = AttachmentFile(dictionary: attachmentfileDictionary)
-                
                 let urlStrig = file.url //.stringValue
                 if urlStrig!.isEmpty {
                     print("附件")
@@ -76,14 +75,11 @@ class RKImageRichTextRun:RKBaseRichTextRun{
             let  imageStorage = TYImageStorage()
             imageStorage.range = drawText.range!
             print( imageStorage.range)
-            let image = UIImage(data: (drawText.data as! NSData))
+            let image = UIImage(data: (drawText.data as! NSData))?.scaleToSize()
             imageStorage.image = image
-              imageStorage.size = CGSizeMake(size.width,size.width)
-//            imageStorage.size = size
+            imageStorage.size = CGSizeMake(size.width,size.width)
             tmpArray.append(imageStorage)
-//            let zz = TYTextStorage()
-//            zz.text = "\n"
-//             tmpArray.append(zz)
+
             
         }
       
@@ -91,4 +87,29 @@ class RKImageRichTextRun:RKBaseRichTextRun{
         }
 
     
+}
+
+
+
+extension UIImage{
+    func scaleToSize()->UIImage{
+        let screenWidth :CGFloat = UIScreen.mainScreen().bounds.width
+        let scale = self.size.width/self.size.height
+        let screenHeight:CGFloat = screenWidth/scale
+        
+        
+       
+        UIGraphicsBeginImageContext(CGSizeMake(screenWidth, screenHeight))
+        
+        self.drawInRect(CGRectMake(0, 0, screenWidth, screenHeight))
+        
+        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        
+        return scaledImage
+        
+        
+        
+    }
 }

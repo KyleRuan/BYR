@@ -16,7 +16,7 @@ class TopicModelEnity{
     
     
     
-    var avatarUrl:String!
+    var avatarUrl:String?
     var userName:String!
     var postTime:String!
 //    var like:String?
@@ -37,7 +37,7 @@ class TopicModelEnity{
         has_attachment = enity.has_attachment
     }
     
-    init(url:String,name:String,time:String,content:String,number:String,has_attachment:Bool,attachment:Attachment?){
+    init(url:String?,name:String,time:String,content:String,number:String,has_attachment:Bool,attachment:Attachment?){
         avatarUrl = url
         userName = name
         postTime = time
