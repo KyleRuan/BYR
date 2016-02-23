@@ -20,7 +20,7 @@ class RKURLRichTextRun:RKBaseRichTextRun{
         
         
      var offset = 0
-        for var url in arrayOfAllMathchedURL {
+        for  url in arrayOfAllMathchedURL {
             var urlText = RKBaseAnalysedResult(type: RKRichTextRunType.RKRichTextRunTypeURL)
             
             

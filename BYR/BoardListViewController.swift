@@ -115,20 +115,7 @@ class BoardListViewController: UIViewController, UITableViewDelegate,UITableView
             cell.board.text = dataSource[0][indexPath.row]["description"].stringValue
             
         }
-
-        
-//        if dataSource.count == 2{
-//            if indexPath.section == 0 {
-//               cell.board.text = dataSource[0][indexPath.row].stringValue
-//                
-//            }else{
-//                let data = dataSource[1][0][indexPath.row]["description"]
-//            }
-//            
-//        }else{
-//            cell.board.text = dataSource[indexPath.section][0][indexPath.row]["description"].stringValue
-//        }
-//    
+  
         return cell
     
     }

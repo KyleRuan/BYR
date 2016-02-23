@@ -10,6 +10,9 @@ import UIKit
 import SwiftyJSON
 import Kingfisher
 
+
+
+
 class TopicListTableViewController:UITableViewController,TYAttributedLabelDelegate,UINavigationControllerDelegate{
 //    var datasource:Array<JSON> = [] 
     var arr:Array<AnyObject> = []
@@ -20,7 +23,14 @@ class TopicListTableViewController:UITableViewController,TYAttributedLabelDelega
     
     var viewModel:TopicListViewModel!
     
-    
+    var showList:Int = 0{
+        didSet {
+            if showList == 10 {
+                self.animationPop()
+            }
+        }
+        
+    }
     
     var currentPage = 1 {
         didSet{
@@ -35,6 +45,28 @@ class TopicListTableViewController:UITableViewController,TYAttributedLabelDelega
     
     let transformAnimation = CAKeyframeAnimation(keyPath: "bounds")
     var backgroundImageView = UIImageView()
+    
+    
+    
+    
+    override init(style: UITableViewStyle) {
+        super.init(style: style)
+    }
+    
+    
+    convenience init(str:String){
+        self.init(style: .Plain)
+        self.type = str
+        
+        
+    }
+ 
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = TopicListViewModel(tableView: self.tableView)
@@ -66,7 +98,7 @@ class TopicListTableViewController:UITableViewController,TYAttributedLabelDelega
     func loadData(){
         // if have network
         viewModel.loadData { () -> Void in
-            self.animationPop()
+//            self.animationPop()
         }
      
     }
@@ -101,6 +133,7 @@ class TopicListTableViewController:UITableViewController,TYAttributedLabelDelega
         
         modelEnity.cellInit(&cell, datasource: viewModel.datasource[indexPath.row])
         cells.append(cell)
+        showList++ 
 
   return cell
     }
