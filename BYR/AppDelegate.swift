@@ -7,15 +7,42 @@
 //
 
 import UIKit
+import JGProgressHUD
+import RealmSwift
+
+//let config = Realm.Configuration.defaultConfiguration.path
+
+let realm = try! Realm()
+
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+////         Override point for customization after application launch.
+//         let isAuthorize = UserAngent.sharedInstance.getIsAuthorized()
+////        self.window?.makeKeyAndVisible()
+////      
+//        
+//        print(realm.path)
+//        if !isAuthorize {
+//            // first Launch ,is not  Authorized
+//            UserAngent.sharedInstance.setIsAuthorized(true)
+//            SegueToViewController.sharedInstance.implementationSegue(self, segueTo: OAUTH_VIEW_CONTROLLER)
+//        }else{
+//            if (UserAngent.sharedInstance.getAccessToken() != nil) {
+//                SegueToViewController.sharedInstance.implementationSegue(self, segueTo: TABAR_VIEW_CONTROLLER)
+//                
+//            }else{
+//                UserAngent.sharedInstance.setIsAuthorized(true)
+//                SegueToViewController.sharedInstance.implementationSegue(self, segueTo: OAUTH_VIEW_CONTROLLER)
+//
+//
+//            }
+//                      
+//        }
         return true
     }
 
