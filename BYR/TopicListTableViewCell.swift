@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TopTenTopicTableViewCell: UITableViewCell {
+class TopicListTableViewCell: UITableViewCell {
 
     @IBOutlet weak var avatar: RoundImageView!
     @IBOutlet weak var title: UILabel!

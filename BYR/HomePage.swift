@@ -23,15 +23,11 @@ class HomePage: UIViewController {
         let v2 = TopicListModelController(type: "recommend")
         v2.type = "recommend"
         v2.title = "推荐文章"
-        let v3 = TopicListTableViewController()
-        v3.title = "分区热门话题的信息"
-        
+    
         
         VCs.append(v1)
         VCs.append(v2)
-        VCs.append(v3)
         // Customize menu (Optional)
-        
        
         let parameters: [CAPSPageMenuOption] = [
             .ScrollMenuBackgroundColor(UIColor.whiteColor()),
@@ -41,7 +37,8 @@ class HomePage: UIViewController {
             .MenuHeight(44.0),
             .SelectionIndicatorHeight(0.0),
             .MenuItemWidthBasedOnTitleTextWidth(true),
-            .SelectedMenuItemLabelColor(UIColor.orangeColor())
+            .SelectedMenuItemLabelColor(UIColor.orangeColor()),
+            .TitleTextSizeBasedOnMenuItemWidth(true)
             
         ]
         

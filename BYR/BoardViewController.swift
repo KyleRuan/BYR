@@ -11,7 +11,6 @@ import SwiftyJSON
 class BoardViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
    
     @IBOutlet weak var boardCollection: UICollectionView!
-    @IBOutlet weak var segments: UISegmentedControl!
     @IBOutlet weak var sectionColletion: UICollectionView!
     
     

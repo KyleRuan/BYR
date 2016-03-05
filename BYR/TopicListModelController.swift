@@ -1,5 +1,5 @@
 //
-//  TenTopicViewController.swift
+//  TopicListModelController.swift
 //  BYR
 //
 //  Created by Jason on 16/3/4.
@@ -17,7 +17,7 @@ import RealmSwift
 class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,UINavigationControllerDelegate{
     var isLoaded = false
     var type = ""
-    var cells:Array<TopTenTopicTableViewCell> = []
+    var cells:Array<TopicListTableViewCell> = []
     let  modelEnity = TopicListModelEnity()
     
     var viewModel:TopicListViewModel! = TopicListViewModel()
@@ -68,7 +68,7 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
         //        self.tableView.footer = footer
         let header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: "loadData")
         self.tableView.header = header;
-        self.tableView.registerNib(UINib(nibName: "TenTopicViewController", bundle: nil), forCellReuseIdentifier: REUSE__IDENTIFIER_FOR_TOPICLIST_CELL)
+        self.tableView.registerNib(UINib(nibName: "TopicListTableViewCell", bundle: nil), forCellReuseIdentifier: REUSE__IDENTIFIER_FOR_TOPICLIST_CELL)
    
         if  Reachability.isConnectedToNetwork(){
             //             setUpAnimation()
@@ -143,7 +143,7 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         
-        var  cell = tableView.dequeueReusableCellWithIdentifier(REUSE__IDENTIFIER_FOR_TOPICLIST_CELL, forIndexPath: indexPath) as! TopTenTopicTableViewCell
+        var  cell = tableView.dequeueReusableCellWithIdentifier(REUSE__IDENTIFIER_FOR_TOPICLIST_CELL, forIndexPath: indexPath) as! TopicListTableViewCell
         
 //        if cells.count > indexPath.row {
 //            return cells[indexPath.row]
@@ -166,8 +166,6 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
         print(indexPath.row)
         
         let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("DetailCellForReuse") as!  TopicDetailViewController
-        
-        let vcd = TopicDetailViewController()
         articles = realm.objects(Topics)
         
         let article = articles[indexPath.row]
@@ -176,7 +174,11 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
         vc.boardName = article.board_name
         vc.title = article.title
         
-        vc.tableView = UITableView(frame: CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height))
+        let originY = fath.navigationController?.navigationBar.frame.origin.y
+        let originHeight = fath.navigationController?.navigationBar.frame.height
+//        let vcBound =
+        
+        vc.tableView = UITableView(frame: CGRectMake(0, originY!+originHeight!, self.view.bounds.width, self.view.bounds.height))
         
         vc.hidesBottomBarWhenPushed = true
 //svc.hidesBottomBarWhenPushed=YES
@@ -206,7 +208,7 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
         //         print("prepareForSegue")
         if segue.identifier == "TOPICDETAILS" {
             let vc = segue.destinationViewController as! TopicDetailViewController
-            let indexPath = tableView.indexPathForCell(sender as! TopTenTopicTableViewCell)
+            let indexPath = tableView.indexPathForCell(sender as! TopicListTableViewCell)
             
             //    let article  = modelEnity.articles[indexPath!.row]
             

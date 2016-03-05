@@ -228,7 +228,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TopTenCell" rowHeight="99" id="LPB-EQ-7eD" customClass="TopTenTopicTableViewCell" customModule="BYR" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TopTenCell" rowHeight="99" id="LPB-EQ-7eD" customClass="TopicListTableViewCell" customModule="BYR" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="600" height="99"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LPB-EQ-7eD" id="cMs-7r-lKe">
@@ -577,7 +577,7 @@
             </objects>
             <point key="canvasLocation" x="-638" y="681"/>
         </scene>
-        <!--wo -->
+        <!--HOME-->
         <scene sceneID="fxW-GC-xPs">
             <objects>
                 <viewController id="3Vw-La-oot" customClass="HomePage" customModule="BYR" customModuleProvider="target" sceneMemberID="viewController">
@@ -590,7 +590,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="wo " id="SRK-Ru-bjW"/>
+                    <navigationItem key="navigationItem" title="HOME" id="SRK-Ru-bjW"/>
                     <connections>
                         <segue destination="NtU-Rx-bg3" kind="show" identifier="TOPICDETAILS" id="KIi-Rw-wSe"/>
                     </connections>
@@ -840,7 +840,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TopTenCell" rowHeight="99" id="i3W-nS-LL2" customClass="TopTenTopicTableViewCell" customModule="BYR" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TopTenCell" rowHeight="99" id="i3W-nS-LL2" customClass="TopicListTableViewCell" customModule="BYR" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="99"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i3W-nS-LL2" id="M9t-Ml-9t1">
@@ -942,7 +942,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TopTenCell" rowHeight="99" id="SLF-DX-qeK" customClass="TopTenTopicTableViewCell" customModule="BYR" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TopTenCell" rowHeight="99" id="SLF-DX-qeK" customClass="TopicListTableViewCell" customModule="BYR" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="99"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SLF-DX-qeK" id="A8h-1e-eJ2">

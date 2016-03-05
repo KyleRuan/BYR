@@ -14,7 +14,7 @@ class TopicListModelEnity{
     
 //     var datasource:Array<JSON> = [] 
     var articles:Array<Topics> = []
-    func cellInit(inout cell:TopTenTopicTableViewCell,datasource:JSON?){
+    func cellInit(inout cell:TopicListTableViewCell,datasource:JSON?){
         
         
         guard let content = datasource else{
@@ -52,7 +52,7 @@ class TopicListModelEnity{
     }
     
     
-    func cellInit(inout cell:TopTenTopicTableViewCell,article:Topics?){
+    func cellInit(inout cell:TopicListTableViewCell,article:Topics?){
         
         
         guard let topic = article else{

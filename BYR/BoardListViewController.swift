@@ -177,8 +177,8 @@ class BoardListViewController: UIViewController, UITableViewDelegate,UITableView
             vc.selectedNum = "\(selectedNum)"
         }
         if segue.identifier == SEGUE_FROM_SECTION_T0_TOPICLIST{
-            let vc = segue.destinationViewController  as! TopicListTableViewController
-            vc.type = selectedNum
+//            let vc = segue.destinationViewController  as! TopicListTableViewController
+//            vc.type = selectedNum
 //            vc.selectedNum = "\(selectedNum)"
         }
     }
