@@ -10,10 +10,20 @@ import Foundation
 import RealmSwift
 
 class Attachment:Object {
-//    var file:[AttachmentFile]?   //文件列表
-    let file = List<AttachmentFile>?()
-    var remain_space:String?//剩余空间大小
+    var file:Array<AttachmentFile>? //文件列表
+//    let file = List<AttachmentFile>()
+    dynamic var remain_space:String?//剩余空间大小
   dynamic  var remain_count:Int = 0 //	剩余附件个数
 //       let tasks = List<Task>()
     
+    
+   override static func ignoredProperties() -> [String] {
+        
+        return ["file"]
+    
+    
+    }
+    
 }
+
+//List<Task>()

@@ -53,6 +53,21 @@ class TopicListViewModel {
                     self.articles = []
                     for arr in article.arrayValue {
                         let art = Topics.mj_objectWithKeyValues(arr.dictionaryObject)
+                        
+                        
+                        
+//                        let attachment = Attachment.mj_objectWithKeyValues(arr["attachment"].dictionaryObject)
+//                        
+//                        for att in arr["attachment"]["file"].arrayValue{
+//                            let file = AttachmentFile.mj_objectWithKeyValues(att.dictionaryObject)
+//                           print(file)
+//                            attachment.file?.append(file)
+//                        }
+                        
+                       
+                        
+//                        art.attachment = attachment
+                        
                         self.articles.append(art)
 //                        realm.add(art)
                         try!  realm.write({ () -> Void in

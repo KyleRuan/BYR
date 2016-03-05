@@ -28,12 +28,17 @@ class RKImageRichTextRun:RKBaseRichTextRun{
             if let num = Int(substring!){
                 //大图: "url"//小图//中图:"thumbnail_middle"
                 //附件为只有url
-                if num > entity!.attachment?.file?.count{
+                if num > entity!.attachment?.file!.count{
                     break
                 }
                 
+                
+//             let  file   =  （entity!.attachment?.file! ）
+                
                 let attachmentfileDictionary = (entity!.attachment!.file as! NSArray).objectAtIndex(num-1) as! NSDictionary
-                let file = AttachmentFile(dictionary: attachmentfileDictionary)
+                let file = AttachmentFile(value: attachmentfileDictionary)
+                
+                
                 let urlStrig = file.url //.stringValue
                 if urlStrig!.isEmpty {
                     print("附件")
