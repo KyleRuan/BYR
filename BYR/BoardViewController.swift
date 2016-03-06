@@ -10,7 +10,7 @@ import UIKit
 import SwiftyJSON
 class BoardViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
    
-    @IBOutlet weak var boardCollection: UICollectionView!
+//    @IBOutlet weak var boardCollection: UICollectionView!
     @IBOutlet weak var sectionColletion: UICollectionView!
     
     
@@ -20,11 +20,6 @@ class BoardViewController: UIViewController,UICollectionViewDelegate,UICollectio
         super.viewDidLoad()
         self.sectionColletion.delegate = self
         self.sectionColletion.dataSource = self
-
-        
-        
-             
-
         // Do any additional setup after loading the view.
     }
 
@@ -52,22 +47,22 @@ class BoardViewController: UIViewController,UICollectionViewDelegate,UICollectio
     }
     
 //    var views =  UIView()
-    @IBAction func segmentValueChanged(sender: UISegmentedControl) {
-      
-        switch sender.selectedSegmentIndex{
-        case 0 :
-            self.view.addSubview(self.boardCollection)
-            print(0)
-        case  1 :
-            self.view.addSubview(self.sectionColletion)
-            print(1)
-        case 2 :
-            print(2)
-        default:
-            print("error")
-        }
-    }
-    
+//    @IBAction func segmentValueChanged(sender: UISegmentedControl) {
+//      
+//        switch sender.selectedSegmentIndex{
+//        case 0 :
+////            self.view.addSubview(self.boardCollection)
+//            print(0)
+//        case  1 :
+//            self.view.addSubview(self.sectionColletion)
+//            print(1)
+//        case 2 :
+//            print(2)
+//        default:
+//            print("error")
+//        }
+//    }
+//    
     
 //    /section/:name.(xml|json)
  

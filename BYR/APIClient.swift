@@ -56,6 +56,15 @@ class APIClinet {
     }
     
     
+    func getTopics(token:AnyObject,thread:String,type:String,success:((JSON)->Void),failure:((NSError)->Void)){
+        //     http://bbs.byr.cn/open/section.json?oauth_token=3140fd026627ac9fba09e638794c4dc4
+        
+        let param = [ACCESS_TOKEN:token]
+        self.getJSONData("/open/\(thread)/\(type).json", parameters: param, success: success, failure: failure)
+        
+    }
+    
+    
     func getTopTenTopics(token:AnyObject,type:String,success:(JSON)->Void,failure:(NSError)->Void){
 //        http://bbs.byr.cn/open/widget/topten.json?oauth_token=ddd06f3d6675fa948970dfe763e47f30
         let param = [ACCESS_TOKEN:token]

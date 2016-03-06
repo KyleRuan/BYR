@@ -380,7 +380,6 @@
                                             <outlet property="board" destination="5jE-v2-MyS" id="Mcp-uV-rrO"/>
                                             <outlet property="boardManager" destination="3SX-KJ-gdY" id="M0Z-S1-8Qa"/>
                                             <outlet property="postToday" destination="roh-wT-JlU" id="7s5-1z-u7O"/>
-                                            <segue destination="7Un-J5-Tra" kind="show" identifier="toTopicList" id="XEc-Lg-XqV"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -397,6 +396,7 @@
                     <connections>
                         <outlet property="tableview" destination="iUA-De-wrJ" id="8NC-u1-fsY"/>
                         <segue destination="Sr3-aZ-PRW" kind="show" identifier="toSubSection" id="SS9-BT-ScY"/>
+                        <segue destination="7Un-J5-Tra" kind="show" identifier="toTopicList" id="Hnt-OW-ZZ9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xlC-KQ-iFT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -662,22 +662,22 @@
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PW3-af-Baf">
                                 <rect key="frame" x="0.0" y="108" width="600" height="443"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gzD-lX-nmj">
-                                    <size key="itemSize" width="150" height="150"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="CwY-JO-VKG">
+                                    <size key="itemSize" width="100" height="100"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BoardCell" id="sKo-md-CZi" customClass="BoardCollectionViewCell" customModule="BYR" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                        <rect key="frame" x="0.0" y="64" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ICON" translatesAutoresizingMaskIntoConstraints="NO" id="SGs-Gq-MLj" customClass="RoundImageView" customModule="BYR" customModuleProvider="target">
-                                                    <rect key="frame" x="15" y="15" width="120" height="120"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Board" translatesAutoresizingMaskIntoConstraints="NO" id="SGs-Gq-MLj">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="60"/>
@@ -688,10 +688,10 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="SGs-Gq-MLj" firstAttribute="centerX" secondItem="sKo-md-CZi" secondAttribute="centerX" id="FuQ-nP-kQw"/>
-                                            <constraint firstItem="SGs-Gq-MLj" firstAttribute="leading" secondItem="sKo-md-CZi" secondAttribute="leadingMargin" constant="7" id="WeC-Dw-zNV"/>
-                                            <constraint firstItem="SGs-Gq-MLj" firstAttribute="centerY" secondItem="sKo-md-CZi" secondAttribute="centerY" id="iu9-fK-V1I"/>
-                                            <constraint firstItem="SGs-Gq-MLj" firstAttribute="top" secondItem="sKo-md-CZi" secondAttribute="topMargin" constant="7" id="mvf-Sv-yyd"/>
+                                            <constraint firstAttribute="bottom" secondItem="SGs-Gq-MLj" secondAttribute="bottom" id="cEv-eE-8Yj"/>
+                                            <constraint firstAttribute="trailing" secondItem="SGs-Gq-MLj" secondAttribute="trailing" id="ecC-Ab-Ph6"/>
+                                            <constraint firstItem="SGs-Gq-MLj" firstAttribute="leading" secondItem="sKo-md-CZi" secondAttribute="leading" id="iuO-4J-H1a"/>
+                                            <constraint firstItem="SGs-Gq-MLj" firstAttribute="top" secondItem="sKo-md-CZi" secondAttribute="top" id="xj6-dp-bC8"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="sectionImage" destination="SGs-Gq-MLj" id="e4R-3N-RLc"/>
@@ -704,6 +704,7 @@
                         <constraints>
                             <constraint firstItem="lHD-dB-IhK" firstAttribute="bottom" secondItem="7w0-cf-ZKr" secondAttribute="top" id="647-r6-OTO"/>
                             <constraint firstItem="PW3-af-Baf" firstAttribute="leading" secondItem="T36-am-kND" secondAttribute="leadingMargin" constant="-20" id="JC1-cx-RQL"/>
+                            <constraint firstItem="PW3-af-Baf" firstAttribute="top" secondItem="gyM-V8-6Vg" secondAttribute="bottom" constant="44" id="S7R-qf-3cG"/>
                             <constraint firstItem="lHD-dB-IhK" firstAttribute="trailing" secondItem="PW3-af-Baf" secondAttribute="trailing" id="c7S-XB-3rZ"/>
                             <constraint firstItem="lHD-dB-IhK" firstAttribute="top" secondItem="PW3-af-Baf" secondAttribute="top" id="fFu-tp-3Mn"/>
                             <constraint firstItem="lHD-dB-IhK" firstAttribute="leading" secondItem="PW3-af-Baf" secondAttribute="leading" id="h6N-kh-8hj"/>
@@ -715,6 +716,9 @@
                             <constraint firstItem="7w0-cf-ZKr" firstAttribute="top" secondItem="PW3-af-Baf" secondAttribute="bottom" id="xm1-zC-x6w"/>
                         </constraints>
                         <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="lHD-dB-IhK"/>
+                            </mask>
                             <mask key="constraints">
                                 <exclude reference="w9c-ac-oa3"/>
                                 <exclude reference="xm1-zC-x6w"/>
@@ -723,7 +727,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="P7w-Uu-4Ps"/>
                     <connections>
-                        <outlet property="boardCollection" destination="lHD-dB-IhK" id="X6r-cB-QWm"/>
                         <outlet property="sectionColletion" destination="PW3-af-Baf" id="2Jx-uR-H3s"/>
                         <segue destination="1f4-iV-kBw" kind="show" identifier="SegueFromSectionToBoardTableView" id="jhf-ZM-Vne"/>
                     </connections>
@@ -933,10 +936,10 @@
             </objects>
             <point key="canvasLocation" x="660" y="-2269"/>
         </scene>
-        <!--Topic List Table View Controller-->
+        <!--Topic List Model Controller-->
         <scene sceneID="Y15-yS-V4W">
             <objects>
-                <tableViewController id="7Un-J5-Tra" customClass="TopicListTableViewController" customModule="BYR" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="7Un-J5-Tra" customClass="TopicListModelController" customModule="BYR" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="99" sectionHeaderHeight="28" sectionFooterHeight="28" id="oDy-O6-z1m">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1021,9 +1024,6 @@
                                     <outlet property="reply_count" destination="kbg-fb-s6F" id="sPA-O3-8iJ"/>
                                     <outlet property="title" destination="2qh-bz-wTk" id="flY-NF-4Tl"/>
                                     <outlet property="userName" destination="Ony-0U-NY2" id="fmi-6S-GVi"/>
-                                    <segue destination="KlE-Ux-PeQ" kind="show" identifier="TOPICDETAIL" id="0QF-P1-5jD">
-                                        <nil key="action"/>
-                                    </segue>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1036,7 +1036,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QVt-kl-YRn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1736" y="2377"/>
+            <point key="canvasLocation" x="2008" y="625"/>
         </scene>
         <!--Topic Detail View Controller-->
         <scene sceneID="8cv-S0-LRr">
@@ -1056,7 +1056,7 @@
                                 <color key="sectionIndexBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="detailcell" id="gjI-OG-j8G" customClass="TopicDetailTableViewCell" customModule="BYR" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="355"/>
+                                        <rect key="frame" x="0.0" y="28" width="600" height="355"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gjI-OG-j8G" id="Bnq-4W-TY0">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="354.5"/>
@@ -1222,7 +1222,7 @@
         <image name="usernameIcon" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9eT-S3-1yd"/>
         <segue reference="KIi-Rw-wSe"/>
+        <segue reference="Hnt-OW-ZZ9"/>
     </inferredMetricsTieBreakers>
 </document>

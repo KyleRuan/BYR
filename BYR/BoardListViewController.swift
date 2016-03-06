@@ -17,9 +17,10 @@ class BoardListViewController: UIViewController, UITableViewDelegate,UITableView
     var dataSource:Array<JSON> = []
     var  sub_section:Array<JSON> = []
     var  selectedNum:String!
+    var listTitle:String = ""
     
     
-
+//http://bbs.byr.cn/open/section/0/BBSLOG/Advice.json?oauth_token=c1ba1dcbdc7716146ba5d72c5beeceff
     override func viewDidLoad() {
         super.viewDidLoad()
         print(dataSource)
@@ -88,7 +89,7 @@ class BoardListViewController: UIViewController, UITableViewDelegate,UITableView
                 print(sub_section[0][indexPath.row].stringValue)
 
             }else{
-                print(dataSource[0][indexPath.row]["description"].stringValue)
+//                print(dataSource[0][indexPath.row]["description"].stringValue)
                 cell.accessoryType = UITableViewCellAccessoryType.None
                 cell.boardManager.text = "版主：\(dataSource[0][indexPath.row]["manager"].stringValue)"
                 let threads_today_count = dataSource[0][indexPath.row]["threads_today_count"].stringValue
@@ -122,15 +123,19 @@ class BoardListViewController: UIViewController, UITableViewDelegate,UITableView
     
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        print("didSelectRow")
+      title =  dataSource[0][indexPath.row]["description"].stringValue
+        
         if sub_section.isEmpty{
             //没有子分区，那么就直接跳到文章页面
             let name = dataSource[0][indexPath.row]["name"].stringValue
-            selectedNum = name
-            self.performSegueWithIdentifier(SEGUE_FROM_SECTION_T0_TOPICLIST, sender: self)
+            selectedNum  = name
+            self.performSegueWithIdentifier(SEGUE_FROM_SECTION_T0_TOPICLIST, sender: indexPath.row)
         }else{
             //有子分区，则看idnexpath
             if indexPath.section == 0{
-//                http://bbs.byr.cn/open/section/0/BBSLOG.json?oauth_token=3140fd026627ac9fba09e638794c4dc4
+//                http://bbs.byr.cn/open/section/0/BBSLOG/Advice.json?oauth_token=c1ba1dcbdc7716146ba5d72c5beeceff
                 
                 
                 
@@ -138,11 +143,13 @@ class BoardListViewController: UIViewController, UITableViewDelegate,UITableView
                 
                 
                 let name = "\(sub_section[0][indexPath.row])"
-                selectedNum = name
+                     selectedNum  = name
+//                selectedNum = selectedNum.
+                
                 self.performSegueWithIdentifier(SEGUE_FROM_SECTION_TO_SUBSECTION, sender: self)
             }else{
                 let name = "\(dataSource[0][indexPath.row]["name"].stringValue)"
-                selectedNum = name
+                   selectedNum  = name
                 self.performSegueWithIdentifier(SEGUE_FROM_SECTION_T0_TOPICLIST, sender: self)
             }
             
@@ -172,13 +179,17 @@ class BoardListViewController: UIViewController, UITableViewDelegate,UITableView
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+//        http://bbs.byr.cn/open/board/BUPTDNF.json?oauth_token=c1ba1dcbdc7716146ba5d72c5beeceff
         if segue.identifier == SEGUE_FROM_SECTION_TO_SUBSECTION{
             let vc = segue.destinationViewController  as! BoardListViewController
             vc.selectedNum = "\(selectedNum)"
         }
         if segue.identifier == SEGUE_FROM_SECTION_T0_TOPICLIST{
-//            let vc = segue.destinationViewController  as! TopicListTableViewController
-//            vc.type = selectedNum
+            let vc = segue.destinationViewController  as! TopicListModelController
+            vc.type = selectedNum
+            vc.thread = "board"
+            vc.title = listTitle
 //            vc.selectedNum = "\(selectedNum)"
         }
     }

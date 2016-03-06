@@ -17,6 +17,7 @@ import RealmSwift
 class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,UINavigationControllerDelegate{
     var isLoaded = false
     var type = ""
+    var thread = "widget"
     var cells:Array<TopicListTableViewCell> = []
     let  modelEnity = TopicListModelEnity()
     
@@ -41,6 +42,7 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nil, bundle: nil)
+       
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -60,6 +62,10 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
     
     
     override func viewDidLoad() {
+        
+       
+        
+        
         super.viewDidLoad()
         viewModel = TopicListViewModel(tableView: self.tableView,type: type)
         self.tableView.dataSource = self
@@ -99,13 +105,9 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
     func loadData(){
         // if have network
         viewModel.type = self.type
+        viewModel.thread = thread
         
         viewModel.loadData { () -> Void in
-            //            self.animationPop()
-            //            self.title
-            
-            //            self.viewModel.articles
-            
             
             
             print(realm.path)
@@ -185,7 +187,7 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
         
         
         fath.navigationController?.pushViewController(vc, animated: true)
-        
+        self.navigationController?.pushViewController(vc, animated: true)
        
 //        self.tabBarController?.navigationController?.pushViewController(vc, animated: true)
 //        parentViewController
