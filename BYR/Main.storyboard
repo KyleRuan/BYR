@@ -627,7 +627,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="124" height="105"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ICON" translatesAutoresizingMaskIntoConstraints="NO" id="OWA-wB-NWR" customClass="RoundImageView" customModule="BYR" customModuleProvider="target">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="ICON" translatesAutoresizingMaskIntoConstraints="NO" id="OWA-wB-NWR" customClass="RoundImageView" customModule="BYR" customModuleProvider="target">
                                                     <rect key="frame" x="22" y="8" width="80" height="560"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="80" id="3YJ-dG-3ZS"/>
@@ -637,11 +637,17 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="OWA-wB-NWR" firstAttribute="top" secondItem="hIJ-yz-9pe" secondAttribute="topMargin" id="9Me-uM-vw6"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="OWA-wB-NWR" secondAttribute="bottom" constant="9" id="DAQ-YF-fsx"/>
+                                            <constraint firstItem="OWA-wB-NWR" firstAttribute="leading" secondItem="hIJ-yz-9pe" secondAttribute="leadingMargin" constant="14" id="EhQ-t8-jbd"/>
+                                            <constraint firstItem="OWA-wB-NWR" firstAttribute="leading" secondItem="hIJ-yz-9pe" secondAttribute="leadingMargin" constant="14" id="Fmy-ao-wCC"/>
                                             <constraint firstItem="OWA-wB-NWR" firstAttribute="leading" secondItem="hIJ-yz-9pe" secondAttribute="leadingMargin" constant="14" id="Gle-Ej-reU"/>
+                                            <constraint firstItem="OWA-wB-NWR" firstAttribute="centerX" secondItem="hIJ-yz-9pe" secondAttribute="centerX" id="KNE-6I-wXE"/>
                                             <constraint firstItem="OWA-wB-NWR" firstAttribute="top" secondItem="hIJ-yz-9pe" secondAttribute="topMargin" id="MkR-72-Vza"/>
                                             <constraint firstItem="OWA-wB-NWR" firstAttribute="leading" secondItem="hIJ-yz-9pe" secondAttribute="leadingMargin" constant="14" id="NQf-qz-ax0"/>
+                                            <constraint firstItem="OWA-wB-NWR" firstAttribute="centerX" secondItem="hIJ-yz-9pe" secondAttribute="centerX" id="QC9-ds-M7I"/>
                                             <constraint firstItem="OWA-wB-NWR" firstAttribute="centerX" secondItem="hIJ-yz-9pe" secondAttribute="centerX" id="X1K-NL-Y5g"/>
+                                            <constraint firstItem="OWA-wB-NWR" firstAttribute="top" secondItem="hIJ-yz-9pe" secondAttribute="topMargin" id="fvv-eW-3Ue"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="OWA-wB-NWR" secondAttribute="bottom" constant="-96" id="nCQ-TY-5NR"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="OWA-wB-NWR" secondAttribute="bottom" constant="-96" id="naA-ws-g71"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="OWA-wB-NWR" secondAttribute="bottom" constant="9" id="wVT-wc-bdx"/>
@@ -688,10 +694,12 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="SGs-Gq-MLj" secondAttribute="bottom" id="cEv-eE-8Yj"/>
-                                            <constraint firstAttribute="trailing" secondItem="SGs-Gq-MLj" secondAttribute="trailing" id="ecC-Ab-Ph6"/>
-                                            <constraint firstItem="SGs-Gq-MLj" firstAttribute="leading" secondItem="sKo-md-CZi" secondAttribute="leading" id="iuO-4J-H1a"/>
-                                            <constraint firstItem="SGs-Gq-MLj" firstAttribute="top" secondItem="sKo-md-CZi" secondAttribute="top" id="xj6-dp-bC8"/>
+                                            <constraint firstItem="SGs-Gq-MLj" firstAttribute="centerY" secondItem="sKo-md-CZi" secondAttribute="centerY" id="9k3-L4-5we"/>
+                                            <constraint firstItem="SGs-Gq-MLj" firstAttribute="top" secondItem="sKo-md-CZi" secondAttribute="top" id="Qm5-JM-Jap"/>
+                                            <constraint firstAttribute="bottom" secondItem="SGs-Gq-MLj" secondAttribute="bottom" id="cic-G0-S4Y"/>
+                                            <constraint firstAttribute="trailing" secondItem="SGs-Gq-MLj" secondAttribute="trailing" id="dz7-Jq-K8a"/>
+                                            <constraint firstItem="SGs-Gq-MLj" firstAttribute="leading" secondItem="sKo-md-CZi" secondAttribute="leading" id="hPZ-j4-y2N"/>
+                                            <constraint firstItem="SGs-Gq-MLj" firstAttribute="centerX" secondItem="sKo-md-CZi" secondAttribute="centerX" id="quq-yJ-2ue"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="sectionImage" destination="SGs-Gq-MLj" id="e4R-3N-RLc"/>
@@ -813,7 +821,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JXZ-OU-mhd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2857" y="729"/>
+            <point key="canvasLocation" x="2909" y="581"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mCf-qf-0O4">
@@ -1036,7 +1044,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QVt-kl-YRn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2008" y="625"/>
+            <point key="canvasLocation" x="3080" y="1553"/>
         </scene>
         <!--Topic Detail View Controller-->
         <scene sceneID="8cv-S0-LRr">
