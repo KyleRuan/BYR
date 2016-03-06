@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "289FEE2B5533BA20193BC6DA48B7AD901758DD09",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "289FEE2B5533BA20193BC6DA48B7AD901758DD09" : 0,
+    "07515E6E11801267DBF2FFDBAAE7CCD386DA155E" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "3A6D7169-2954-4E74-816E-36C3189087C2",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "289FEE2B5533BA20193BC6DA48B7AD901758DD09" : "BYR\/",
+    "07515E6E11801267DBF2FFDBAAE7CCD386DA155E" : "..\/..\/..\/%E4%BD%A0%E5%A5%BD%E9%98%AE%E5%87%AF\/BBS-Client"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "BYR",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "BYR.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/KyleRuan\/BBS-Client.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "07515E6E11801267DBF2FFDBAAE7CCD386DA155E"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/KyleRuan\/BYR.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "289FEE2B5533BA20193BC6DA48B7AD901758DD09"
+    }
+  ]
+}
