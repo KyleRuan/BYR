@@ -32,7 +32,7 @@ class Topics:Object{
     dynamic var reply_count:Int = 0 // 该主题回复文章数
     dynamic var last_reply_user_id:String?//该文章最后回复者的id
     dynamic var last_reply_time:Int = 0//该文章最后回复的时间 unxitmestamp
-    dynamic var date = NSDate()
+//    dynamic var date = NSDate()
     
  /// 处理的是当前文章的分页信息
     dynamic var pagination:Pagination?  //分页信息

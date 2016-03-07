@@ -23,7 +23,7 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
     
     var viewModel:TopicListViewModel! = TopicListViewModel()
     var articles:Results<Topics>! = realm.objects(Topics)
-    
+     var lastPosition = CGPointZero
     var currentPage = 1 {
         didSet{
             nextPage = currentPage + 1
@@ -68,8 +68,10 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
         
         super.viewDidLoad()
         viewModel = TopicListViewModel(tableView: self.tableView,type: type)
+//        self.tableView.frame = fath.tabBarController
         self.tableView.dataSource = self
         self.tableView.delegate = self
+      
         //        let footer = MJRefreshFooter(refreshingTarget: self, refreshingAction: "loadMore")
         //        self.tableView.footer = footer
         let header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: "loadData")
@@ -105,6 +107,7 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.hidden =  false
+          lastPosition = CGPointZero
     }
     
     
@@ -120,7 +123,12 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
             print(self.typeRealm.path)
         
 //            let pre = NSPredicate(value: <#T##Bool#>)
-            self.articles = self.typeRealm.objects(Topics).sorted("date", ascending: true)
+            if self.type == "topten"{
+             self.articles = self.typeRealm.objects(Topics).sorted("reply_count", ascending: true)
+            }else{
+            self.articles = self.typeRealm.objects(Topics).sorted("last_reply_time", ascending: true)    
+            }
+            
             self.title = self.viewModel.title
             
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
@@ -172,6 +180,27 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
     }
     
     
+   
+    override func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+//         if scroll
+        if lastPosition.y < scrollView.contentOffset.y{
+            //向下
+            fath.tabBarController?.tabBar.hidden = true ;
+            lastPosition = scrollView.contentOffset
+           
+        }else{
+          fath.tabBarController?.tabBar.hidden = false ;
+            lastPosition = scrollView.contentOffset
+        }
+    }
+    
+//    override func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+////         fath.tabBarController?.tabBar.hidden = false  ;
+////        lastPosition = scrollView.contentOffset
+//    }
+    
+    
+    
     
     override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 50
@@ -196,20 +225,16 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
         
         vc.hidesBottomBarWhenPushed = true
 //svc.hidesBottomBarWhenPushed=YES
+        if  self.navigationController != nil{
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else{
+               fath.navigationController?.pushViewController(vc, animated: true)
+        }
         
+     
         
-        fath.navigationController?.pushViewController(vc, animated: true)
-        self.navigationController?.pushViewController(vc, animated: true)
+//        self.navigationController?.pushViewController(vc, animated: true)
        
-//        self.tabBarController?.navigationController?.pushViewController(vc, animated: true)
-//        parentViewController
-        
-//        presentViewController(vc, animated: true, completion: nil)
-        
-//        self.presentingViewController?.navigationController?.pushViewController(vc, animated: true)
-//        self.presentViewController(vc, animated: true, completion: nil)
-//        self.tabBarController?.navigationController?.pushViewController(vc, animated: true)        //        self.performSegueWithIdentifier(SEGUE_FROM_TOPTEN_TO_TOPICDETAIL, sender: nil)
-//        performSegueWithIdentifier("TOPICDETAILS", sender: nil)
         
     }
     

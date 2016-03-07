@@ -415,13 +415,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="355" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iW9-hT-zxM" customClass="DetailTableView" customModule="BYR" customModuleProvider="target">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="355" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iW9-hT-zxM" customClass="DetailTableView" customModule="BYR" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="detailcell" id="Nfj-A1-Mua" customClass="TopicDetailTableViewCell" customModule="BYR" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="355"/>
+                                        <rect key="frame" x="0.0" y="92" width="600" height="355"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nfj-A1-Mua" id="A4z-T0-vZA">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="354.5"/>
@@ -1230,7 +1230,7 @@
         <image name="usernameIcon" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5hT-XY-00b"/>
         <segue reference="Hnt-OW-ZZ9"/>
+        <segue reference="KIi-Rw-wSe"/>
     </inferredMetricsTieBreakers>
 </document>

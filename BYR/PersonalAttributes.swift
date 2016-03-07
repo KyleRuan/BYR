@@ -62,7 +62,7 @@ class PersonalAttributes {
         datasource["登陆次数"] =  "\(user.login_count)"
         let Format = "YYYY-MM-dd-HH:mm"
         datasource["上次登录时间"] = FormmatterTime.NomalTime(user.last_login_time,Format: Format)
-        datasource["上次登录IP"] = "\(user.last_login_ip)"
+        datasource["上次登录IP"] = "\(user.last_login_ip!)"
         datasource["挂站时间"] = "\(user.stay_count/60/60)小时"
         datasource["注册时间"] = FormmatterTime.NomalTime(user.first_login_time,Format: Format)
         
