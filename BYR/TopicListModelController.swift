@@ -120,10 +120,12 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
         viewModel.loadData(typeRealm) { () -> Void in
             
             
-            print(self.typeRealm.path)
+            print(self.typeReapost_timelm.path)
         
 //            let pre = NSPredicate(value: <#T##Bool#>)
             if self.type == "topten"{
+//                post_time
+                
              self.articles = self.typeRealm.objects(Topics).sorted("reply_count", ascending: true)
             }else{
             self.articles = self.typeRealm.objects(Topics).sorted("last_reply_time", ascending: true)    
