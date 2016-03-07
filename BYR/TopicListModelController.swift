@@ -59,7 +59,7 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
     let transformAnimation = CAKeyframeAnimation(keyPath: "bounds")
     var backgroundImageView = UIImageView()
     
-    
+    var typeRealm:Realm!
     
     override func viewDidLoad() {
         
@@ -79,6 +79,12 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
         if  Reachability.isConnectedToNetwork(){
             //             setUpAnimation()
             self.tableView.header.beginRefreshing()
+            
+            
+            var config = Realm.Configuration()
+            config.path = NSURL.fileURLWithPath(config.path!).URLByDeletingLastPathComponent?.URLByAppendingPathComponent("\(type).realm").path
+            
+             typeRealm = try! Realm(configuration: config)
         }
         
         
@@ -106,12 +112,15 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
         // if have network
         viewModel.type = self.type
         viewModel.thread = thread
+
         
-        viewModel.loadData { () -> Void in
+        viewModel.loadData(typeRealm) { () -> Void in
             
             
-            print(realm.path)
-            self.articles = realm.objects(Topics)
+            print(self.typeRealm.path)
+        
+//            let pre = NSPredicate(value: <#T##Bool#>)
+            self.articles = self.typeRealm.objects(Topics).sorted("date", ascending: true)
             self.title = self.viewModel.title
             
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
@@ -152,8 +161,11 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
 //        }
         
         
-        articles = realm.objects(Topics)
-        modelEnity.cellInit(&cell, article: articles[indexPath.row])
+        articles = typeRealm.objects(Topics)
+        if articles.count > 0{
+           modelEnity.cellInit(&cell, article: articles[indexPath.row])  
+        }
+       
 //        cells.append(cell)
         
         return cell
@@ -168,7 +180,7 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
         print(indexPath.row)
         
         let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("DetailCellForReuse") as!  TopicDetailViewController
-        articles = realm.objects(Topics)
+        articles = typeRealm.objects(Topics)
         
         let article = articles[indexPath.row]
         
@@ -214,7 +226,7 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
             
             //    let article  = modelEnity.articles[indexPath!.row]
             
-            articles = realm.objects(Topics)
+            articles = typeRealm.objects(Topics)
             
             let article = articles[indexPath!.row]
             
