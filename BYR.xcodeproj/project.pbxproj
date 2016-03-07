@@ -310,7 +310,6 @@
 		B7AF265F1BD7F4CC000E9448 /* Alamofire-SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AF26591BD7F4CC000E9448 /* Alamofire-SwiftyJSON.swift */; };
 		B7AF26621BD7F4CC000E9448 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AF265C1BD7F4CC000E9448 /* Constants.swift */; };
 		B7AF26641BD7F56A000E9448 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7AF26631BD7F56A000E9448 /* Main.storyboard */; };
-		B7C97C571BD8F73B00E0B103 /* TopicListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C97C561BD8F73B00E0B103 /* TopicListTableViewController.swift */; };
 		B7C97C591BD8F80B00E0B103 /* TopicListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C97C581BD8F80B00E0B103 /* TopicListTableViewCell.swift */; };
 		B7D574111BE77F8F00D7D725 /* TopicDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D574101BE77F8F00D7D725 /* TopicDetailViewController.swift */; };
 		B7D574151BE7824A00D7D725 /* TopicDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D574141BE7824A00D7D725 /* TopicDetailTableViewCell.swift */; };
@@ -672,7 +671,6 @@
 		B7AF26591BD7F4CC000E9448 /* Alamofire-SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alamofire-SwiftyJSON.swift"; sourceTree = "<group>"; };
 		B7AF265C1BD7F4CC000E9448 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B7AF26631BD7F56A000E9448 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		B7C97C561BD8F73B00E0B103 /* TopicListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListTableViewController.swift; sourceTree = "<group>"; };
 		B7C97C581BD8F80B00E0B103 /* TopicListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListTableViewCell.swift; sourceTree = "<group>"; };
 		B7D574101BE77F8F00D7D725 /* TopicDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicDetailViewController.swift; sourceTree = "<group>"; };
 		B7D574141BE7824A00D7D725 /* TopicDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -1230,7 +1228,6 @@
 			children = (
 				B78842901C88A32C0077C4AB /* HomePage.swift */,
 				B78842921C88A90D0077C4AB /* TopicListModelController.swift */,
-				B7C97C561BD8F73B00E0B103 /* TopicListTableViewController.swift */,
 				B7D574101BE77F8F00D7D725 /* TopicDetailViewController.swift */,
 				B7D574161BE790D000D7D725 /* SettingTableViewController.swift */,
 				B776071F1BD7F094003B3801 /* OauthViewController.swift */,
@@ -1697,7 +1694,6 @@
 				B72459151BE9CED200F2C1C1 /* UserAngent.swift in Sources */,
 				B74326D81BED06C000BC686E /* TYImageCache.m in Sources */,
 				B75B199C1C09D31700FD5CE6 /* RKBaseAnalysedResult.swift in Sources */,
-				B7C97C571BD8F73B00E0B103 /* TopicListTableViewController.swift in Sources */,
 				B77B0E3E1C65E75C001FDEC2 /* ShowImageDetailViewController.swift in Sources */,
 				B7FD03121C43872A00D68D77 /* CustomNavigationAnimationController.swift in Sources */,
 				B77607121BD7EFDB003B3801 /* Vote.swift in Sources */,

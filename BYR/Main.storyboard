@@ -320,7 +320,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ISh-pF-5Ym" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3280" y="-1443"/>
+            <point key="canvasLocation" x="3048" y="-2363"/>
         </scene>
         <!--Board List View Controller-->
         <scene sceneID="HzA-QD-WCn">
@@ -1201,7 +1201,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UJ0-EG-lMp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3706" y="1865"/>
+            <point key="canvasLocation" x="4106" y="1497"/>
         </scene>
         <!--Setting-->
         <scene sceneID="4un-Ip-2vm">
@@ -1230,7 +1230,7 @@
         <image name="usernameIcon" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="KIi-Rw-wSe"/>
         <segue reference="Hnt-OW-ZZ9"/>
+        <segue reference="KIi-Rw-wSe"/>
     </inferredMetricsTieBreakers>
 </document>

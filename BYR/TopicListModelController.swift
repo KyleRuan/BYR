@@ -23,7 +23,7 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
     
     var viewModel:TopicListViewModel! = TopicListViewModel()
     var articles:Results<Topics>! = realm.objects(Topics)
-    
+     var lastPosition = CGPointZero
     var currentPage = 1 {
         didSet{
             nextPage = currentPage + 1
@@ -59,7 +59,7 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
     let transformAnimation = CAKeyframeAnimation(keyPath: "bounds")
     var backgroundImageView = UIImageView()
     
-    
+    var typeRealm:Realm!
     
     override func viewDidLoad() {
         
@@ -68,8 +68,10 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
         
         super.viewDidLoad()
         viewModel = TopicListViewModel(tableView: self.tableView,type: type)
+//        self.tableView.frame = fath.tabBarController
         self.tableView.dataSource = self
         self.tableView.delegate = self
+      
         //        let footer = MJRefreshFooter(refreshingTarget: self, refreshingAction: "loadMore")
         //        self.tableView.footer = footer
         let header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: "loadData")
@@ -79,6 +81,12 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
         if  Reachability.isConnectedToNetwork(){
             //             setUpAnimation()
             self.tableView.header.beginRefreshing()
+            
+            
+            var config = Realm.Configuration()
+            config.path = NSURL.fileURLWithPath(config.path!).URLByDeletingLastPathComponent?.URLByAppendingPathComponent("\(type).realm").path
+            
+             typeRealm = try! Realm(configuration: config)
         }
         
         
@@ -99,6 +107,7 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.hidden =  false
+          lastPosition = CGPointZero
     }
     
     
@@ -106,12 +115,20 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
         // if have network
         viewModel.type = self.type
         viewModel.thread = thread
+
         
-        viewModel.loadData { () -> Void in
+        viewModel.loadData(typeRealm) { () -> Void in
             
             
-            print(realm.path)
-            self.articles = realm.objects(Topics)
+            print(self.typeRealm.path)
+        
+//            let pre = NSPredicate(value: <#T##Bool#>)
+            if self.type == "topten"{
+             self.articles = self.typeRealm.objects(Topics).sorted("reply_count", ascending: true)
+            }else{
+            self.articles = self.typeRealm.objects(Topics).sorted("last_reply_time", ascending: true)    
+            }
+            
             self.title = self.viewModel.title
             
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
@@ -152,12 +169,36 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
 //        }
         
         
-        articles = realm.objects(Topics)
-        modelEnity.cellInit(&cell, article: articles[indexPath.row])
+        articles = typeRealm.objects(Topics)
+        if articles.count > 0{
+           modelEnity.cellInit(&cell, article: articles[indexPath.row])  
+        }
+       
 //        cells.append(cell)
         
         return cell
     }
+    
+    
+   
+    override func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+//         if scroll
+        if lastPosition.y < scrollView.contentOffset.y{
+            //向下
+            fath.tabBarController?.tabBar.hidden = true ;
+            lastPosition = scrollView.contentOffset
+           
+        }else{
+          fath.tabBarController?.tabBar.hidden = false ;
+            lastPosition = scrollView.contentOffset
+        }
+    }
+    
+//    override func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+////         fath.tabBarController?.tabBar.hidden = false  ;
+////        lastPosition = scrollView.contentOffset
+//    }
+    
     
     
     
@@ -168,7 +209,7 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
         print(indexPath.row)
         
         let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("DetailCellForReuse") as!  TopicDetailViewController
-        articles = realm.objects(Topics)
+        articles = typeRealm.objects(Topics)
         
         let article = articles[indexPath.row]
         
@@ -184,20 +225,16 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
         
         vc.hidesBottomBarWhenPushed = true
 //svc.hidesBottomBarWhenPushed=YES
+        if  self.navigationController != nil{
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else{
+               fath.navigationController?.pushViewController(vc, animated: true)
+        }
         
+     
         
-        fath.navigationController?.pushViewController(vc, animated: true)
-        self.navigationController?.pushViewController(vc, animated: true)
+//        self.navigationController?.pushViewController(vc, animated: true)
        
-//        self.tabBarController?.navigationController?.pushViewController(vc, animated: true)
-//        parentViewController
-        
-//        presentViewController(vc, animated: true, completion: nil)
-        
-//        self.presentingViewController?.navigationController?.pushViewController(vc, animated: true)
-//        self.presentViewController(vc, animated: true, completion: nil)
-//        self.tabBarController?.navigationController?.pushViewController(vc, animated: true)        //        self.performSegueWithIdentifier(SEGUE_FROM_TOPTEN_TO_TOPICDETAIL, sender: nil)
-//        performSegueWithIdentifier("TOPICDETAILS", sender: nil)
         
     }
     
@@ -214,7 +251,7 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
             
             //    let article  = modelEnity.articles[indexPath!.row]
             
-            articles = realm.objects(Topics)
+            articles = typeRealm.objects(Topics)
             
             let article = articles[indexPath!.row]
             

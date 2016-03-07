@@ -16,10 +16,11 @@ class HomePage: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         var VCs :[UIViewController] = []
-
+   let nav = (self.navigationController?.navigationBar.frame.height)! + (self.navigationController?.navigationBar.frame.origin.y)!
         let v1 = TopicListModelController(type: "topten")
         
         v1.title = "今日十大"
+//        v1.tableView = UITableView(frame: CGRect)
         let v2 = TopicListModelController(type: "recommend")
         v2.type = "recommend"
         v2.title = "推荐文章"
@@ -43,11 +44,14 @@ class HomePage: UIViewController {
         ]
         
         // Initialize scroll menu
-         let nav = (self.navigationController?.navigationBar.frame.height)! + (self.navigationController?.navigationBar.frame.origin.y)!
+      
        
 //        (self.navigationController?.navigationBar.bounds.height)! + (self.navigationController?.navigationBar.bounds.origin.y)!
-        print(    (self.navigationController?.navigationBar.bounds.height)! + (self.navigationController?.navigationBar.bounds.origin.y)!)
-        pageMenu = CAPSPageMenu(viewControllers: VCs, frame: CGRectMake(0.0, nav, self.view.frame.width, self.view.frame.height), pageMenuOptions: parameters)
+        
+//        print(self.tabBarController?.tabBar.frame.height)
+        let tabHeight = self.tabBarController?.tabBar.frame.origin.y
+//cell高度为50
+        pageMenu = CAPSPageMenu(viewControllers: VCs, frame: CGRectMake(0.0, nav, self.view.frame.width, tabHeight!-50), pageMenuOptions: parameters)
         fath = self ;
         
         self.view.addSubview(pageMenu!.view)
