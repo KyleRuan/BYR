@@ -72,8 +72,8 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
         self.tableView.dataSource = self
         self.tableView.delegate = self
       
-        //        let footer = MJRefreshFooter(refreshingTarget: self, refreshingAction: "loadMore")
-        //        self.tableView.footer = footer
+                let footer = MJRefreshFooter(refreshingTarget: self, refreshingAction: "loadMore")
+                self.tableView.footer = footer
         let header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: "loadData")
         self.tableView.header = header;
         self.tableView.registerNib(UINib(nibName: "TopicListTableViewCell", bundle: nil), forCellReuseIdentifier: REUSE__IDENTIFIER_FOR_TOPICLIST_CELL)
@@ -98,6 +98,11 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
         
     }
     
+    //TODO : toLoadmore
+    func loadMore(){
+//        viewModel.nextPage
+    }
+    
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -119,14 +124,14 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
         
         viewModel.loadData(typeRealm) { () -> Void in
             
-            
-            print(self.typeReapost_timelm.path)
-        
-//            let pre = NSPredicate(value: <#T##Bool#>)
-            if self.type == "topten"{
+            if self.type == "thread"{
 //                post_time
+//                let count = self.typeRealm.objects(Topics).count
+//                1457305357
                 
-             self.articles = self.typeRealm.objects(Topics).sorted("reply_count", ascending: true)
+             self.articles = self.typeRealm.objects(Topics)
+                
+                
             }else{
             self.articles = self.typeRealm.objects(Topics).sorted("last_reply_time", ascending: true)    
             }
@@ -244,29 +249,29 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     
+//    
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        //         print("prepareForSegue")
+//        if segue.identifier == "TOPICDETAILS" {
+//            let vc = segue.destinationViewController as! TopicDetailViewController
+//            let indexPath = tableView.indexPathForCell(sender as! TopicListTableViewCell)
+//            
+//            //    let article  = modelEnity.articles[indexPath!.row]
+//            
+//            articles = typeRealm.objects(Topics)
+//            
+//            let article = articles[indexPath!.row]
+//            
+//            vc.topicId = "\(article.id)"
+//            vc.boardName = article.board_name
+//            vc.title = article.title
+//            
+//            vc.tableView = UITableView(frame: CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height))
+//        }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        //         print("prepareForSegue")
-        if segue.identifier == "TOPICDETAILS" {
-            let vc = segue.destinationViewController as! TopicDetailViewController
-            let indexPath = tableView.indexPathForCell(sender as! TopicListTableViewCell)
-            
-            //    let article  = modelEnity.articles[indexPath!.row]
-            
-            articles = typeRealm.objects(Topics)
-            
-            let article = articles[indexPath!.row]
-            
-            vc.topicId = "\(article.id)"
-            vc.boardName = article.board_name
-            vc.title = article.title
-            
-            vc.tableView = UITableView(frame: CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height))
-        }
         
         
-        
-    }
+//    }
     //        TOPICDETAIL
     // Get the new view controller using segue.destinationViewController.
     // Pass the selected object to the new view controller.

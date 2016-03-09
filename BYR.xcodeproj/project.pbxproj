@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4DD660FFE5F5452C27D9CB99 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D20BE0ED24ACC701A254FF3 /* Pods.framework */; };
+		B7009CA81C8F2CC1004A49F4 /* PostTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7009CA71C8F2CC1004A49F4 /* PostTopicViewController.swift */; };
 		B70B69921C4BF7DB00373971 /* TopicListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70B69911C4BF7DB00373971 /* TopicListViewModel.swift */; };
 		B711A7681BEC5C2600368B6C /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = B711A73E1BEC5C2600368B6C /* MJRefreshAutoFooter.m */; };
 		B711A7691BEC5C2600368B6C /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = B711A7401BEC5C2600368B6C /* MJRefreshBackFooter.m */; };
@@ -42,6 +43,8 @@
 		B74326DD1BED06C000BC686E /* TYTextStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = B74326D11BED06C000BC686E /* TYTextStorage.m */; };
 		B74326DE1BED06C000BC686E /* TYViewStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = B74326D41BED06C000BC686E /* TYViewStorage.m */; };
 		B749001E1C2830CF004BDE37 /* TopicListModelEnity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B749001D1C2830CF004BDE37 /* TopicListModelEnity.swift */; };
+		B755CAB91C8EECAD00F6E4D8 /* Board.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B755CAB81C8EECAD00F6E4D8 /* Board.storyboard */; };
+		B758A5081C8EE65300CBF873 /* HomePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B758A5071C8EE65300CBF873 /* HomePage.storyboard */; };
 		B75B19981C09D23C00FD5CE6 /* RichTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75B19971C09D23C00FD5CE6 /* RichTextView.swift */; };
 		B75B199A1C09D27C00FD5CE6 /* RKBaseRichTextRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75B19991C09D27C00FD5CE6 /* RKBaseRichTextRun.swift */; };
 		B75B199C1C09D31700FD5CE6 /* RKBaseAnalysedResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75B199B1C09D31700FD5CE6 /* RKBaseAnalysedResult.swift */; };
@@ -310,6 +313,10 @@
 		B7AF265F1BD7F4CC000E9448 /* Alamofire-SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AF26591BD7F4CC000E9448 /* Alamofire-SwiftyJSON.swift */; };
 		B7AF26621BD7F4CC000E9448 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AF265C1BD7F4CC000E9448 /* Constants.swift */; };
 		B7AF26641BD7F56A000E9448 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7AF26631BD7F56A000E9448 /* Main.storyboard */; };
+		B7C1061A1C8FF81D00EDB1E2 /* FeedMediaAddCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C106161C8FF81D00EDB1E2 /* FeedMediaAddCell.swift */; };
+		B7C1061B1C8FF81D00EDB1E2 /* FeedMediaAddCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7C106171C8FF81D00EDB1E2 /* FeedMediaAddCell.xib */; };
+		B7C1061C1C8FF81D00EDB1E2 /* FeedMediaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C106181C8FF81D00EDB1E2 /* FeedMediaCell.swift */; };
+		B7C1061D1C8FF81D00EDB1E2 /* FeedMediaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7C106191C8FF81D00EDB1E2 /* FeedMediaCell.xib */; };
 		B7C97C591BD8F80B00E0B103 /* TopicListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C97C581BD8F80B00E0B103 /* TopicListTableViewCell.swift */; };
 		B7D574111BE77F8F00D7D725 /* TopicDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D574101BE77F8F00D7D725 /* TopicDetailViewController.swift */; };
 		B7D574151BE7824A00D7D725 /* TopicDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D574141BE7824A00D7D725 /* TopicDetailTableViewCell.swift */; };
@@ -323,6 +330,7 @@
 		0D20BE0ED24ACC701A254FF3 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A106F2EAE456E8AFDF2A1D2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		3B43955F829EAD6159AE1184 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		B7009CA71C8F2CC1004A49F4 /* PostTopicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTopicViewController.swift; sourceTree = "<group>"; };
 		B70B69911C4BF7DB00373971 /* TopicListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListViewModel.swift; sourceTree = "<group>"; };
 		B711A73D1BEC5C2600368B6C /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		B711A73E1BEC5C2600368B6C /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
@@ -386,6 +394,8 @@
 		B74326D31BED06C000BC686E /* TYViewStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYViewStorage.h; sourceTree = "<group>"; };
 		B74326D41BED06C000BC686E /* TYViewStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYViewStorage.m; sourceTree = "<group>"; };
 		B749001D1C2830CF004BDE37 /* TopicListModelEnity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListModelEnity.swift; sourceTree = "<group>"; };
+		B755CAB81C8EECAD00F6E4D8 /* Board.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Board.storyboard; sourceTree = "<group>"; };
+		B758A5071C8EE65300CBF873 /* HomePage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HomePage.storyboard; sourceTree = "<group>"; };
 		B75B19971C09D23C00FD5CE6 /* RichTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RichTextView.swift; sourceTree = "<group>"; };
 		B75B19991C09D27C00FD5CE6 /* RKBaseRichTextRun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKBaseRichTextRun.swift; sourceTree = "<group>"; };
 		B75B199B1C09D31700FD5CE6 /* RKBaseAnalysedResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKBaseAnalysedResult.swift; sourceTree = "<group>"; };
@@ -671,6 +681,10 @@
 		B7AF26591BD7F4CC000E9448 /* Alamofire-SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alamofire-SwiftyJSON.swift"; sourceTree = "<group>"; };
 		B7AF265C1BD7F4CC000E9448 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B7AF26631BD7F56A000E9448 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B7C106161C8FF81D00EDB1E2 /* FeedMediaAddCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedMediaAddCell.swift; path = ../../../../../Desktop/FeedMediaAddCell.swift; sourceTree = "<group>"; };
+		B7C106171C8FF81D00EDB1E2 /* FeedMediaAddCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FeedMediaAddCell.xib; path = ../../../../../Desktop/FeedMediaAddCell.xib; sourceTree = "<group>"; };
+		B7C106181C8FF81D00EDB1E2 /* FeedMediaCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedMediaCell.swift; path = ../../../../../Desktop/FeedMediaCell.swift; sourceTree = "<group>"; };
+		B7C106191C8FF81D00EDB1E2 /* FeedMediaCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FeedMediaCell.xib; path = ../../../../../Desktop/FeedMediaCell.xib; sourceTree = "<group>"; };
 		B7C97C581BD8F80B00E0B103 /* TopicListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListTableViewCell.swift; sourceTree = "<group>"; };
 		B7D574101BE77F8F00D7D725 /* TopicDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicDetailViewController.swift; sourceTree = "<group>"; };
 		B7D574141BE7824A00D7D725 /* TopicDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -1235,6 +1249,7 @@
 				B793C5691C033AE60067A94F /* BoardListViewController.swift */,
 				B742F9781C32C4BE0071885D /* setupLoadingView.swift */,
 				B77B0E3D1C65E75C001FDEC2 /* ShowImageDetailViewController.swift */,
+				B7009CA71C8F2CC1004A49F4 /* PostTopicViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1243,6 +1258,8 @@
 			isa = PBXGroup;
 			children = (
 				B7AF26631BD7F56A000E9448 /* Main.storyboard */,
+				B755CAB81C8EECAD00F6E4D8 /* Board.storyboard */,
+				B758A5071C8EE65300CBF873 /* HomePage.storyboard */,
 				B7A78E581C884122000DC879 /* Setting.storyboard */,
 				B7D574131BE77FB600D7D725 /* Cell */,
 				B77B0E3B1C65E4AF001FDEC2 /* ImageDisplayView.swift */,
@@ -1253,6 +1270,10 @@
 		B7D574131BE77FB600D7D725 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				B7C106161C8FF81D00EDB1E2 /* FeedMediaAddCell.swift */,
+				B7C106171C8FF81D00EDB1E2 /* FeedMediaAddCell.xib */,
+				B7C106181C8FF81D00EDB1E2 /* FeedMediaCell.swift */,
+				B7C106191C8FF81D00EDB1E2 /* FeedMediaCell.xib */,
 				B78842931C88A90D0077C4AB /* TopicListTableViewCell.xib */,
 				B78D08871C895F0F0043EBFA /* TopicDetailTableViewCells.xib */,
 				B7C97C581BD8F80B00E0B103 /* TopicListTableViewCell.swift */,
@@ -1443,6 +1464,7 @@
 				B75F8E961C8C45B900076D19 /* [em20].gif in Resources */,
 				B75F8ED91C8C45B900076D19 /* [ema14].gif in Resources */,
 				B75F8F4D1C8C45B900076D19 /* [emc5].gif in Resources */,
+				B7C1061D1C8FF81D00EDB1E2 /* FeedMediaCell.xib in Resources */,
 				B75F8ED81C8C45B900076D19 /* [ema13].gif in Resources */,
 				B75F8F421C8C45B900076D19 /* [emc49].gif in Resources */,
 				B75F8F3D1C8C45B900076D19 /* [emc44].gif in Resources */,
@@ -1459,6 +1481,7 @@
 				B75F8EB61C8C45B900076D19 /* [em4].gif in Resources */,
 				B75F8F4A1C8C45B900076D19 /* [emc56].gif in Resources */,
 				B75F8ED31C8C45B900076D19 /* [em9].gif in Resources */,
+				B7C1061B1C8FF81D00EDB1E2 /* FeedMediaAddCell.xib in Resources */,
 				B75F8EA31C8C45B900076D19 /* [em32].gif in Resources */,
 				B75F8EB11C8C45B900076D19 /* [em45].gif in Resources */,
 				B75F8EF41C8C45B900076D19 /* [ema39].gif in Resources */,
@@ -1506,6 +1529,7 @@
 				B75F8EA11C8C45B900076D19 /* [em30].gif in Resources */,
 				B75F8E901C8C45B900076D19 /* [em15].gif in Resources */,
 				B75F8EE21C8C45B900076D19 /* [ema22].gif in Resources */,
+				B755CAB91C8EECAD00F6E4D8 /* Board.storyboard in Resources */,
 				B75F8EF61C8C45B900076D19 /* [ema40].gif in Resources */,
 				B75F8F111C8C45B900076D19 /* [emb4].gif in Resources */,
 				B75F8F3A1C8C45B900076D19 /* [emc41].gif in Resources */,
@@ -1541,6 +1565,7 @@
 				B75F8E951C8C45B900076D19 /* [em1].gif in Resources */,
 				B75F8EA41C8C45B900076D19 /* [em33].gif in Resources */,
 				B75F8F471C8C45B900076D19 /* [emc53].gif in Resources */,
+				B758A5081C8EE65300CBF873 /* HomePage.storyboard in Resources */,
 				B75F8E8C1C8C45B900076D19 /* [em11].gif in Resources */,
 				B75F8E941C8C45B900076D19 /* [em19].gif in Resources */,
 				B75F8F341C8C45B900076D19 /* [emc36].gif in Resources */,
@@ -1608,6 +1633,7 @@
 			files = (
 				B7AF26621BD7F4CC000E9448 /* Constants.swift in Sources */,
 				B76313871C87E08D0018210D /* NSObject+MJClass.m in Sources */,
+				B7C1061C1C8FF81D00EDB1E2 /* FeedMediaCell.swift in Sources */,
 				B74326DB1BED06C000BC686E /* TYTextContainer+Extended.m in Sources */,
 				B711A7721BEC5C2600368B6C /* MJRefreshBackStateFooter.m in Sources */,
 				B76313831C87E08D0018210D /* MJFoundation.m in Sources */,
@@ -1630,6 +1656,7 @@
 				B7D7EEA51BF0A12500D2981C /* TopicModelEntity.swift in Sources */,
 				B7A6A34E1C881ED50006AA6B /* Reachability.swift in Sources */,
 				B77607151BD7EFDB003B3801 /* Board.swift in Sources */,
+				B7009CA81C8F2CC1004A49F4 /* PostTopicViewController.swift in Sources */,
 				B77276E61C156F3A00A34927 /* RichTextRunFactory.swift in Sources */,
 				B711A7711BEC5C2600368B6C /* MJRefreshBackNormalFooter.m in Sources */,
 				B78773EF1BE9E2EC004566D5 /* PersonalAttributes.swift in Sources */,
@@ -1703,6 +1730,7 @@
 				B711A7731BEC5C2600368B6C /* MJRefreshGifHeader.m in Sources */,
 				B75BF0E91BE79CCB00A4820C /* XHSoundManager.m in Sources */,
 				B77607161BD7EFDB003B3801 /* Zone.swift in Sources */,
+				B7C1061A1C8FF81D00EDB1E2 /* FeedMediaAddCell.swift in Sources */,
 				B742F9791C32C4BE0071885D /* setupLoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

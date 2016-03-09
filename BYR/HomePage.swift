@@ -51,7 +51,7 @@ class HomePage: UIViewController {
 //        print(self.tabBarController?.tabBar.frame.height)
         let tabHeight = self.tabBarController?.tabBar.frame.origin.y
 //cell高度为50
-        pageMenu = CAPSPageMenu(viewControllers: VCs, frame: CGRectMake(0.0, nav, self.view.frame.width, tabHeight!-50), pageMenuOptions: parameters)
+        pageMenu = CAPSPageMenu(viewControllers: VCs, frame: CGRectMake(0.0, nav, self.view.frame.width, tabHeight!), pageMenuOptions: parameters)
         fath = self ;
         
         self.view.addSubview(pageMenu!.view)

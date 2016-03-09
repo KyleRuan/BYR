@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="z6T-C6-rw7">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Home-->
+        <scene sceneID="99g-HG-91e">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="z6T-C6-rw7" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="Home" selectedImage="HomeSelected" id="eQw-Co-h8C"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics">
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </simulatedTabBarMetrics>
+                    <navigationBar key="navigationBar" clipsSubviews="YES" contentMode="scaleToFill" id="7nt-6O-d1b">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.060310948109999998" green="0.67520809039999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3Vw-La-oot" kind="relationship" relationship="rootViewController" id="46k-W0-gQI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lm7-SO-Ow6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-674" y="-1391"/>
+        </scene>
+        <!--HOME-->
+        <scene sceneID="fxW-GC-xPs">
+            <objects>
+                <viewController id="3Vw-La-oot" customClass="HomePage" customModule="BYR" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Y3M-15-jjk"/>
+                        <viewControllerLayoutGuide type="bottom" id="dJK-kl-6Ue"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UA9-zZ-LIV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="HOME" id="SRK-Ru-bjW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iqm-E2-Ue2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="640" y="-1408"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Home" width="26" height="25"/>
+        <image name="HomeSelected" width="26" height="25"/>
+    </resources>
+</document>

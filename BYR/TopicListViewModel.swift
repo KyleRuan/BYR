@@ -45,15 +45,18 @@ class TopicListViewModel {
         let token = UserAngent.sharedInstance.getAccessToken()
         
         
-//        try! typedRealm.write({ () -> Void in
-//            typedRealm.deleteAll()
-//        })
         
         APIClinet.sharedInstance.getTopics(token!, thread: thread, type: type, success: { (json) -> Void in
             print(json)
             if json.type == Type.Dictionary{
                 let article = json["article"]
                 self.articles = []
+                if(self.thread == "widget"){
+                    try! typedRealm.write({ () -> Void in
+                        typedRealm.deleteAll()
+                    })
+
+                }
                 for arr in article.arrayValue {
                     let art = Topics.mj_objectWithKeyValues(arr.dictionaryObject)
                     
