@@ -723,13 +723,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		B70B69931C4BFBD000373971 /* CustomAnimation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = CustomAnimation;
-			sourceTree = "<group>";
-		};
 		B711A73B1BEC5C2600368B6C /* MJRefresh */ = {
 			isa = PBXGroup;
 			children = (
@@ -1162,7 +1155,6 @@
 				B788428E1C884C160077C4AB /* Extension */,
 				B7A78E571C883C69000DC879 /* NetWorking */,
 				B763136C1C87E08D0018210D /* MJExtension */,
-				B70B69931C4BFBD000373971 /* CustomAnimation */,
 				B7FD030E1C4386FC00D68D77 /* Animation */,
 				B74326C01BED06C000BC686E /* TYAttributedLabel */,
 				B711A77B1BEC665200368B6C /* Resource */,

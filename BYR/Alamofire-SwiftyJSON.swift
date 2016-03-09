@@ -2,8 +2,8 @@
 //  AlamofireSwiftyJSON.swift
 //  AlamofireSwiftyJSON
 //
-//  Created by Pinglin Tang on 14-9-22.
-//  Copyright (c) 2014 SwiftyJSON. All rights reserved.
+//  Created by Jason on 16/10/14
+//  Copyright (c) 2016 SwiftyJSON. All rights reserved.
 //
 
 import Foundation
@@ -11,7 +11,7 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-// MARK: - Request for Swift JSON
+
 
 extension Request {
     

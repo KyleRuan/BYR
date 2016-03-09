@@ -2,8 +2,8 @@
 //  APIClient.swift
 //  Byr
 //
-//  Created by Jason on 15/10/14.
-//  Copyright © 2015年 KYLERUAN. All rights reserved.
+//  Created by Jason on /10/14.
+//  Copyright © 2016年 KYLERUAN. All rights reserved.
 //
 
 import Foundation
