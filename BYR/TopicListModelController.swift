@@ -23,7 +23,7 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
     
     var viewModel:TopicListViewModel! = TopicListViewModel()
     var articles:Results<Topics>! = realm.objects(Topics)
-    
+     var lastPosition = CGPointZero
     var currentPage = 1 {
         didSet{
             nextPage = currentPage + 1
@@ -59,7 +59,7 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
     let transformAnimation = CAKeyframeAnimation(keyPath: "bounds")
     var backgroundImageView = UIImageView()
     
-    
+    var typeRealm:Realm!
     
     override func viewDidLoad() {
         
@@ -68,10 +68,12 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
         
         super.viewDidLoad()
         viewModel = TopicListViewModel(tableView: self.tableView,type: type)
+//        self.tableView.frame = fath.tabBarController
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        //        let footer = MJRefreshFooter(refreshingTarget: self, refreshingAction: "loadMore")
-        //        self.tableView.footer = footer
+      
+                let footer = MJRefreshFooter(refreshingTarget: self, refreshingAction: "loadMore")
+                self.tableView.footer = footer
         let header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: "loadData")
         self.tableView.header = header;
         self.tableView.registerNib(UINib(nibName: "TopicListTableViewCell", bundle: nil), forCellReuseIdentifier: REUSE__IDENTIFIER_FOR_TOPICLIST_CELL)
@@ -79,6 +81,12 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
         if  Reachability.isConnectedToNetwork(){
             //             setUpAnimation()
             self.tableView.header.beginRefreshing()
+            
+            
+            var config = Realm.Configuration()
+            config.path = NSURL.fileURLWithPath(config.path!).URLByDeletingLastPathComponent?.URLByAppendingPathComponent("\(type).realm").path
+            
+             typeRealm = try! Realm(configuration: config)
         }
         
         
@@ -90,6 +98,11 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
         
     }
     
+    //TODO : toLoadmore
+    func loadMore(){
+//        viewModel.nextPage
+    }
+    
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -99,6 +112,7 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.hidden =  false
+          lastPosition = CGPointZero
     }
     
     
@@ -106,12 +120,22 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
         // if have network
         viewModel.type = self.type
         viewModel.thread = thread
+
         
-        viewModel.loadData { () -> Void in
+        viewModel.loadData(typeRealm) { () -> Void in
             
+            if self.type == "thread"{
+//                post_time
+//                let count = self.typeRealm.objects(Topics).count
+//                1457305357
+                
+             self.articles = self.typeRealm.objects(Topics)
+                
+                
+            }else{
+            self.articles = self.typeRealm.objects(Topics).sorted("last_reply_time", ascending: true)    
+            }
             
-            print(realm.path)
-            self.articles = realm.objects(Topics)
             self.title = self.viewModel.title
             
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
@@ -152,12 +176,36 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
 //        }
         
         
-        articles = realm.objects(Topics)
-        modelEnity.cellInit(&cell, article: articles[indexPath.row])
+        articles = typeRealm.objects(Topics)
+        if articles.count > 0{
+           modelEnity.cellInit(&cell, article: articles[indexPath.row])  
+        }
+       
 //        cells.append(cell)
         
         return cell
     }
+    
+    
+   
+    override func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+//         if scroll
+        if lastPosition.y < scrollView.contentOffset.y{
+            //向下
+            fath.tabBarController?.tabBar.hidden = true ;
+            lastPosition = scrollView.contentOffset
+           
+        }else{
+          fath.tabBarController?.tabBar.hidden = false ;
+            lastPosition = scrollView.contentOffset
+        }
+    }
+    
+//    override func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+////         fath.tabBarController?.tabBar.hidden = false  ;
+////        lastPosition = scrollView.contentOffset
+//    }
+    
     
     
     
@@ -168,7 +216,7 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
         print(indexPath.row)
         
         let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("DetailCellForReuse") as!  TopicDetailViewController
-        articles = realm.objects(Topics)
+        articles = typeRealm.objects(Topics)
         
         let article = articles[indexPath.row]
         
@@ -184,20 +232,16 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
         
         vc.hidesBottomBarWhenPushed = true
 //svc.hidesBottomBarWhenPushed=YES
+        if  self.navigationController != nil{
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else{
+               fath.navigationController?.pushViewController(vc, animated: true)
+        }
         
+     
         
-        fath.navigationController?.pushViewController(vc, animated: true)
-        self.navigationController?.pushViewController(vc, animated: true)
+//        self.navigationController?.pushViewController(vc, animated: true)
        
-//        self.tabBarController?.navigationController?.pushViewController(vc, animated: true)
-//        parentViewController
-        
-//        presentViewController(vc, animated: true, completion: nil)
-        
-//        self.presentingViewController?.navigationController?.pushViewController(vc, animated: true)
-//        self.presentViewController(vc, animated: true, completion: nil)
-//        self.tabBarController?.navigationController?.pushViewController(vc, animated: true)        //        self.performSegueWithIdentifier(SEGUE_FROM_TOPTEN_TO_TOPICDETAIL, sender: nil)
-//        performSegueWithIdentifier("TOPICDETAILS", sender: nil)
         
     }
     
@@ -205,29 +249,29 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     
+//    
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        //         print("prepareForSegue")
+//        if segue.identifier == "TOPICDETAILS" {
+//            let vc = segue.destinationViewController as! TopicDetailViewController
+//            let indexPath = tableView.indexPathForCell(sender as! TopicListTableViewCell)
+//            
+//            //    let article  = modelEnity.articles[indexPath!.row]
+//            
+//            articles = typeRealm.objects(Topics)
+//            
+//            let article = articles[indexPath!.row]
+//            
+//            vc.topicId = "\(article.id)"
+//            vc.boardName = article.board_name
+//            vc.title = article.title
+//            
+//            vc.tableView = UITableView(frame: CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height))
+//        }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        //         print("prepareForSegue")
-        if segue.identifier == "TOPICDETAILS" {
-            let vc = segue.destinationViewController as! TopicDetailViewController
-            let indexPath = tableView.indexPathForCell(sender as! TopicListTableViewCell)
-            
-            //    let article  = modelEnity.articles[indexPath!.row]
-            
-            articles = realm.objects(Topics)
-            
-            let article = articles[indexPath!.row]
-            
-            vc.topicId = "\(article.id)"
-            vc.boardName = article.board_name
-            vc.title = article.title
-            
-            vc.tableView = UITableView(frame: CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height))
-        }
         
         
-        
-    }
+//    }
     //        TOPICDETAIL
     // Get the new view controller using segue.destinationViewController.
     // Pass the selected object to the new view controller.

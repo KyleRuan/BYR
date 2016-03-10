@@ -14,7 +14,7 @@ import RealmSwift
 class User:Object{
    
     dynamic var id:String!//用户ID 用户信息
-    dynamic var user_name:String!  //用户中文昵称
+    dynamic var user_name:String! = " "  //用户中文昵称
     dynamic var face_url:String! //用户头像地址
     dynamic var face_width:Int = 0//用户头像宽度
     dynamic var face_height:Int = 0 //用户头像高度
@@ -37,6 +37,8 @@ class User:Object{
     dynamic  var is_admin:String!//用户是否为管理员	当前登陆用户为 自己或是当前用户具有管理权限
     dynamic var stay_count:Int = 0 //NSNumber	用户挂站时间，以秒为单位	当前登陆用户为 自己或是当前用户具有管理权限
 //    dynamic var avatorData:NSData? = UIImage().mj_JSONData()
+    
+      override  static func primaryKey() -> String? { return "id" }
 
 }
 

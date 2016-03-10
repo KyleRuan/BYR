@@ -2,8 +2,8 @@
 //  BoardListTableViewCell.swift
 //  BYR
 //
-//  Created by Jason on 15/11/23.
-//  Copyright © 2015年 KYLERUAN. All rights reserved.
+//  Created by Jason on 16/1/23.
+//  Copyright © 2016年 KYLERUAN. All rights reserved.
 //
 
 import UIKit
