@@ -19,7 +19,7 @@
 
 
 ##调试
-使用Charles进行抓包，进行分析，使用Reveal进行UI调试
+使用Charles进行抓包分析,通过Sketch制作UI模型,通过Reveal进行UI调试
 
 ##正在做的事
 1. 添加Proposer来做授权的事
