@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftyJSON
+import RealmSwift
 
 class TopicListViewModel {
     var datasource:Array<JSON> = []
@@ -39,25 +40,30 @@ class TopicListViewModel {
     
    
     
-    func loadData(completion:()->Void){
+    func loadData(typedRealm:Realm = realm,completion:()->Void){
         // if have network
         let token = UserAngent.sharedInstance.getAccessToken()
-        try! realm.write({ () -> Void in
-            realm.deleteAll()
-        })
+        
+        
         
         APIClinet.sharedInstance.getTopics(token!, thread: thread, type: type, success: { (json) -> Void in
             print(json)
             if json.type == Type.Dictionary{
                 let article = json["article"]
                 self.articles = []
+                if(self.thread == "widget"){
+                    try! typedRealm.write({ () -> Void in
+                        typedRealm.deleteAll()
+                    })
+
+                }
                 for arr in article.arrayValue {
                     let art = Topics.mj_objectWithKeyValues(arr.dictionaryObject)
                     
                     self.articles.append(art)
                     //                        realm.add(art)
-                    try!  realm.write({ () -> Void in
-                        realm.add(art)
+                    try!  typedRealm.write({ () -> Void in
+                        typedRealm.add(art, update: true)
                     })
                     
                 }
@@ -75,35 +81,6 @@ class TopicListViewModel {
                 print(er)
         }
 
-      
-//            APIClinet.sharedInstance.getTopTenTopics(token!, type: type, success: { (json) -> Void in
-//                print(json)
-//                if json.type == Type.Dictionary{
-//                    let article = json["article"]
-//                    self.articles = []
-//                    for arr in article.arrayValue {
-//                        let art = Topics.mj_objectWithKeyValues(arr.dictionaryObject)
-//                        
-//                        self.articles.append(art)
-////                        realm.add(art)
-//                        try!  realm.write({ () -> Void in
-//                            realm.add(art)
-//                        })
-//                        
-//                    }
-//                    if  article != nil{
-//                        self.datasource.appendContentsOf(article.arrayValue )
-//                        self.title = json["title"].stringValue
-//                        self.tableView.reloadData()
-//                        self.tableView.header.endRefreshing()
-//                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-//                            completion()
-//                        })
-//                    }
-//                }
-//            }){ (er) -> Void in
-//                    print(er)
-//            }
     }
     
   

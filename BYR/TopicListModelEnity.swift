@@ -65,17 +65,21 @@ class TopicListModelEnity{
         //            let topic = Topics.yy_modelWithJSON(content.dictionaryObject)
         articles.append(topic)
         cell.title.text = topic.title
-        cell.userName.text = topic.user.user_name
+    
         cell.board.text = topic.board_name
         cell.reply_count.text = "评论：\(topic.reply_count)"
         
         
         cell.post_time.text = FormmatterTime.NomalTime(topic.post_time)
         
-        let faceurl = topic.user.face_url ?? ""
+        guard let userInfo = topic.user else {
+            return
+        }
+        cell.userName.text = userInfo.user_name
+        let faceurl = userInfo.face_url ?? ""
         
         
-        let gender = topic.user.gender
+        let gender = userInfo.gender
         
         if let url = NSURL(string: faceurl) {
             if gender == "m" {

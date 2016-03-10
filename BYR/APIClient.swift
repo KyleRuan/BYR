@@ -2,8 +2,8 @@
 //  APIClient.swift
 //  Byr
 //
-//  Created by Jason on 15/10/14.
-//  Copyright © 2015年 KYLERUAN. All rights reserved.
+//  Created by Jason on /10/14.
+//  Copyright © 2016年 KYLERUAN. All rights reserved.
 //
 
 import Foundation
@@ -45,10 +45,9 @@ class APIClinet {
     }
     
     
-//    BBSLOG
-//         http://bbs.byr.cn/open/section/0/BBSLOG.json?oauth_token=3140fd026627ac9fba09e638794c4dc4
+
     func getSectionInfo(token:AnyObject,name:String,success:((JSON)->Void),failure:((NSError)->Void)){
-//     http://bbs.byr.cn/open/section.json?oauth_token=3140fd026627ac9fba09e638794c4dc4
+
     
     let param = [ACCESS_TOKEN:token]
         self.getJSONData("/open/section/\(name).json", parameters: param, success: success, failure: failure)
@@ -57,7 +56,7 @@ class APIClinet {
     
     
     func getTopics(token:AnyObject,thread:String,type:String,success:((JSON)->Void),failure:((NSError)->Void)){
-        //     http://bbs.byr.cn/open/section.json?oauth_token=3140fd026627ac9fba09e638794c4dc4
+        //
         
         let param = [ACCESS_TOKEN:token]
         self.getJSONData("/open/\(thread)/\(type).json", parameters: param, success: success, failure: failure)
@@ -66,7 +65,7 @@ class APIClinet {
     
     
     func getTopTenTopics(token:AnyObject,type:String,success:(JSON)->Void,failure:(NSError)->Void){
-//        http://bbs.byr.cn/open/widget/topten.json?oauth_token=ddd06f3d6675fa948970dfe763e47f30
+//
         let param = [ACCESS_TOKEN:token]
         self.getJSONData("/open/widget/\(type).json", parameters: param, success: success, failure: failure)
     }
@@ -84,7 +83,7 @@ class APIClinet {
 //    page	false	int 默认1
     
     func getTopicList(token:AnyObject,name:String,mode:Int = 2,page:Int,success:(JSON)->Void,failure:(NSError)->Void){
-//                http://bbs.byr.cn/open//board/bbs.json?oauth_token=ddd06f3d6675fa948970dfe763e47f30
+//
         let param = [ACCESS_TOKEN:token,"mode":mode,"page":page]
          self.getJSONData("/open/board/\(name).json", parameters: param, success: success, failure: failure)
     }

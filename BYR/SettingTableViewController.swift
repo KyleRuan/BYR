@@ -51,8 +51,12 @@ class SettingTableViewController: UITableViewController {
         self.head.avatarButton.kf_setImageWithURL(url!, forState: UIControlState.Normal)
         let color = UIColor(colorLiteralRed: 0, green: 0.3, blue: 0.5, alpha: 0.5)
         self.head.backgroundColor =  color
-        let info = [XHUserNameKey:user.user_name,XHBirthdayKey:user.level]
-        self.head.setInfo(info)
+        
+        if let username = user.user_name{
+            let info = [XHUserNameKey:(user.user_name),XHBirthdayKey:user.level]
+            self.head.setInfo(info)
+        }
+        
         
         self.tableView.tableHeaderView = self.head
         

@@ -2,8 +2,8 @@
 //  Mail.swift
 //  我邮
 //
-//  Created by Jason on 15/5/26.
-//  Copyright (c) 2015年 KyleRuan. All rights reserved.
+//  Created by Jason on 16/5/26.
+//  Copyright (c) 2016年 KyleRuan. All rights reserved.
 ////
 //
 import Foundation
