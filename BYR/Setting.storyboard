@@ -86,11 +86,11 @@
             </objects>
             <point key="canvasLocation" x="650" y="-440"/>
         </scene>
-        <!--设置-->
+        <!--我-->
         <scene sceneID="eXG-ct-NxI">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="UlM-Oc-QG4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="设置" image="Setting" selectedImage="SettingSelected" id="98i-bF-kh2"/>
+                    <tabBarItem key="tabBarItem" title="我" image="Setting" selectedImage="SettingSelected" id="98i-bF-kh2"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XuN-wY-m9y">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

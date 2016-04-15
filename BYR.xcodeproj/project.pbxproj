@@ -43,6 +43,7 @@
 		B74326DD1BED06C000BC686E /* TYTextStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = B74326D11BED06C000BC686E /* TYTextStorage.m */; };
 		B74326DE1BED06C000BC686E /* TYViewStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = B74326D41BED06C000BC686E /* TYViewStorage.m */; };
 		B749001E1C2830CF004BDE37 /* TopicListModelEnity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B749001D1C2830CF004BDE37 /* TopicListModelEnity.swift */; };
+		B74F974D1CC0171C0067CFBF /* BoardListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74F974C1CC0171C0067CFBF /* BoardListModel.swift */; };
 		B755CAB91C8EECAD00F6E4D8 /* Board.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B755CAB81C8EECAD00F6E4D8 /* Board.storyboard */; };
 		B758A5081C8EE65300CBF873 /* HomePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B758A5071C8EE65300CBF873 /* HomePage.storyboard */; };
 		B75B19981C09D23C00FD5CE6 /* RichTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75B19971C09D23C00FD5CE6 /* RichTextView.swift */; };
@@ -302,7 +303,7 @@
 		B78842941C88A90D0077C4AB /* TopicListModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78842921C88A90D0077C4AB /* TopicListModelController.swift */; };
 		B78842951C88A90D0077C4AB /* TopicListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B78842931C88A90D0077C4AB /* TopicListTableViewCell.xib */; };
 		B78842971C88AECA0077C4AB /* LoadingInTheAppAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78842961C88AECA0077C4AB /* LoadingInTheAppAnimation.swift */; };
-		B78D08891C895F0F0043EBFA /* TopicDetailTableViewCells.xib in Resources */ = {isa = PBXBuildFile; fileRef = B78D08871C895F0F0043EBFA /* TopicDetailTableViewCells.xib */; };
+		B78D08891C895F0F0043EBFA /* TopicDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B78D08871C895F0F0043EBFA /* TopicDetailTableViewCell.xib */; };
 		B793C56A1C033AE60067A94F /* BoardListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B793C5691C033AE60067A94F /* BoardListViewController.swift */; };
 		B793C5701C0340680067A94F /* BoardListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B793C56F1C0340680067A94F /* BoardListTableViewCell.swift */; };
 		B7A6A34E1C881ED50006AA6B /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6A34D1C881ED50006AA6B /* Reachability.swift */; };
@@ -313,15 +314,16 @@
 		B7AF265F1BD7F4CC000E9448 /* Alamofire-SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AF26591BD7F4CC000E9448 /* Alamofire-SwiftyJSON.swift */; };
 		B7AF26621BD7F4CC000E9448 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AF265C1BD7F4CC000E9448 /* Constants.swift */; };
 		B7AF26641BD7F56A000E9448 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7AF26631BD7F56A000E9448 /* Main.storyboard */; };
-		B7C1061A1C8FF81D00EDB1E2 /* FeedMediaAddCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C106161C8FF81D00EDB1E2 /* FeedMediaAddCell.swift */; };
-		B7C1061B1C8FF81D00EDB1E2 /* FeedMediaAddCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7C106171C8FF81D00EDB1E2 /* FeedMediaAddCell.xib */; };
-		B7C1061C1C8FF81D00EDB1E2 /* FeedMediaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C106181C8FF81D00EDB1E2 /* FeedMediaCell.swift */; };
-		B7C1061D1C8FF81D00EDB1E2 /* FeedMediaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7C106191C8FF81D00EDB1E2 /* FeedMediaCell.xib */; };
 		B7C97C591BD8F80B00E0B103 /* TopicListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C97C581BD8F80B00E0B103 /* TopicListTableViewCell.swift */; };
 		B7D574111BE77F8F00D7D725 /* TopicDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D574101BE77F8F00D7D725 /* TopicDetailViewController.swift */; };
 		B7D574151BE7824A00D7D725 /* TopicDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D574141BE7824A00D7D725 /* TopicDetailTableViewCell.swift */; };
 		B7D574171BE790D000D7D725 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D574161BE790D000D7D725 /* SettingTableViewController.swift */; };
 		B7D7EEA51BF0A12500D2981C /* TopicModelEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D7EEA41BF0A12500D2981C /* TopicModelEntity.swift */; };
+		B7E1EAEB1C98308A0085E228 /* feed_media_add.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B7E1EAE61C98308A0085E228 /* feed_media_add.pdf */; };
+		B7E1EAEC1C98308A0085E228 /* FeedMediaAddCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E1EAE71C98308A0085E228 /* FeedMediaAddCell.swift */; };
+		B7E1EAED1C98308A0085E228 /* FeedMediaAddCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7E1EAE81C98308A0085E228 /* FeedMediaAddCell.xib */; };
+		B7E1EAEE1C98308A0085E228 /* FeedMediaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E1EAE91C98308A0085E228 /* FeedMediaCell.swift */; };
+		B7E1EAEF1C98308A0085E228 /* FeedMediaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7E1EAEA1C98308A0085E228 /* FeedMediaCell.xib */; };
 		B7FD03111C43872A00D68D77 /* CustomInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FD030F1C43872A00D68D77 /* CustomInteractionController.swift */; };
 		B7FD03121C43872A00D68D77 /* CustomNavigationAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FD03101C43872A00D68D77 /* CustomNavigationAnimationController.swift */; };
 /* End PBXBuildFile section */
@@ -394,6 +396,7 @@
 		B74326D31BED06C000BC686E /* TYViewStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYViewStorage.h; sourceTree = "<group>"; };
 		B74326D41BED06C000BC686E /* TYViewStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYViewStorage.m; sourceTree = "<group>"; };
 		B749001D1C2830CF004BDE37 /* TopicListModelEnity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListModelEnity.swift; sourceTree = "<group>"; };
+		B74F974C1CC0171C0067CFBF /* BoardListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardListModel.swift; sourceTree = "<group>"; };
 		B755CAB81C8EECAD00F6E4D8 /* Board.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Board.storyboard; sourceTree = "<group>"; };
 		B758A5071C8EE65300CBF873 /* HomePage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HomePage.storyboard; sourceTree = "<group>"; };
 		B75B19971C09D23C00FD5CE6 /* RichTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RichTextView.swift; sourceTree = "<group>"; };
@@ -669,7 +672,7 @@
 		B78842921C88A90D0077C4AB /* TopicListModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListModelController.swift; sourceTree = "<group>"; };
 		B78842931C88A90D0077C4AB /* TopicListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicListTableViewCell.xib; sourceTree = "<group>"; };
 		B78842961C88AECA0077C4AB /* LoadingInTheAppAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingInTheAppAnimation.swift; sourceTree = "<group>"; };
-		B78D08871C895F0F0043EBFA /* TopicDetailTableViewCells.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicDetailTableViewCells.xib; sourceTree = "<group>"; };
+		B78D08871C895F0F0043EBFA /* TopicDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicDetailTableViewCell.xib; sourceTree = "<group>"; };
 		B793C5691C033AE60067A94F /* BoardListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardListViewController.swift; sourceTree = "<group>"; };
 		B793C56F1C0340680067A94F /* BoardListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardListTableViewCell.swift; sourceTree = "<group>"; };
 		B7A6A34D1C881ED50006AA6B /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
@@ -681,15 +684,16 @@
 		B7AF26591BD7F4CC000E9448 /* Alamofire-SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alamofire-SwiftyJSON.swift"; sourceTree = "<group>"; };
 		B7AF265C1BD7F4CC000E9448 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B7AF26631BD7F56A000E9448 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		B7C106161C8FF81D00EDB1E2 /* FeedMediaAddCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedMediaAddCell.swift; path = ../../../../../Desktop/FeedMediaAddCell.swift; sourceTree = "<group>"; };
-		B7C106171C8FF81D00EDB1E2 /* FeedMediaAddCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FeedMediaAddCell.xib; path = ../../../../../Desktop/FeedMediaAddCell.xib; sourceTree = "<group>"; };
-		B7C106181C8FF81D00EDB1E2 /* FeedMediaCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedMediaCell.swift; path = ../../../../../Desktop/FeedMediaCell.swift; sourceTree = "<group>"; };
-		B7C106191C8FF81D00EDB1E2 /* FeedMediaCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FeedMediaCell.xib; path = ../../../../../Desktop/FeedMediaCell.xib; sourceTree = "<group>"; };
 		B7C97C581BD8F80B00E0B103 /* TopicListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListTableViewCell.swift; sourceTree = "<group>"; };
 		B7D574101BE77F8F00D7D725 /* TopicDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicDetailViewController.swift; sourceTree = "<group>"; };
 		B7D574141BE7824A00D7D725 /* TopicDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicDetailTableViewCell.swift; sourceTree = "<group>"; };
 		B7D574161BE790D000D7D725 /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		B7D7EEA41BF0A12500D2981C /* TopicModelEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicModelEntity.swift; sourceTree = "<group>"; };
+		B7E1EAE61C98308A0085E228 /* feed_media_add.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = feed_media_add.pdf; sourceTree = "<group>"; };
+		B7E1EAE71C98308A0085E228 /* FeedMediaAddCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedMediaAddCell.swift; sourceTree = "<group>"; };
+		B7E1EAE81C98308A0085E228 /* FeedMediaAddCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedMediaAddCell.xib; sourceTree = "<group>"; };
+		B7E1EAE91C98308A0085E228 /* FeedMediaCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedMediaCell.swift; sourceTree = "<group>"; };
+		B7E1EAEA1C98308A0085E228 /* FeedMediaCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedMediaCell.xib; sourceTree = "<group>"; };
 		B7FD030F1C43872A00D68D77 /* CustomInteractionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInteractionController.swift; sourceTree = "<group>"; };
 		B7FD03101C43872A00D68D77 /* CustomNavigationAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationAnimationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1182,6 +1186,7 @@
 				B7D7EEA41BF0A12500D2981C /* TopicModelEntity.swift */,
 				B749001D1C2830CF004BDE37 /* TopicListModelEnity.swift */,
 				B70B69911C4BF7DB00373971 /* TopicListViewModel.swift */,
+				B74F974C1CC0171C0067CFBF /* BoardListModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1262,12 +1267,13 @@
 		B7D574131BE77FB600D7D725 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				B7C106161C8FF81D00EDB1E2 /* FeedMediaAddCell.swift */,
-				B7C106171C8FF81D00EDB1E2 /* FeedMediaAddCell.xib */,
-				B7C106181C8FF81D00EDB1E2 /* FeedMediaCell.swift */,
-				B7C106191C8FF81D00EDB1E2 /* FeedMediaCell.xib */,
+				B7E1EAE61C98308A0085E228 /* feed_media_add.pdf */,
+				B7E1EAE71C98308A0085E228 /* FeedMediaAddCell.swift */,
+				B7E1EAE81C98308A0085E228 /* FeedMediaAddCell.xib */,
+				B7E1EAE91C98308A0085E228 /* FeedMediaCell.swift */,
+				B7E1EAEA1C98308A0085E228 /* FeedMediaCell.xib */,
 				B78842931C88A90D0077C4AB /* TopicListTableViewCell.xib */,
-				B78D08871C895F0F0043EBFA /* TopicDetailTableViewCells.xib */,
+				B78D08871C895F0F0043EBFA /* TopicDetailTableViewCell.xib */,
 				B7C97C581BD8F80B00E0B103 /* TopicListTableViewCell.swift */,
 				B7D574141BE7824A00D7D725 /* TopicDetailTableViewCell.swift */,
 				B75BF0EB1BE7C83200A4820C /* SettingTableViewCell.swift */,
@@ -1454,9 +1460,9 @@
 				B75F8EE91C8C45B900076D19 /* [ema29].gif in Resources */,
 				B75F8F1B1C8C45B900076D19 /* [emc13].gif in Resources */,
 				B75F8E961C8C45B900076D19 /* [em20].gif in Resources */,
+				B7E1EAED1C98308A0085E228 /* FeedMediaAddCell.xib in Resources */,
 				B75F8ED91C8C45B900076D19 /* [ema14].gif in Resources */,
 				B75F8F4D1C8C45B900076D19 /* [emc5].gif in Resources */,
-				B7C1061D1C8FF81D00EDB1E2 /* FeedMediaCell.xib in Resources */,
 				B75F8ED81C8C45B900076D19 /* [ema13].gif in Resources */,
 				B75F8F421C8C45B900076D19 /* [emc49].gif in Resources */,
 				B75F8F3D1C8C45B900076D19 /* [emc44].gif in Resources */,
@@ -1473,7 +1479,6 @@
 				B75F8EB61C8C45B900076D19 /* [em4].gif in Resources */,
 				B75F8F4A1C8C45B900076D19 /* [emc56].gif in Resources */,
 				B75F8ED31C8C45B900076D19 /* [em9].gif in Resources */,
-				B7C1061B1C8FF81D00EDB1E2 /* FeedMediaAddCell.xib in Resources */,
 				B75F8EA31C8C45B900076D19 /* [em32].gif in Resources */,
 				B75F8EB11C8C45B900076D19 /* [em45].gif in Resources */,
 				B75F8EF41C8C45B900076D19 /* [ema39].gif in Resources */,
@@ -1491,6 +1496,7 @@
 				B75F8EFA1C8C45B900076D19 /* [ema6].gif in Resources */,
 				B75F8F501C8C45B900076D19 /* [emc8].gif in Resources */,
 				B75F8ED61C8C45B900076D19 /* [ema11].gif in Resources */,
+				B7E1EAEB1C98308A0085E228 /* feed_media_add.pdf in Resources */,
 				B75F8ED01C8C45B900076D19 /* [em73].gif in Resources */,
 				B75F8EB21C8C45B900076D19 /* [em46].gif in Resources */,
 				B75F8E931C8C45B900076D19 /* [em18].gif in Resources */,
@@ -1517,7 +1523,7 @@
 				B75F8F131C8C45B900076D19 /* [emb6].gif in Resources */,
 				B75F8F351C8C45B900076D19 /* [emc37].gif in Resources */,
 				B75F8EC01C8C45B900076D19 /* [em59].gif in Resources */,
-				B78D08891C895F0F0043EBFA /* TopicDetailTableViewCells.xib in Resources */,
+				B78D08891C895F0F0043EBFA /* TopicDetailTableViewCell.xib in Resources */,
 				B75F8EA11C8C45B900076D19 /* [em30].gif in Resources */,
 				B75F8E901C8C45B900076D19 /* [em15].gif in Resources */,
 				B75F8EE21C8C45B900076D19 /* [ema22].gif in Resources */,
@@ -1528,6 +1534,7 @@
 				B75F8EA51C8C45B900076D19 /* [em34].gif in Resources */,
 				B75F8F491C8C45B900076D19 /* [emc55].gif in Resources */,
 				B75F8F041C8C45B900076D19 /* [emb15].gif in Resources */,
+				B7E1EAEF1C98308A0085E228 /* FeedMediaCell.xib in Resources */,
 				B75F8EC11C8C45B900076D19 /* [em5].gif in Resources */,
 				B75F8F0B1C8C45B900076D19 /* [emb21].gif in Resources */,
 				B75F8EA81C8C45B900076D19 /* [em37].gif in Resources */,
@@ -1625,7 +1632,6 @@
 			files = (
 				B7AF26621BD7F4CC000E9448 /* Constants.swift in Sources */,
 				B76313871C87E08D0018210D /* NSObject+MJClass.m in Sources */,
-				B7C1061C1C8FF81D00EDB1E2 /* FeedMediaCell.swift in Sources */,
 				B74326DB1BED06C000BC686E /* TYTextContainer+Extended.m in Sources */,
 				B711A7721BEC5C2600368B6C /* MJRefreshBackStateFooter.m in Sources */,
 				B76313831C87E08D0018210D /* MJFoundation.m in Sources */,
@@ -1678,9 +1684,11 @@
 				B7A874421BFF0B2C001F1D11 /* BoardViewController.swift in Sources */,
 				B74326DD1BED06C000BC686E /* TYTextStorage.m in Sources */,
 				B70B69921C4BF7DB00373971 /* TopicListViewModel.swift in Sources */,
+				B7E1EAEE1C98308A0085E228 /* FeedMediaCell.swift in Sources */,
 				B74326D91BED06C000BC686E /* TYImageStorage.m in Sources */,
 				B711A76E1BEC5C2600368B6C /* MJRefreshAutoNormalFooter.m in Sources */,
 				B763138A1C87E08D0018210D /* NSObject+MJProperty.m in Sources */,
+				B7E1EAEC1C98308A0085E228 /* FeedMediaAddCell.swift in Sources */,
 				B77607131BD7EFDB003B3801 /* VoteOption.swift in Sources */,
 				B776071A1BD7EFDB003B3801 /* Reminding.swift in Sources */,
 				B711A7751BEC5C2600368B6C /* MJRefreshStateHeader.m in Sources */,
@@ -1700,6 +1708,7 @@
 				B74326DC1BED06C000BC686E /* TYTextContainer.m in Sources */,
 				B7767B901C10205800E0D9D2 /* RKEmojiRichTextRun.swift in Sources */,
 				B7A874401BFEF4A3001F1D11 /* BoardCollectionViewCell.swift in Sources */,
+				B74F974D1CC0171C0067CFBF /* BoardListModel.swift in Sources */,
 				B78842911C88A32C0077C4AB /* HomePage.swift in Sources */,
 				B7D574111BE77F8F00D7D725 /* TopicDetailViewController.swift in Sources */,
 				B75B19A01C09D53D00FD5CE6 /* RKRichTextRunType.swift in Sources */,
@@ -1722,7 +1731,6 @@
 				B711A7731BEC5C2600368B6C /* MJRefreshGifHeader.m in Sources */,
 				B75BF0E91BE79CCB00A4820C /* XHSoundManager.m in Sources */,
 				B77607161BD7EFDB003B3801 /* Zone.swift in Sources */,
-				B7C1061A1C8FF81D00EDB1E2 /* FeedMediaAddCell.swift in Sources */,
 				B742F9791C32C4BE0071885D /* setupLoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -18,7 +18,6 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
     var isLoaded = false
     var type = ""
     var thread = "widget"
-    var cells:Array<TopicListTableViewCell> = []
     let  modelEnity = TopicListModelEnity()
     
     var viewModel:TopicListViewModel! = TopicListViewModel()
@@ -72,9 +71,9 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
         self.tableView.dataSource = self
         self.tableView.delegate = self
       
-                let footer = MJRefreshFooter(refreshingTarget: self, refreshingAction: "loadMore")
+                let footer = MJRefreshFooter(refreshingTarget: self, refreshingAction: #selector(TopicListModelController.loadMore))
                 self.tableView.footer = footer
-        let header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: "loadData")
+        let header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(TopicListModelController.loadData))
         self.tableView.header = header;
         self.tableView.registerNib(UINib(nibName: "TopicListTableViewCell", bundle: nil), forCellReuseIdentifier: REUSE__IDENTIFIER_FOR_TOPICLIST_CELL)
    
@@ -125,9 +124,6 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
         viewModel.loadData(typeRealm) { () -> Void in
             
             if self.type == "thread"{
-//                post_time
-//                let count = self.typeRealm.objects(Topics).count
-//                1457305357
                 
              self.articles = self.typeRealm.objects(Topics)
                 
@@ -169,19 +165,14 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         
-        var  cell = tableView.dequeueReusableCellWithIdentifier(REUSE__IDENTIFIER_FOR_TOPICLIST_CELL, forIndexPath: indexPath) as! TopicListTableViewCell
-        
-//        if cells.count > indexPath.row {
-//            return cells[indexPath.row]
-//        }
-        
-        
-        articles = typeRealm.objects(Topics)
+        let  cell = tableView.dequeueReusableCellWithIdentifier(REUSE__IDENTIFIER_FOR_TOPICLIST_CELL, forIndexPath: indexPath) as! TopicListTableViewCell
+
+//        articles = typeRealm.objects(Topics)
         if articles.count > 0{
-           modelEnity.cellInit(&cell, article: articles[indexPath.row])  
+//           modelEnity.cellInit(&cell, article: articles[indexPath.row])  
+            cell.topic = articles[indexPath.row]
         }
        
-//        cells.append(cell)
         
         return cell
     }
@@ -201,10 +192,7 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
         }
     }
     
-//    override func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-////         fath.tabBarController?.tabBar.hidden = false  ;
-////        lastPosition = scrollView.contentOffset
-//    }
+
     
     
     
@@ -212,11 +200,12 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
     override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 50
     }
+    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print(indexPath.row)
         
         let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("DetailCellForReuse") as!  TopicDetailViewController
-        articles = typeRealm.objects(Topics)
+//        articles = typeRealm.objects(Topics)
         
         let article = articles[indexPath.row]
         
@@ -226,12 +215,9 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
         
         let originY = fath.navigationController?.navigationBar.frame.origin.y
         let originHeight = fath.navigationController?.navigationBar.frame.height
-//        let vcBound =
-        
         vc.tableView = UITableView(frame: CGRectMake(0, originY!+originHeight!, self.view.bounds.width, self.view.bounds.height))
         
         vc.hidesBottomBarWhenPushed = true
-//svc.hidesBottomBarWhenPushed=YES
         if  self.navigationController != nil{
             self.navigationController?.pushViewController(vc, animated: true)
         }else{
@@ -239,10 +225,6 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
         }
         
      
-        
-//        self.navigationController?.pushViewController(vc, animated: true)
-       
-        
     }
     
     // MARK: - Navigation

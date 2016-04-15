@@ -37,14 +37,14 @@ class ShowImageDetailViewController: UIViewController,UIGestureRecognizerDelegat
         doubleTapRecognizer.numberOfTouchesRequired = 1 // fingures
         self.imageView.addGestureRecognizer(doubleTapRecognizer)
         
-        let singleTapRecognizer = UITapGestureRecognizer(target: self, action: "handleSingleTap")
+        let singleTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(ShowImageDetailViewController.handleSingleTap))
         singleTapRecognizer.numberOfTapsRequired = 1
         singleTapRecognizer.numberOfTouchesRequired = 1
         self.imageView.addGestureRecognizer(singleTapRecognizer)
         
         singleTapRecognizer.requireGestureRecognizerToFail(doubleTapRecognizer)
         
-        let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: "save:")
+        let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(ShowImageDetailViewController.save(_:)))
         self.imageView.addGestureRecognizer(longPressRecognizer)
     }
 
@@ -57,9 +57,9 @@ class ShowImageDetailViewController: UIViewController,UIGestureRecognizerDelegat
             let alert = UIAlertController(title: "保存图片", message: "是否保存图片", preferredStyle: UIAlertControllerStyle.ActionSheet)
             let action = UIAlertAction(title: "保存图片", style: UIAlertActionStyle.Default, handler: { (_) -> Void in
                 if let orign = self.originImage{
-                    UIImageWriteToSavedPhotosAlbum(orign, self, "imageSavedToPhotosAlbum:didFinishSavingWithError:contextInfo:", nil)
+                    UIImageWriteToSavedPhotosAlbum(orign, self, #selector(ShowImageDetailViewController.imageSavedToPhotosAlbum(_:didFinishSavingWithError:contextInfo:)), nil)
                 }else{
-                    UIImageWriteToSavedPhotosAlbum(self.imageView.image!, self, "imageSavedToPhotosAlbum:didFinishSavingWithError:contextInfo:", nil)
+                    UIImageWriteToSavedPhotosAlbum(self.imageView.image!, self, #selector(ShowImageDetailViewController.imageSavedToPhotosAlbum(_:didFinishSavingWithError:contextInfo:)), nil)
                 }
 
             })

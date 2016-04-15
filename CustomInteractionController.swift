@@ -27,7 +27,7 @@ class CustomInteractionController:UIPercentDrivenInteractiveTransition {
     }
 //
     private func setupGestureRecognizer(view: UIView) {
-        view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: "handlePanGesture:"))
+        view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(CustomInteractionController.handlePanGesture(_:))))
     }
 //
     func handlePanGesture(gestureRecognizer: UIPanGestureRecognizer) {
