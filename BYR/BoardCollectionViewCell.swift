@@ -12,14 +12,14 @@ class BoardCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var sectionImage: RoundImageView!
     
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//        // Initialization code
-//        
-//        
-//        
-//    }
-//    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+        
+        
+        
+    }
+//
 //   
 //    
 //    override init(frame: CGRect) {

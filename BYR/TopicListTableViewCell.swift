@@ -17,28 +17,42 @@ class TopicListTableViewCell: UITableViewCell {
     @IBOutlet weak var post_time: UILabel!
     @IBOutlet weak var board: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-//        avatar = RoundImageView()
-//        title = UILabel()
-//        userName = UILabel()
-//        reply_count = UILabel()
-//        board = UILabel()
-        // Initialization code
+    
+    var topic:Topics = Topics(){
+        didSet {
+            title.text = topic.title
+            board.text = topic.board_name
+            post_time.text = FormmatterTime.NomalTime(topic.post_time)
+            reply_count.text = "评论数 \(topic.reply_count)"
+            
+            guard let userInfo = topic.user else {
+                return
+            }
+            userName.text = userInfo.user_name
+            let faceurl = userInfo.face_url ?? ""
+            let gender = userInfo.gender
+            
+            if let url = NSURL(string: faceurl) {
+                if gender == "m" {
+                    
+                    avatar.kf_setImageWithURL(url, placeholderImage: UIImage(named: "face_default_m"))
+                } else{
+                    avatar.kf_setImageWithURL(url, placeholderImage: UIImage(named: "face_default_m"))
+                }
+                avatar.cornerRadius = avatar.bounds.size.width/2
+            }
+
+        }
         
     }
     
-//    required init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-
-//    init(_: Topicslist){
-//        
-//    }
-
-//    required init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
+    
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+    }
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
