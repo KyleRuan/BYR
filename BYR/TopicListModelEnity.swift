@@ -58,11 +58,10 @@ class TopicListModelEnity{
         guard let topic = article else{
             return
         }
-        //        let topic = Topic
         
-//        let  topic = Topics.mj_objectWithKeyValues(content.dictionaryObject)
         
-        //            let topic = Topics.yy_modelWithJSON(content.dictionaryObject)
+//        cell.model = topic
+
         articles.append(topic)
         cell.title.text = topic.title
     

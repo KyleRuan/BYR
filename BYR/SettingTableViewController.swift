@@ -39,7 +39,7 @@ class SettingTableViewController: UITableViewController {
         
      let  user = User.mj_objectWithKeyValues(UserAngent.sharedInstance.getUserInfo())
        //
-       let userInfo = JSON(UserAngent.sharedInstance.getUserInfo()!)
+//       let userInfo = JSON(UserAngent.sharedInstance.getUserInfo()!)
         
         let rect = CGRect(x: 0, y: 0, width: self.tableView.bounds.width, height: self.tableView.bounds.height/5)
 //        print(rect)
@@ -52,7 +52,7 @@ class SettingTableViewController: UITableViewController {
         let color = UIColor(colorLiteralRed: 0, green: 0.3, blue: 0.5, alpha: 0.5)
         self.head.backgroundColor =  color
         
-        if let username = user.user_name{
+        if let _ = user.user_name{
             let info = [XHUserNameKey:(user.user_name),XHBirthdayKey:user.level]
             self.head.setInfo(info)
         }

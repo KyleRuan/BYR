@@ -11,8 +11,8 @@ import SwiftyJSON
 
 class TopicModelEnity{
     
-    var user:User!
-    var topic:Topics!
+//    var user:User!
+//    var topic:Topics!
     
     
     
@@ -24,6 +24,7 @@ class TopicModelEnity{
     var number:String!
     var has_attachment:Bool
     var attachment:Attachment?
+    var cellHeight:CGFloat = 0
     
     
     init(enity:TopicModelEnity){
@@ -51,26 +52,12 @@ class TopicModelEnity{
         
         
     }
-//    
-//    init(json:JSON){
-//        
-//        
-//    }
+
     
-//    init(json:JSON){
-//        let topic = Topics.yy_modelWithJSON(json)
-//    }
-    
-    
-    //文章元数据，以及该元数据还包括以下两个属性
-    
-//    属性	类型	说明
-//    article	array	当前主题包含的文章元数据数组
-//    pagination	array	当前主题分页信息
     class  func initDataSource(json:JSON,inout dataEntityArray:[TopicModelEnity])->(Int,Int){
           let topic = Topics.mj_objectWithKeyValues(json.dictionaryObject)
 
-        print(json)
+//        print(json) 
       let  MaxPage = topic.pagination?.page_all_count
       let   currentPage =  topic.pagination?.page_current_count
    
@@ -81,7 +68,7 @@ class TopicModelEnity{
              let article = Topics.mj_objectWithKeyValues(jsons.dictionaryObject)
             let userName = article.user.id
             let postTime =  FormmatterTime.NomalTime(article.post_time, Format: "MM-dd-HH:mm")
-            let number = article.position as? Int ?? 0
+            let number = article.position 
             let content = article.content
             let avatarURL = article.user.face_url
             let has_attachment = article.has_attachment

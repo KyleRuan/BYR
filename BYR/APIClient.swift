@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
- let baseurl = "http:bbs.byr.cn"
+ let baseurl = "http://bbs.byr.cn"
 
 // 	"http:bbs.byr.cn/open/thread/Basketball/592235.json"
 

@@ -13,9 +13,9 @@ import SwiftyJSON
 class TopicDetailViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource ,TYAttributedLabelDelegate{
     var topicId:String!
     var boardName:String!
-    var heights:[String:CGFloat?]  = [:]
+//    var heights:[String:CGFloat?]  = [:]
     var dataEntityArray:Array<TopicModelEnity> = []
-    var topicEnity:TopicModelEnity!
+//    var topicEnity:TopicModelEnity!
     var currentPage = 1 {
         didSet{
             nextPage = currentPage + 1
@@ -24,8 +24,7 @@ class TopicDetailViewController: UIViewController ,UITableViewDelegate, UITableV
     }
     var MaxPage = 100
     var nextPage:Int = 1
-   
-//    http://bbs.byr.cn/open/section.json?oauth_token=3140fd026627ac9fba09e638794c4dc4
+
     
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
@@ -41,26 +40,18 @@ class TopicDetailViewController: UIViewController ,UITableViewDelegate, UITableV
 
     }
     
-    
-    
-    
-    
   
     var tableView:UITableView! = UITableView()
     override func viewDidLoad() {
         super.viewDidLoad()
-// for debug
-//         topicId = "253902"
-//         boardName =  "Photo"
-    
-//        self.tableView = UITableView(frame: CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height))
-        self.tableView.registerNib(UINib(nibName: "TopicDetailTableViewCells", bundle: nil), forCellReuseIdentifier: "detailcell")
-        self.view.addSubview(tableView)
-        self.tableView.backgroundColor = UIColor.whiteColor()
+//        self.tableView.registerNib(UINib(nibName: "TopicDetailTableViewCell", bundle: nil), forCellReuseIdentifier: "detailcell")
+        
+         self.view.addSubview(tableView)
+         self.tableView.backgroundColor = UIColor.whiteColor()
          self.tableView.delegate = self
          self.tableView.dataSource = self
-       self.tableView.header  = MJRefreshStateHeader (refreshingTarget: self, refreshingAction: "reLoadData")
-         self.tableView.footer = MJRefreshBackNormalFooter(refreshingTarget: self, refreshingAction: "loadData")
+         self.tableView.header  = MJRefreshStateHeader (refreshingTarget: self, refreshingAction: #selector(TopicDetailViewController.reLoadData))
+         self.tableView.footer = MJRefreshBackNormalFooter(refreshingTarget: self, refreshingAction: #selector(TopicDetailViewController.loadData))
         //debug的时候
         self.tableView.header.beginRefreshing()
     
@@ -118,14 +109,22 @@ class TopicDetailViewController: UIViewController ,UITableViewDelegate, UITableV
     }
    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+//        print("cellForRowAtIndexPath--------\(indexPath.row)")
         
-        var  cell = tableView.dequeueReusableCellWithIdentifier(REUSE_IDENTIFIER_FOR_TOPIC_DETAIL_CELL)  as! TopicDetailTableViewCell
-        if dataEntityArray.count != 0  {
-          TopicDetailTableViewCell.prepareForCell(&cell,entity: dataEntityArray[indexPath.row])
-            (cell.view.subviews.first as! TYAttributedLabel).delegate = self
-        }
         
-        heights["\(indexPath.row)"] = cell.bounds.height
+        let cell = TopicDetailTableViewCell.cellWidthTableView(tableView)
+        
+//        var  cell = tableView.dequeueReusableCellWithIdentifier(REUSE_IDENTIFIER_FOR_TOPIC_DETAIL_CELL)  as! TopicDetailTableViewCell
+        
+        cell.topicDetail = dataEntityArray[indexPath.row]
+//        if dataEntityArray.count != 0  {
+//            
+//            cell.topicDetail = dataEntityArray[indexPath.row]
+////          TopicDetailTableViewCell.prepareForCell(&cell,entity: dataEntityArray[indexPath.row])
+//            (cell.view.subviews.first as! TYAttributedLabel).delegate = self
+//        }
+    (cell.view.subviews.first as! TYAttributedLabel).delegate = self
+
         return cell
     }
     override func didReceiveMemoryWarning() {
@@ -135,7 +134,7 @@ class TopicDetailViewController: UIViewController ,UITableViewDelegate, UITableV
     
 //  
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-           return (heights["\(indexPath.row)"] ?? 120)!
+         return dataEntityArray[indexPath.row].cellHeight
     }
     
     
