@@ -71,7 +71,7 @@ class TopicListViewModel {
                     self.datasource.appendContentsOf(article.arrayValue )
                     self.title = json["title"].stringValue
                     self.tableView.reloadData()
-                    self.tableView.header.endRefreshing()
+                    self.tableView.mj_header.endRefreshing()
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
                         completion()
                     })

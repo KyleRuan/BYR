@@ -11,54 +11,55 @@ import SwiftyJSON
 import Kingfisher
 
 class SettingTableViewController: UITableViewController {
-    var head = XHPathCover()
     
+    var headerView:UIView!
+    var headHeight:CGFloat! = 50
     var keys = Array<String>()
     var values = Array<String>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.dataSource = self
         self.tableView.delegate = self
         initUserInfo()
-       
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
         
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-    
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.toolbarHidden = true
     }
+    
     func  initUserInfo() {
-        
-        
-        
-     let  user = User.mj_objectWithKeyValues(UserAngent.sharedInstance.getUserInfo())
-       //
-//       let userInfo = JSON(UserAngent.sharedInstance.getUserInfo()!)
-        
-        let rect = CGRect(x: 0, y: 0, width: self.tableView.bounds.width, height: self.tableView.bounds.height/5)
-//        print(rect)
-        self.head = XHPathCover(frame: rect)
+        let  user = User.mj_objectWithKeyValues(UserAngent.sharedInstance.getUserInfo())
+        headerView = UIView(frame:CGRectMake(0,-headHeight,UIScreen.mainScreen().bounds.width,headHeight))
+        headerView.backgroundColor = UIColor.redColor()
+        self.tableView.addSubview(headerView)
+        self.tableView.sendSubviewToBack(headerView)
+        self.tableView.contentInset =  UIEdgeInsets(top: headHeight, left: 0, bottom: 0, right: 0)
         
         
         let url = NSURL(string: user.face_url)
+        let avatar = UIImageView()
+//        if let avatarUrl = url {
+//            avatar.kf_setImageWithURL(avatarUrl)
+//               self.headerView.addSubview(avatar)
+//        }
         
-        self.head.avatarButton.kf_setImageWithURL(url!, forState: UIControlState.Normal)
-        let color = UIColor(colorLiteralRed: 0, green: 0.3, blue: 0.5, alpha: 0.5)
-        self.head.backgroundColor =  color
+     
         
-        if let _ = user.user_name{
-            let info = [XHUserNameKey:(user.user_name),XHBirthdayKey:user.level]
-            self.head.setInfo(info)
-        }
+        //        let avatar = (url!, forState: UIControlState.Normal)
+        //        self.head.avatarButton.kf_setImageWithURL(url!, forState: UIControlState.Normal)
+        //        let color = UIColor(colorLiteralRed: 0, green: 0.3, blue: 0.5, alpha: 0.5)
+        //        self.head.backgroundColor =  color
+        
+        //        if let _ = user.user_name{
+        //            let info = [XHUserNameKey:(user.user_name),XHBirthdayKey:user.level]
+        //            self.head.setInfo(info)
+        //        }
         
         
-        self.tableView.tableHeaderView = self.head
+        //        self.tableView.tableHeaderView = self.head
         
         
         let attribute = PersonalAttributes()
@@ -80,7 +81,7 @@ class SettingTableViewController: UITableViewController {
         }
         
         
-}
+    }
     
     
     override func didReceiveMemoryWarning() {
@@ -100,14 +101,14 @@ class SettingTableViewController: UITableViewController {
         return keys.count
     }
     
-    @IBAction func exitToLogin() {
+@IBAction func exitToLogin() {
         let sheet = UIAlertController(title: "退出当前用户", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
         
         let action = UIAlertAction(title: "退出当前用户", style: UIAlertActionStyle.Destructive) { (exit) -> Void in
             UserAngent.sharedInstance.removeObjectForKey(USER_INFO)
             UserAngent.sharedInstance.removeObjectForKey(ACCESS_TOKEN)
             SegueToViewController.sharedInstance.implementationSegue(self, segueTo: OAUTH_VIEW_CONTROLLER)
-
+            
         }
         sheet.addAction(action)
         sheet.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: { (_) -> Void in
@@ -115,13 +116,7 @@ class SettingTableViewController: UITableViewController {
         }))
         presentViewController(sheet, animated: true, completion: nil)
         
-//        
         
-//        let alert = UIActionSheet(title: "退出当前用户", delegate: nil, cancelButtonTitle:"取消", destructiveButtonTitle: "退出登入")
-//        self.view.addSubview(alert)
-//        UserAngent.sharedInstance.removeObjectForKey(USER_INFO)
-//        UserAngent.sharedInstance.removeObjectForKey(ACCESS_TOKEN)
-//        SegueToViewController.sharedInstance.implementationSegue(self, segueTo: OAUTH_VIEW_CONTROLLER)
         
     }
     
@@ -140,49 +135,26 @@ class SettingTableViewController: UITableViewController {
     }
     
     
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    // Return false if you do not want the specified item to be editable.
-    return true
-    }
-    */
     
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-    if editingStyle == .Delete {
-    // Delete the row from the data source
-    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-    } else if editingStyle == .Insert {
-    // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }
-    }
-    */
     
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
     
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+        //
+        var  offsetY:CGFloat  = 1
+        var scale:CGFloat = 1
+        if scrollView.contentOffset.y < 0 {
+            offsetY = -scrollView.contentOffset.y
+            scale = offsetY/headHeight
+//            self.headerView.layer.position = CGPointMake(UIScreen.mainScreen().bounds.size.width / 2.0,  scrollView.contentOffset.y / 2.0)
+                   self.headerView.transform = CGAffineTransformMakeScale(scale, scale)
+        }
+        
+        
+        // scale ruhe jisuan
+        
+ 
     }
-    */
     
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    // Return false if you do not want the item to be re-orderable.
-    return true
-    }
-    */
     
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
     
 }
