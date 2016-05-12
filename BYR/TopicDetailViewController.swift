@@ -50,10 +50,10 @@ class TopicDetailViewController: UIViewController ,UITableViewDelegate, UITableV
          self.tableView.backgroundColor = UIColor.whiteColor()
          self.tableView.delegate = self
          self.tableView.dataSource = self
-         self.tableView.header  = MJRefreshStateHeader (refreshingTarget: self, refreshingAction: #selector(TopicDetailViewController.reLoadData))
-         self.tableView.footer = MJRefreshBackNormalFooter(refreshingTarget: self, refreshingAction: #selector(TopicDetailViewController.loadData))
+         self.tableView.mj_header  = MJRefreshStateHeader (refreshingTarget: self, refreshingAction: #selector(TopicDetailViewController.reLoadData))
+         self.tableView.mj_footer = MJRefreshBackNormalFooter(refreshingTarget: self, refreshingAction: #selector(TopicDetailViewController.loadData))
         //debug的时候
-        self.tableView.header.beginRefreshing()
+        self.tableView.mj_header.beginRefreshing()
     
     }
 
@@ -69,7 +69,7 @@ class TopicDetailViewController: UIViewController ,UITableViewDelegate, UITableV
     func reLoadData(){
         currentPage = 0
         self.loadData()
-         self.tableView.header.endRefreshing()
+         self.tableView.mj_header.endRefreshing()
     }
     
     func loadData(){
@@ -79,13 +79,13 @@ class TopicDetailViewController: UIViewController ,UITableViewDelegate, UITableV
 
 // print(json)
                 self.initDataSource(json)
-                self.tableView.footer.endRefreshing()
+                self.tableView.mj_footer.endRefreshing()
                 self.tableView.reloadData()
                 }) { (error) -> Void in
                     print(error)
             }
         }else{
-           self.tableView.footer.endRefreshing()
+           self.tableView.mj_footer.endRefreshing()
             //显示没有数据加载了
         }
        
