@@ -72,15 +72,15 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
         self.tableView.delegate = self
       
                 let footer = MJRefreshFooter(refreshingTarget: self, refreshingAction: #selector(TopicListModelController.loadMore))
-                self.tableView.footer = footer
+                self.tableView.mj_footer = footer
         let header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(TopicListModelController.loadData))
-        self.tableView.header = header;
+        self.tableView.mj_header = header;
         self.tableView.registerNib(UINib(nibName: "TopicListTableViewCell", bundle: nil), forCellReuseIdentifier: REUSE__IDENTIFIER_FOR_TOPICLIST_CELL)
    
         if  Reachability.isConnectedToNetwork(){
             //             setUpAnimation()
-            self.tableView.header.beginRefreshing()
-            
+            self.tableView.mj_header.beginRefreshing()
+        
             
             var config = Realm.Configuration()
             config.path = NSURL.fileURLWithPath(config.path!).URLByDeletingLastPathComponent?.URLByAppendingPathComponent("\(type).realm").path
