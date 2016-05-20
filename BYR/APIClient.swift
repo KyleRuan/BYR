@@ -11,6 +11,7 @@ import Alamofire
 import SwiftyJSON
 
  let baseurl = "http://bbs.byr.cn"
+//http://bbs.byr.cn/oauth2/token
 
 // 	"http:bbs.byr.cn/open/thread/Basketball/592235.json"
 
@@ -33,8 +34,10 @@ class APIClinet {
     
     //可以在这个添加token是否是合适
   private func postJSONData(path:String,parameter:[String:AnyObject]?,success:(JSON) -> Void,failure:(NSError)->Void){
-        Alamofire.request(.POST, baseurl, parameters: parameter).responseSwiftyJSON{
+        Alamofire.request(.POST, baseurl+path, parameters: parameter).responseSwiftyJSON{
             (request,response ,result ,error) in
+             print(request)
+            print(response)
             if let err = error {
                 failure(err)
             } else {
@@ -116,7 +119,24 @@ class APIClinet {
         self.getJSONData("/oauth2/authorize", parameters: param, success: success, failure: failure)
         
     }
+    //http://bbs.byr.cn/oauth2/token
     
+    func getACCESSToken(refresh_token:AnyObject,success:(JSON)->Void,failure:(NSError)->Void) {
+        
+//        let refresh_token = UserAngent.sharedInstance.getRefreshToken()!
+        let param = ["client_id":CLIENT_ID,"client_secret":CLIENT_SECRET,"grant_type":"refresh_token","refresh_token":refresh_token]
+        
+        self.postJSONData("/oauth2/token", parameter: param, success: success, failure: failure)
+    }
+    
+//    请求方式 POST
+//    
+//    请求参数
+//    参数	必选	含义
+//    client_id	true	开发者申请通过后分配的id,对应于appkey
+//    client_secret	true	开发者申请通过后得到的秘钥
+//    grant_type	true	授权类型，此处为 "refresh_token"
+//    refresh_token	true	上一步返回的refresh_token
  
     
 

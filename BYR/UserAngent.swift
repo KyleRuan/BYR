@@ -32,6 +32,14 @@ class UserAngent{
      return NSUserDefaults.standardUserDefaults().objectForKey(ACCESS_TOKEN)
     }
     
+    func setRefreshToken(RefreshToken:AnyObject?)  {
+         NSUserDefaults.standardUserDefaults().setObject(RefreshToken, forKey: REFRESHTOKEN)
+    }
+    
+    func getRefreshToken()->AnyObject?{
+        return NSUserDefaults.standardUserDefaults().objectForKey(REFRESHTOKEN)
+    }
+    
     
     func  getIsAuthorized()->Bool{
         return NSUserDefaults.standardUserDefaults().boolForKey(IS_AUTHORIZE)

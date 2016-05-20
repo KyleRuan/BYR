@@ -9,6 +9,7 @@
 import Foundation
 
  let  ACCESS_TOKEN   = "oauth_token"
+ let REFRESHTOKEN  = "refresh_token"
  let Oauth_URL     = "http://bbs.byr.cn/oauth2/authorize"
  let RESPONSE_TYPE = "token"
  let CLIENT_ID     = "2a44821105d92482960593d94e4d042e"
@@ -18,6 +19,8 @@ import Foundation
  let IS_NOT_FIRST_LAUNCH = "isNotFirstLaunch"
  let  IS_AUTHORIZE = "authorize"
  let USER_INFO = "userInfo"
+
+let CLIENT_SECRET = "b7d17ce51dee62ab0d22d1bc5aa67e32"
 
 
 
