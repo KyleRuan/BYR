@@ -45,12 +45,19 @@ class OauthViewController: UIViewController,UIWebViewDelegate {
         defer{
              self.hud.dismiss()
         }
+        
+        
 
        if let requestURLString:NSString = webView.request?.URL?.absoluteString where requestURLString.containsString("access_token"){
+        
+       
         let access_token = NSURLComponents(string: requestURLString as String)?.fragment?.componentsSeparatedByString("&")[0].componentsSeparatedByString("=")[1]
         
+        let refreshToken = NSURLComponents(string: requestURLString as String)?.fragment?.componentsSeparatedByString("&")[2].componentsSeparatedByString("=")[1]
         
+         print(refreshToken)
           UserAngent.sharedInstance.setAccessToken(access_token)
+          UserAngent.sharedInstance.setRefreshToken(refreshToken)
             webview.backgroundColor = UIColor.blueColor()
           self.performSegueWithIdentifier(SEGUE_FROM_LOGIN_TO_TABBAR, sender: self)
 

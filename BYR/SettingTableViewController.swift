@@ -32,55 +32,31 @@ class SettingTableViewController: UITableViewController {
     
     func  initUserInfo() {
         let  user = User.mj_objectWithKeyValues(UserAngent.sharedInstance.getUserInfo())
-        headerView = UIView(frame:CGRectMake(0,-headHeight,UIScreen.mainScreen().bounds.width,headHeight))
+        headerView = UIView(frame:CGRectMake(0,-headHeight,self.tableView.bounds.width,headHeight))
         headerView.backgroundColor = UIColor.redColor()
         self.tableView.addSubview(headerView)
         self.tableView.sendSubviewToBack(headerView)
         self.tableView.contentInset =  UIEdgeInsets(top: headHeight, left: 0, bottom: 0, right: 0)
         
-        
         let url = NSURL(string: user.face_url)
-        let avatar = UIImageView()
-//        if let avatarUrl = url {
-//            avatar.kf_setImageWithURL(avatarUrl)
-//               self.headerView.addSubview(avatar)
-//        }
+        let avatar = UIImageView(frame: CGRectMake(headerView.bounds.midX, headerView.bounds.midY, headHeight/4, headHeight/4))
+        if let avatarUrl = url {
+            avatar.kf_setImageWithURL(avatarUrl)
+            avatar.layer.cornerRadius = avatar.bounds.width/2
+               self.headerView.addSubview(avatar)
+        }
         
-     
-        
-        //        let avatar = (url!, forState: UIControlState.Normal)
-        //        self.head.avatarButton.kf_setImageWithURL(url!, forState: UIControlState.Normal)
-        //        let color = UIColor(colorLiteralRed: 0, green: 0.3, blue: 0.5, alpha: 0.5)
-        //        self.head.backgroundColor =  color
-        
-        //        if let _ = user.user_name{
-        //            let info = [XHUserNameKey:(user.user_name),XHBirthdayKey:user.level]
-        //            self.head.setInfo(info)
-        //        }
-        
-        
-        //        self.tableView.tableHeaderView = self.head
-        
-        
+     // user_name user_level
         let attribute = PersonalAttributes()
         let (keyArray,valueArray) = attribute.keyValuePairs(user)
-        
-        
-        
-        
-        
-        
         for value in valueArray {
             if !value.isEmpty {
                 let index = valueArray.indexOf(value)
                 self.keys.append(keyArray[index!])
                 self.values.append(value)
-                
             }
             self.tableView.reloadData()
         }
-        
-        
     }
     
     
@@ -115,42 +91,29 @@ class SettingTableViewController: UITableViewController {
             
         }))
         presentViewController(sheet, animated: true, completion: nil)
-        
-        
-        
     }
-    
-    
-    
-    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("SettingCell", forIndexPath: indexPath) as! SettingTableViewCell
-        
         cell.keyLabel.text = keys[indexPath.row]
         cell.valueLabel.text =  values[indexPath.row]
-        
-        
         return cell
     }
     
     
-    
-    
-    
+
     override func scrollViewDidScroll(scrollView: UIScrollView) {
-        //
+
         var  offsetY:CGFloat  = 1
         var scale:CGFloat = 1
         if scrollView.contentOffset.y < 0 {
             offsetY = -scrollView.contentOffset.y
             scale = offsetY/headHeight
-//            self.headerView.layer.position = CGPointMake(UIScreen.mainScreen().bounds.size.width / 2.0,  scrollView.contentOffset.y / 2.0)
+            self.headerView.layer.position = CGPointMake(UIScreen.mainScreen().bounds.size.width / 2.0,  scrollView.contentOffset.y / 2.0)
                    self.headerView.transform = CGAffineTransformMakeScale(scale, scale)
         }
         
         
-        // scale ruhe jisuan
         
  
     }

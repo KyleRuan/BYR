@@ -5,9 +5,6 @@
 
 #import <JGProgressHUD/JGProgressHUD.h>
 
-
-
-#import "XHPathCover.h"
 #import "MJRefresh.h"
 #import "TYAttributedLabel.h"
 //#import "YYModel.h"
