@@ -32,9 +32,10 @@ class RKImageRichTextRun:RKBaseRichTextRun{
                     break
                 }
                 
-                
+               print(entity)
+                print(num)
 //             let  file   =  （entity!.attachment?.file! ）
-                
+//                  let attachmentfileDictionary = entity!.attachment!.file![num-1]
                 let attachmentfileDictionary = (entity!.attachment!.file as! NSArray).objectAtIndex(num-1) as! NSDictionary
                 let file = AttachmentFile(value: attachmentfileDictionary)
                 
