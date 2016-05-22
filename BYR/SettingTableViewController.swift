@@ -12,8 +12,8 @@ import Kingfisher
 
 class SettingTableViewController: UITableViewController {
     
-    var headerView:UIView!
-    var headHeight:CGFloat! = 50
+    var headerView:userAvatarView!
+    var headHeight:CGFloat! = 160
     var keys = Array<String>()
     var values = Array<String>()
     
@@ -32,18 +32,31 @@ class SettingTableViewController: UITableViewController {
     
     func  initUserInfo() {
         let  user = User.mj_objectWithKeyValues(UserAngent.sharedInstance.getUserInfo())
-        headerView = UIView(frame:CGRectMake(0,-headHeight,self.tableView.bounds.width,headHeight))
+//        let radius:CGFloat = 40
+        headerView = userAvatarView(frame:CGRectMake(0,-headHeight,self.tableView.bounds.width,headHeight))
+        
+        
+//         headerView.avatar = user.face_url
         headerView.backgroundColor = UIColor.redColor()
         self.tableView.addSubview(headerView)
-        self.tableView.sendSubviewToBack(headerView)
+//        self.tableView.sendSubviewToBack(headerView)
         self.tableView.contentInset =  UIEdgeInsets(top: headHeight, left: 0, bottom: 0, right: 0)
         
         let url = NSURL(string: user.face_url)
-        let avatar = UIImageView(frame: CGRectMake(headerView.bounds.midX, headerView.bounds.midY, headHeight/4, headHeight/4))
+//        let avatar = UIImageView(frame: CGRectMake(headerView.bounds.midX, headerView.bounds.midY, headHeight/4, headHeight/4))
+        let avatar = UIImageView()
         if let avatarUrl = url {
-            avatar.kf_setImageWithURL(avatarUrl)
-            avatar.layer.cornerRadius = avatar.bounds.width/2
-               self.headerView.addSubview(avatar)
+            
+            avatar.kf_setImageWithURL(avatarUrl, placeholderImage: nil, optionsInfo: nil, completionHandler: { (image, error, cacheType, imageURL) in
+                self.headerView.avatar = image
+            })
+            
+            
+//
+            avatar.kf_setImageWithURL(avatarUrl, placeholderImage: nil)
+//
+////            avatar.layer.cornerRadius = avatar.bounds.width/2
+//               self.headerView.addSubview(avatar)
         }
         
      // user_name user_level
@@ -100,16 +113,13 @@ class SettingTableViewController: UITableViewController {
         return cell
     }
     
-    
 
     override func scrollViewDidScroll(scrollView: UIScrollView) {
-
-        var  offsetY:CGFloat  = 1
         var scale:CGFloat = 1
-        if scrollView.contentOffset.y < 0 {
-            offsetY = -scrollView.contentOffset.y
-            scale = offsetY/headHeight
-            self.headerView.layer.position = CGPointMake(UIScreen.mainScreen().bounds.size.width / 2.0,  scrollView.contentOffset.y / 2.0)
+        if scrollView.contentOffset.y < -headHeight{
+//            offsetY = -scrollView.contentOffset.y
+            scale = abs(scrollView.contentOffset.y)/headHeight
+            self.headerView.layer.position = CGPointMake(UIScreen.mainScreen().bounds.size.width / 2.0, scrollView.contentOffset.y / 2.0)
                    self.headerView.transform = CGAffineTransformMakeScale(scale, scale)
         }
         
