@@ -41,6 +41,7 @@
 		B738F4F01CEF0A1000772E1D /* userAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B738F4EF1CEF0A1000772E1D /* userAvatarView.swift */; };
 		B742F9791C32C4BE0071885D /* setupLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B742F9781C32C4BE0071885D /* setupLoadingView.swift */; };
 		B749001E1C2830CF004BDE37 /* TopicListModelEnity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B749001D1C2830CF004BDE37 /* TopicListModelEnity.swift */; };
+		B74966731CF057A3008AE3EB /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74966721CF057A3008AE3EB /* UIImageExtension.swift */; };
 		B74F974D1CC0171C0067CFBF /* BoardListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74F974C1CC0171C0067CFBF /* BoardListModel.swift */; };
 		B755CAB91C8EECAD00F6E4D8 /* Board.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B755CAB81C8EECAD00F6E4D8 /* Board.storyboard */; };
 		B758A5081C8EE65300CBF873 /* HomePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B758A5071C8EE65300CBF873 /* HomePage.storyboard */; };
@@ -390,6 +391,7 @@
 		B738F4EF1CEF0A1000772E1D /* userAvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = userAvatarView.swift; path = TYAttributedLabel/userAvatarView.swift; sourceTree = "<group>"; };
 		B742F9781C32C4BE0071885D /* setupLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setupLoadingView.swift; sourceTree = "<group>"; };
 		B749001D1C2830CF004BDE37 /* TopicListModelEnity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListModelEnity.swift; sourceTree = "<group>"; };
+		B74966721CF057A3008AE3EB /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		B74F974C1CC0171C0067CFBF /* BoardListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardListModel.swift; sourceTree = "<group>"; };
 		B755CAB81C8EECAD00F6E4D8 /* Board.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Board.storyboard; sourceTree = "<group>"; };
 		B758A5071C8EE65300CBF873 /* HomePage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HomePage.storyboard; sourceTree = "<group>"; };
@@ -1196,6 +1198,7 @@
 				B731FD711BD8E3650050F215 /* RoundImageView.swift */,
 				B78773EE1BE9E2EC004566D5 /* PersonalAttributes.swift */,
 				B7A6A34D1C881ED50006AA6B /* Reachability.swift */,
+				B74966721CF057A3008AE3EB /* UIImageExtension.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -1701,6 +1704,7 @@
 				B77607101BD7EFDB003B3801 /* RecordTopic.swift in Sources */,
 				B7767B901C10205800E0D9D2 /* RKEmojiRichTextRun.swift in Sources */,
 				B7A874401BFEF4A3001F1D11 /* BoardCollectionViewCell.swift in Sources */,
+				B74966731CF057A3008AE3EB /* UIImageExtension.swift in Sources */,
 				B74F974D1CC0171C0067CFBF /* BoardListModel.swift in Sources */,
 				B78842911C88A32C0077C4AB /* HomePage.swift in Sources */,
 				B70ED89F1CE4EA6D003D830D /* UIView+MJExtension.m in Sources */,
