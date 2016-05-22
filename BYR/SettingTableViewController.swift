@@ -54,9 +54,7 @@ class SettingTableViewController: UITableViewController {
             
 //
             avatar.kf_setImageWithURL(avatarUrl, placeholderImage: nil)
-//
-////            avatar.layer.cornerRadius = avatar.bounds.width/2
-//               self.headerView.addSubview(avatar)
+  
         }
         
      // user_name user_level
