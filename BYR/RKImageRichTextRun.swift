@@ -31,11 +31,6 @@ class RKImageRichTextRun:RKBaseRichTextRun{
                 if num > entity!.attachment?.file!.count{
                     break
                 }
-                
-               print(entity)
-                print(num)
-//             let  file   =  （entity!.attachment?.file! ）
-//                  let attachmentfileDictionary = entity!.attachment!.file![num-1]
                 let attachmentfileDictionary = (entity!.attachment!.file as! NSArray).objectAtIndex(num-1) as! NSDictionary
                 let file = AttachmentFile(value: attachmentfileDictionary)
                 
@@ -53,12 +48,10 @@ class RKImageRichTextRun:RKBaseRichTextRun{
                 if let url = NSURL(string:"\(urlStrig!)?oauth_token=\(token!)"){
                     if  RKImageRichTextRun.caches.objectForKey(urlStrig!) != nil {
                          imageText.data = RKImageRichTextRun.caches.objectForKey(urlStrig!)
-                        print("cache")
                     }else{
                         let data = NSData(contentsOfURL: url)!
                         imageText.data = data
                         RKImageRichTextRun.caches.setObject(data, forKey: urlStrig!)
-                        print("network")
                     }
                 }
                 
@@ -85,8 +78,6 @@ class RKImageRichTextRun:RKBaseRichTextRun{
             imageStorage.image = image
             imageStorage.size = CGSizeMake(size.width,size.width)
             tmpArray.append(imageStorage)
-
-            
         }
       
         return tmpArray
@@ -96,26 +87,28 @@ class RKImageRichTextRun:RKBaseRichTextRun{
 }
 
 
-
-extension UIImage{
-    func scaleToSize()->UIImage{
-        let screenWidth :CGFloat = UIScreen.mainScreen().bounds.width
-        let scale = self.size.width/self.size.height
-        let screenHeight:CGFloat = screenWidth/scale
-        
-        
-       
-        UIGraphicsBeginImageContext(CGSizeMake(screenWidth, screenHeight))
-        
-        self.drawInRect(CGRectMake(0, 0, screenWidth, screenHeight))
-        
-        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        
-        return scaledImage
-        
-        
-        
-    }
-}
+//
+//extension UIImage{
+//    func scaleToSize()->UIImage{
+//        
+//        let width = min(UIScreen.mainScreen().bounds.width, self.size.width )
+//        
+//        let scale:CGFloat =  self.size.height/self.size.width
+//
+//        
+//        let height:CGFloat = width*scale
+//       
+//        UIGraphicsBeginImageContext(CGSizeMake(width, height))
+//        
+//        self.drawInRect(CGRectMake(0, 0, width, height))
+//        
+//        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+//        UIGraphicsEndImageContext()
+//        
+//        
+//        return scaledImage
+//        
+//        
+//        
+//    }
+//}

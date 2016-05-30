@@ -66,12 +66,9 @@ class userAvatarView: UIView {
         
         
         private func addAvatar() {
-            
-            
             if avatar == nil {
                 avatar = UIImage(named: "face_default_m")
             }
-            
             let imageViewSizeX = UIScreen.mainScreen().bounds.midX-(avatarRadius+borderWidth)
             let imageViewSizeY = self.bounds.maxY
             let imageView = UIImageView(frame: CGRectMake(imageViewSizeX, imageViewSizeY-2*(avatarRadius+borderWidth),2*(avatarRadius+borderWidth), 2*(avatarRadius+borderWidth)))

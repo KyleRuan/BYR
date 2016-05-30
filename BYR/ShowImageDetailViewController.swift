@@ -11,7 +11,9 @@ import JGProgressHUD
 
 
 class ShowImageDetailViewController: UIViewController,UIGestureRecognizerDelegate {
-    var imageView:ImageDisplayView! = ImageDisplayView(frame: UIScreen.mainScreen().bounds)
+    var imageView:ImageDisplayView!
+    
+//    var imageView:UIImage = {
     var originImage:UIImage?
     var hub =  JGProgressHUD()
 //    var tapGusture:UITapGestureRecognizer!
@@ -21,12 +23,12 @@ class ShowImageDetailViewController: UIViewController,UIGestureRecognizerDelegat
         super.viewDidLoad()
 //    
 //        imageView = ImageDisplayView(frame: CGRectInset(self.view.frame, 0, self.view.bounds.height/4))
+        imageView.frame = CGRectMake(0, UIScreen.mainScreen().bounds.height/2-self.imageView.frame.height/2, self.imageView.frame.width, self.imageView.frame.height)
          self.view.addSubview(imageView!)
         imageView.userInteractionEnabled = true
        let   tapGusture = UITapGestureRecognizer(target: self, action: Selector("tap"))
         tapGusture.numberOfTapsRequired = 1
         tapGusture.numberOfTouchesRequired = 1
-//         tapGusture.delegate = self
         self.imageView.addGestureRecognizer(tapGusture)
         
 //        tapGusture.delegate = self
@@ -70,9 +72,6 @@ class ShowImageDetailViewController: UIViewController,UIGestureRecognizerDelegat
             alert.addAction(cancel)
             alert.addAction(action)
             self.presentViewController(alert, animated: true) { () -> Void in
-                self.hub.showInView(self.view)
-                self.hub.textLabel.text = "正在保存"
-           
             }
             
             

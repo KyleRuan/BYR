@@ -148,11 +148,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BYR/BoardListViewController.swift"
-            timestampString = "482392133.345132"
+            timestampString = "485805062.63027"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "172"
-            endingLineNumber = "172">
+            startingLineNumber = "167"
+            endingLineNumber = "167">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -214,11 +214,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BYR/ShowImageDetailViewController.swift"
-            timestampString = "478249940.689289"
+            timestampString = "486203995.995233"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "imageSavedToPhotosAlbum(_:didFinishSavingWithError:contextInfo:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -285,22 +285,38 @@
             endingLineNumber = "37"
             landmarkName = "init(enity:)"
             landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BYR/BoardListViewController.swift"
-            timestampString = "482392133.345132"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
-            landmarkName = "tableView(_:didSelectRowAtIndexPath:)"
-            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BYR.TopicModelEnity.init (enity : BYR.TopicModelEnity) -&gt; BYR.TopicModelEnity"
+                  moduleName = "BYR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/TopicModelEntity.swift"
+                  timestampString = "486264031.74492"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "556">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BYR.TopicModelEnity.__allocating_init (enity : BYR.TopicModelEnity) -&gt; BYR.TopicModelEnity"
+                  moduleName = "BYR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/TopicModelEntity.swift"
+                  timestampString = "486264031.74514"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "330">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -326,45 +342,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BYR/TopicListModelController.swift"
-            timestampString = "482333176.771191"
+            timestampString = "486228459.962747"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
             landmarkName = "scrollViewWillBeginDragging(_:)"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BYR.TopicListModelController.scrollViewWillBeginDragging (__ObjC.UIScrollView) -&gt; ()"
-                  moduleName = "BYR"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/TopicListModelController.swift"
-                  timestampString = "485628369.854486"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "182"
-                  endingLineNumber = "182"
-                  offsetFromSymbolStart = "12">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "function signature specialization &lt;Arg[0] = Owned To Guaranteed&gt; of BYR.TopicListModelController.scrollViewWillBeginDragging (__ObjC.UIScrollView) -&gt; ()"
-                  moduleName = "BYR"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/TopicListModelController.swift"
-                  timestampString = "485628369.85466"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "182"
-                  endingLineNumber = "182"
-                  offsetFromSymbolStart = "12">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -374,11 +358,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BYR/ShowImageDetailViewController.swift"
-            timestampString = "480671435.730492"
+            timestampString = "486202998.965321"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -405,22 +389,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BYR/TopicListModelController.swift"
-            timestampString = "482333176.771191"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
-            landmarkName = "loadData()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "BYR/BoardViewController.swift"
             timestampString = "482377163.471465"
             startingColumnNumber = "9223372036854775807"
@@ -429,118 +397,6 @@
             endingLineNumber = "41"
             landmarkName = "collectionView(_:cellForItemAtIndexPath:)"
             landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BYR/BoardListViewController.swift"
-            timestampString = "482390719.154032"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
-            landmarkName = "tableView(_:didSelectRowAtIndexPath:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BYR/BoardListViewController.swift"
-            timestampString = "482392180.611314"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
-            landmarkName = "tableView(_:didSelectRowAtIndexPath:)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "function signature specialization &lt;Arg[0] = Dead and Owned To Guaranteed, Arg[1] = Owned To Guaranteed&gt; of BYR.BoardListViewController.tableView (__ObjC.UITableView, didSelectRowAtIndexPath : __ObjC.NSIndexPath) -&gt; ()"
-                  moduleName = "BYR"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/BoardListViewController.swift"
-                  timestampString = "485628369.85795"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "119"
-                  endingLineNumber = "119"
-                  offsetFromSymbolStart = "2748">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "function signature specialization &lt;Arg[0] = Dead and Owned To Guaranteed, Arg[1] = Owned To Guaranteed&gt; of BYR.BoardListViewController.tableView (__ObjC.UITableView, didSelectRowAtIndexPath : __ObjC.NSIndexPath) -&gt; ()"
-                  moduleName = "BYR"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/BoardListViewController.swift"
-                  timestampString = "485628369.858049"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "119"
-                  endingLineNumber = "119"
-                  offsetFromSymbolStart = "2788">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BYR/RKImageRichTextRun.swift"
-            timestampString = "484811635.079857"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "analyseText(_:entity:)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "function signature specialization &lt;Arg[1] = Owned To Guaranteed&gt; of BYR.RKImageRichTextRun.analyseText (inout __ObjC.NSString, entity : Swift.Optional&lt;BYR.TopicModelEnity&gt;) -&gt; ()"
-                  moduleName = "BYR"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/RKImageRichTextRun.swift"
-                  timestampString = "485628369.858941"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "1868">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "function signature specialization &lt;Arg[1] = Owned To Guaranteed&gt; of BYR.RKImageRichTextRun.analyseText (inout __ObjC.NSString, entity : Swift.Optional&lt;BYR.TopicModelEnity&gt;) -&gt; ()"
-                  moduleName = "BYR"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/RKImageRichTextRun.swift"
-                  timestampString = "485628369.859053"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "2012">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -597,108 +453,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BYR/OauthViewController.swift"
-            timestampString = "485429636.647523"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "webViewDidFinishLoad(_:)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "function signature specialization &lt;Arg[0] = Owned To Guaranteed&gt; of BYR.OauthViewController.webViewDidFinishLoad (__ObjC.UIWebView) -&gt; ()"
-                  moduleName = "BYR"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/OauthViewController.swift"
-                  timestampString = "485628369.860395"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "976">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "function signature specialization &lt;Arg[0] = Owned To Guaranteed&gt; of BYR.OauthViewController.webViewDidFinishLoad (__ObjC.UIWebView) -&gt; ()"
-                  moduleName = "BYR"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/OauthViewController.swift"
-                  timestampString = "485628369.860492"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "1040">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BYR/OauthViewController.swift"
-            timestampString = "485429515.89763"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "webViewDidFinishLoad(_:)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "function signature specialization &lt;Arg[0] = Owned To Guaranteed&gt; of BYR.OauthViewController.webViewDidFinishLoad (__ObjC.UIWebView) -&gt; ()"
-                  moduleName = "BYR"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/OauthViewController.swift"
-                  timestampString = "485628369.861133"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "976">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "function signature specialization &lt;Arg[0] = Owned To Guaranteed&gt; of BYR.OauthViewController.webViewDidFinishLoad (__ObjC.UIWebView) -&gt; ()"
-                  moduleName = "BYR"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/OauthViewController.swift"
-                  timestampString = "485628369.861225"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "1040">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "BYR/TopicListViewModel.swift"
-            timestampString = "485432708.475651"
+            timestampString = "485803317.705288"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "loadData(_:completion:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -709,60 +469,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BYR/APIClient.swift"
-            timestampString = "485431988.107382"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "postJSONData(_:parameter:success:failure:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BYR/APIClient.swift"
-            timestampString = "485431988.107382"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "postJSONData(_:parameter:success:failure:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BYR/APIClient.swift"
-            timestampString = "485431988.107382"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "postJSONData(_:parameter:success:failure:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "BYR/TopicListViewModel.swift"
-            timestampString = "485432725.005041"
+            timestampString = "485803317.705288"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "loadData(_:completion:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -789,86 +501,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BYR/TopicDetailViewController.swift"
-            timestampString = "485433021.798588"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
-            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BYR/TopicDetailTableViewCell.swift"
-            timestampString = "485433112.948754"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "cellWidthTableView(_:)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "function signature specialization &lt;Arg[0] = Owned To Guaranteed, Arg[1] = Dead&gt; of static BYR.TopicDetailTableViewCell.cellWidthTableView (__ObjC.UITableView) -&gt; BYR.TopicDetailTableViewCell"
-                  moduleName = "BYR"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/TopicDetailTableViewCell.swift"
-                  timestampString = "485628369.866277"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "20">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "function signature specialization &lt;Arg[0] = Owned To Guaranteed, Arg[1] = Dead&gt; of static BYR.TopicDetailTableViewCell.cellWidthTableView (__ObjC.UITableView) -&gt; BYR.TopicDetailTableViewCell"
-                  moduleName = "BYR"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/TopicDetailTableViewCell.swift"
-                  timestampString = "485628369.866382"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "48">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BYR/SettingTableViewController.swift"
-            timestampString = "485627404.546456"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "initUserInfo()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "BYR/TYAttributedLabel/userAvatarView.swift"
             timestampString = "485628271.566707"
             startingColumnNumber = "9223372036854775807"
@@ -886,12 +518,12 @@
                   moduleName = "BYR"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/TYAttributedLabel/userAvatarView.swift"
-                  timestampString = "485628369.867671"
+                  timestampString = "486264031.750808"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "39"
                   endingLineNumber = "39"
-                  offsetFromSymbolStart = "68">
+                  offsetFromSymbolStart = "65">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -901,12 +533,12 @@
                   moduleName = "BYR"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/TYAttributedLabel/userAvatarView.swift"
-                  timestampString = "485628369.86781"
+                  timestampString = "486264031.752231"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "39"
                   endingLineNumber = "39"
-                  offsetFromSymbolStart = "52">
+                  offsetFromSymbolStart = "53">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -916,14 +548,346 @@
                   moduleName = "BYR"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/TYAttributedLabel/userAvatarView.swift"
-                  timestampString = "485628369.867909"
+                  timestampString = "486264031.753065"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "39"
                   endingLineNumber = "39"
-                  offsetFromSymbolStart = "304">
+                  offsetFromSymbolStart = "267">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BYR/BoardListViewController.swift"
+            timestampString = "485805062.63027"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "prepareForSegue(_:sender:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BYR/BoardListViewController.swift"
+            timestampString = "485804781.776942"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "tableView(_:didSelectRowAtIndexPath:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BYR/TopicListModelController.swift"
+            timestampString = "486228459.962747"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "317"
+            endingLineNumber = "317"
+            landmarkName = "animationPop()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BYR/TopicListModelController.swift"
+            timestampString = "486228459.962747"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "320"
+            endingLineNumber = "320"
+            landmarkName = "animationPop()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BYR/SubBoradListViewController.swift"
+            timestampString = "485795156.02718"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BYR/SubBoradListViewController.swift"
+            timestampString = "485795158.15328"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BYR/SubBoradListViewController.swift"
+            timestampString = "485805189.135162"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "prepareForSegue(_:sender:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BYR/BoardListModel.swift"
+            timestampString = "485804781.776942"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "initWithArray(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BYR/BoardListModel.swift"
+            timestampString = "485804781.776942"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "initWithArray(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BYR/BoardListViewController.swift"
+            timestampString = "485805062.63027"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "tableView(_:didSelectRowAtIndexPath:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BYR/TopicDetailTableViewCell.swift"
+            timestampString = "486226065.321708"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "TopicDetailTableViewCell"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BYR/RKImageRichTextRun.swift"
+            timestampString = "486226964.634899"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BYR/TYAttributedLabel/userAvatarView.swift"
+            timestampString = "486227978.283801"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "init(frame:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BYR.userAvatarView.init (frame : __C.CGRect) -&gt; BYR.userAvatarView"
+                  moduleName = "BYR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/TYAttributedLabel/userAvatarView.swift"
+                  timestampString = "486264031.758454"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "280">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BYR.userAvatarView.__allocating_init (frame : __C.CGRect) -&gt; BYR.userAvatarView"
+                  moduleName = "BYR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/TYAttributedLabel/userAvatarView.swift"
+                  timestampString = "486264031.758957"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "308">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BYR.userAvatarView.init (frame : __C.CGRect, backgroundImage : __ObjC.UIImage, avatarImage : __ObjC.UIImage, avatarRadius : CoreGraphics.CGFloat) -&gt; BYR.userAvatarView"
+                  moduleName = "BYR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/TYAttributedLabel/userAvatarView.swift"
+                  timestampString = "486264031.759129"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "319">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BYR.userAvatarView.__allocating_init (frame : __C.CGRect, backgroundImage : __ObjC.UIImage, avatarImage : __ObjC.UIImage, avatarRadius : CoreGraphics.CGFloat) -&gt; BYR.userAvatarView"
+                  moduleName = "BYR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/TYAttributedLabel/userAvatarView.swift"
+                  timestampString = "486264031.759331"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "353">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BYR/APIClient.swift"
+            timestampString = "486234673.608287"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "getUserInfo(_:userId:success:failure:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BYR/APIClient.swift"
+            timestampString = "486234673.608287"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "getJSONData(_:parameters:success:failure:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BYR/APIClient.swift"
+            timestampString = "486229432.428088"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "getJSONData(_:parameters:success:failure:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BYR/RoundImageView.swift"
+            timestampString = "486263849.34066"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "hitTest(_:withEvent:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

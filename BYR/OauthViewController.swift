@@ -11,10 +11,8 @@ import JGProgressHUD
 import Alamofire
 
 class OauthViewController: UIViewController,UIWebViewDelegate {
-
     var hud = JGProgressHUD()
     @IBOutlet weak var webview: UIWebView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         webview.delegate = self

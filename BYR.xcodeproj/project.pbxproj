@@ -290,6 +290,7 @@
 		B77C6BC61BE9040A00F36E95 /* FormatterTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C6BC51BE9040A00F36E95 /* FormatterTime.swift */; };
 		B77C6BC81BE9C93700F36E95 /* SegueToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C6BC71BE9C93700F36E95 /* SegueToViewController.swift */; };
 		B78773EF1BE9E2EC004566D5 /* PersonalAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78773EE1BE9E2EC004566D5 /* PersonalAttributes.swift */; };
+		B78781B01CF48B4A000A7E56 /* SubBoradListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78781AF1CF48B4A000A7E56 /* SubBoradListViewController.swift */; };
 		B78842911C88A32C0077C4AB /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78842901C88A32C0077C4AB /* HomePage.swift */; };
 		B78842941C88A90D0077C4AB /* TopicListModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78842921C88A90D0077C4AB /* TopicListModelController.swift */; };
 		B78842951C88A90D0077C4AB /* TopicListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B78842931C88A90D0077C4AB /* TopicListTableViewCell.xib */; };
@@ -653,6 +654,7 @@
 		B77C6BC51BE9040A00F36E95 /* FormatterTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatterTime.swift; sourceTree = "<group>"; };
 		B77C6BC71BE9C93700F36E95 /* SegueToViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueToViewController.swift; sourceTree = "<group>"; };
 		B78773EE1BE9E2EC004566D5 /* PersonalAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalAttributes.swift; sourceTree = "<group>"; };
+		B78781AF1CF48B4A000A7E56 /* SubBoradListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubBoradListViewController.swift; sourceTree = "<group>"; };
 		B78842901C88A32C0077C4AB /* HomePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		B78842921C88A90D0077C4AB /* TopicListModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListModelController.swift; sourceTree = "<group>"; };
 		B78842931C88A90D0077C4AB /* TopicListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicListTableViewCell.xib; sourceTree = "<group>"; };
@@ -1249,6 +1251,7 @@
 				B776071F1BD7F094003B3801 /* OauthViewController.swift */,
 				B7A874411BFF0B2C001F1D11 /* BoardViewController.swift */,
 				B793C5691C033AE60067A94F /* BoardListViewController.swift */,
+				B78781AF1CF48B4A000A7E56 /* SubBoradListViewController.swift */,
 				B742F9781C32C4BE0071885D /* setupLoadingView.swift */,
 				B77B0E3D1C65E75C001FDEC2 /* ShowImageDetailViewController.swift */,
 				B7009CA71C8F2CC1004A49F4 /* PostTopicViewController.swift */,
@@ -1663,6 +1666,7 @@
 				B78773EF1BE9E2EC004566D5 /* PersonalAttributes.swift in Sources */,
 				B7767B921C10358A00E0D9D2 /* RKURLRichTextRun.swift in Sources */,
 				B7D574151BE7824A00D7D725 /* TopicDetailTableViewCell.swift in Sources */,
+				B78781B01CF48B4A000A7E56 /* SubBoradListViewController.swift in Sources */,
 				B738F4F01CEF0A1000772E1D /* userAvatarView.swift in Sources */,
 				B76313841C87E08D0018210D /* MJProperty.m in Sources */,
 				B7C97C591BD8F80B00E0B103 /* TopicListTableViewCell.swift in Sources */,
@@ -1792,6 +1796,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Debug;
 		};
@@ -1828,9 +1833,11 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Release;
 		};
@@ -1846,6 +1853,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				"LIBRARY_SEARCH_PATHS[arch=*]" = "";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
 				PRODUCT_BUNDLE_IDENTIFIER = RuanKai.BYR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1868,6 +1876,7 @@
 				INFOPLIST_FILE = BYR/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
 				PRODUCT_BUNDLE_IDENTIFIER = RuanKai.BYR;
 				PRODUCT_NAME = "$(TARGET_NAME)";

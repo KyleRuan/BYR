@@ -28,28 +28,6 @@ class BoardListTableViewCell: UITableViewCell {
     
     }
     
-    
-//    
-//  convenience  init(tableView:UITableView){
-////        self.init?(coder  NSCoder)
-//    
-//   self.init(style: UITableViewCellStyle.Default, reuseIdentifier: "BoardList")
-//    
-//      self = tableView.dequeueReusableCellWithIdentifier("BoardList") as! BoardListTableViewCell
-////      return cell
-//    
-//    }
-//    
-//    
-//    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-//        super.init(style: style, reuseIdentifier: "BoardList")
-//    }
-//    
-//    required init?(coder aDecoder: NSCoder) {
-//       super.init(coder: aDecoder)
-//    }
-//    
-   
     class func cellWithTableView(tableView:UITableView)->BoardListTableViewCell {
        return tableView.dequeueReusableCellWithIdentifier("BoardList") as! BoardListTableViewCell
     }
@@ -57,7 +35,6 @@ class BoardListTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-         print("awakeFromNib")
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

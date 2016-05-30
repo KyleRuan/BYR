@@ -16,35 +16,15 @@ extension UIImage {
         // avatar居中，直径为80的园
         // 要求这个图片是  Width= Height
         let imageWH = image.size.width ;
-        
         let ovalWH = imageWH+borderWidth*2
-        
         UIGraphicsBeginImageContext(CGSizeMake(ovalWH, ovalWH))
-        
         UIGraphicsBeginImageContextWithOptions(CGSizeMake(ovalWH, ovalWH), false, 0)
-        
-        //        // 画头像的大圆
         let path = UIBezierPath(ovalInRect: CGRectMake(0, 0, ovalWH, ovalWH))
         borderColor.set()
         path.fill()
-        
-        //        //
-        // 3.设置裁剪区域
         let clipPath = UIBezierPath(ovalInRect: CGRectMake(borderWidth, borderWidth, imageWH, imageWH))
         clipPath.addClip()
-        
-        
-        
-        
         image.drawAtPoint(CGPointMake(borderWidth, borderWidth))
-        //        //
-        //        //        // 4.绘制图片
-        //        //        [image drawAtPoint:CGPointMake(border, border)];
-        //        //           image?.drawAtPoint(CGPointMake(midX-avatarRadius, maxY))
-        //
-        //        self.drawInRect(avatarFrame)
-        //        //
-        //        //        // 5.获取图片
         let clipImage = UIGraphicsGetImageFromCurrentImageContext();
         //        //
         //        // 6.关闭上下文
@@ -56,16 +36,37 @@ extension UIImage {
     }
     
     static func scaleTosizeImage(image:UIImage,size:CGSize)->UIImage {
-        
         UIGraphicsBeginImageContextWithOptions(size, false, 0)
-        
         image.drawInRect(CGRectMake(0, 0, size.width, size.height))
-        
-        
         let scaled = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        
         return scaled
     }
+    
+    
+    
+    func scaleToSize()->UIImage{
+        
+        let width = min(UIScreen.mainScreen().bounds.width, self.size.width )
+        
+        let scale:CGFloat =  self.size.height/self.size.width
+        
+        
+        let height:CGFloat = width*scale
+        
+        UIGraphicsBeginImageContext(CGSizeMake(width, height))
+        
+        self.drawInRect(CGRectMake(0, 0, width, height))
+        
+        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        
+        return scaledImage
+
+    }
+    
+    
+    
     
 }

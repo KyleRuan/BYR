@@ -34,11 +34,12 @@ class TopicListTableViewCell: UITableViewCell {
             
             if let url = NSURL(string: faceurl) {
                 if gender == "m" {
-                    
+    
                     avatar.kf_setImageWithURL(url, placeholderImage: UIImage(named: "face_default_m"))
                 } else{
                     avatar.kf_setImageWithURL(url, placeholderImage: UIImage(named: "face_default_m"))
                 }
+                avatar.userId =  userInfo.id
                 avatar.cornerRadius = avatar.bounds.size.width/2
             }
 

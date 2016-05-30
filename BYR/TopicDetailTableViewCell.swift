@@ -32,12 +32,10 @@ class TopicDetailTableViewCell: UITableViewCell {
             }else{
                 number.text = "\(topicDetail.number)楼"
             }
-
-            
-            
             
             if let  url  = topicDetail.avatarUrl {
                 avatar.kf_setImageWithURL(NSURL(string: url)!)
+                
             }else{
                 avatar.image = UIImage(named: "face_default_m")
             }

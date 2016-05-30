@@ -17,18 +17,22 @@ class BoardListModel{
     var accessoryType:UITableViewCellAccessoryType!
     var description:String!
     var name :String!
+   
     
     
     convenience init(json:JSON){
        self.init()
+        
+      
         accessoryType = UITableViewCellAccessoryType.None
         manager = "版主：\(json["manager"].stringValue)"
         let threads_today_count = json["threads_today_count"].stringValue
-        if threads_today_count  != "0"{
+        print(threads_today_count)
+        if threads_today_count  !=  "0"{
             postToday = "今日发帖数：\(threads_today_count)"
         }
         board = json["description"].stringValue
-
+         print(board)
       name =  json["name"].stringValue
     
     }
@@ -40,8 +44,18 @@ class BoardListModel{
             let item = BoardListModel(json: json)
            arr.append(item)
         }
-        
         return arr
+    }
+    
+    
+  class  func initWithArray(jsonArray:JSON) ->[Board] {
+         var boards:Array<Board>=[]
+        for json in jsonArray.arrayValue{
+            let board = Board.mj_objectWithKeyValues(json.dictionaryObject)
+            boards.append(board)
+        }
+
+        return boards
         
     }
 

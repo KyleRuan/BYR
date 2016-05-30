@@ -48,6 +48,15 @@ class APIClinet {
     }
     
     
+    
+    
+    func getUserInfo(token:AnyObject,userId:String,success:((JSON)->Void),failure:((NSError)->Void)) {
+        let param = [ACCESS_TOKEN:token]
+        print(userId)
+//        http://bbs.byr.cn/open/user/query/weiyuhan.json
+        self.getJSONData("/open/user/query/\(userId).json", parameters: param, success: success, failure: failure)
+    }
+    
 
     func getSectionInfo(token:AnyObject,name:String,success:((JSON)->Void),failure:((NSError)->Void)){
 

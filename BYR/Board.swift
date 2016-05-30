@@ -11,9 +11,7 @@ import RealmSwift
 
 class Board:Object {
     dynamic var name:String?  //版面名称
-    dynamic var maneger:String?  //版主列表，以空格分隔各个id
-    dynamic var descriptions:String? //版面描述
-    dynamic var board_class:String? //版面所属类别
+    dynamic var manager:String?  //版主列表，以空格分隔各个id
     dynamic var section:String?  //版面所属分区号
     dynamic var post_today_count:Int = 0 //今日发文总数
     dynamic var threads_today_count:Int = 0 //今日主题总数(收藏夹接口)

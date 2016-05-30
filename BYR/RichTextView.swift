@@ -48,9 +48,7 @@ class RichTextView: UIView ,TYAttributedLabelDelegate{
         attStringCreater.createTextContainerWithTextWidth(UIScreen.mainScreen().bounds.width-5)
         label.textContainer = attStringCreater
         label.sizeToFit()
-//        label2.textContainer = attStringCreater
-//        label2.sizeToFit()
-//        return label2
+
         tmpArray.removeAll()
         return label
         

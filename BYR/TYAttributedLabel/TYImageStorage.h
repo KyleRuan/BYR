@@ -27,4 +27,5 @@ typedef enum : NSUInteger {
 @property (nonatomic, assign) TYImageAlignment imageAlignment; // default center
 
 @property (nonatomic, assign) BOOL cacheImageOnMemory; // default NO ,if YES can improve performance，but increase memory
+
 @end

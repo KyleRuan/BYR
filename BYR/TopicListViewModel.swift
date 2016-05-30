@@ -41,34 +41,18 @@ class TopicListViewModel {
    
     
     func loadData(typedRealm:Realm = realm,completion:()->Void){
-        // if have network
         let token = UserAngent.sharedInstance.getAccessToken()
-        
-//        let tokenlegal =  APIClinet.sharedInstance.isTokenLegal(<#T##uid: AnyObject##AnyObject#>, token: <#T##AnyObject#>, success: <#T##(JSON) -> Void#>, failure: <#T##(NSError) -> Void#>)
-        
         APIClinet.sharedInstance.getTopics(token!, thread: thread, type: type, success: { (json) -> Void in
              print(json)
              let code = json["code"]
             if code != nil {
                 print(code)
                 if (code == "1703") {
-//                    print(UserAngent.sharedInstance.getRefreshToken())
-                    
                         UserAngent.sharedInstance.removeObjectForKey(USER_INFO)
                         UserAngent.sharedInstance.removeObjectForKey(ACCESS_TOKEN)
                         SegueToViewController.sharedInstance.implementationSegue(self, segueTo: OAUTH_VIEW_CONTROLLER)
-                    
-                    
-                                  }
             }
-            
-            
-//            APIClinet.sharedInstance.getACCESSToken(UserAngent.sharedInstance.getRefreshToken()!, success: { (json) in
-//                print(json)
-//                }, failure: { (error) in
-//                    print(error)
-//            })
-
+    }
             
             if json.type == Type.Dictionary{
                 let article = json["article"]

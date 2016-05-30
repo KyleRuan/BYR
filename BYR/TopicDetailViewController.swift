@@ -9,13 +9,12 @@
 import UIKit
 import Kingfisher
 import SwiftyJSON
+import JGProgressHUD
 
 class TopicDetailViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource ,TYAttributedLabelDelegate{
     var topicId:String!
     var boardName:String!
-//    var heights:[String:CGFloat?]  = [:]
     var dataEntityArray:Array<TopicModelEnity> = []
-//    var topicEnity:TopicModelEnity!
     var currentPage = 1 {
         didSet{
             nextPage = currentPage + 1
@@ -24,9 +23,6 @@ class TopicDetailViewController: UIViewController ,UITableViewDelegate, UITableV
     }
     var MaxPage = 100
     var nextPage:Int = 1
-
-    
-    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nil, bundle: nil)
     }
@@ -39,32 +35,25 @@ class TopicDetailViewController: UIViewController ,UITableViewDelegate, UITableV
         self.init(nibName: nil, bundle: nil)
 
     }
-    
-  
-    var tableView:UITableView! = UITableView()
+     @IBOutlet weak var tableView: UITableView!
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.tableView.registerNib(UINib(nibName: "TopicDetailTableViewCell", bundle: nil), forCellReuseIdentifier: "detailcell")
-        
-         self.view.addSubview(tableView)
-         self.tableView.backgroundColor = UIColor.whiteColor()
          self.tableView.delegate = self
          self.tableView.dataSource = self
          self.tableView.mj_header  = MJRefreshStateHeader (refreshingTarget: self, refreshingAction: #selector(TopicDetailViewController.reLoadData))
          self.tableView.mj_footer = MJRefreshBackNormalFooter(refreshingTarget: self, refreshingAction: #selector(TopicDetailViewController.loadData))
-        //debug的时候
         self.tableView.mj_header.beginRefreshing()
-    
     }
-
-    
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.hidden =  true
     }
-    
-    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
     
     func reLoadData(){
         currentPage = 0
@@ -73,11 +62,8 @@ class TopicDetailViewController: UIViewController ,UITableViewDelegate, UITableV
     }
     
     func loadData(){
-        
         if  nextPage <= MaxPage{
             APIClinet.sharedInstance.getOneTopicDetail(UserAngent.sharedInstance.getAccessToken()!, path: "\(boardName)/\(self.topicId)", page:self.nextPage,success: { (json) -> Void in
-
-// print(json)
                 self.initDataSource(json)
                 self.tableView.mj_footer.endRefreshing()
                 self.tableView.reloadData()
@@ -86,12 +72,15 @@ class TopicDetailViewController: UIViewController ,UITableViewDelegate, UITableV
             }
         }else{
            self.tableView.mj_footer.endRefreshing()
-            //显示没有数据加载了
+            // Hub显示
+            let hud = JGProgressHUD()
+            hud.textLabel.text = "已经到头了，哈哈哈"
+            hud.showInView(self.view, animated: false)
+            hud.dismissAfterDelay(1)
+            
         }
-       
         
     }
-    
     
     func initDataSource(json:JSON){
         (MaxPage,currentPage) = TopicModelEnity.initDataSource(json,dataEntityArray: &dataEntityArray)
@@ -99,6 +88,7 @@ class TopicDetailViewController: UIViewController ,UITableViewDelegate, UITableV
  
     //tableViewDataSource
     
+    //MARK: - tableViewDataSource
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -109,30 +99,12 @@ class TopicDetailViewController: UIViewController ,UITableViewDelegate, UITableV
     }
    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        print("cellForRowAtIndexPath--------\(indexPath.row)")
-        
-        
         let cell = TopicDetailTableViewCell.cellWidthTableView(tableView)
-        
-//        var  cell = tableView.dequeueReusableCellWithIdentifier(REUSE_IDENTIFIER_FOR_TOPIC_DETAIL_CELL)  as! TopicDetailTableViewCell
-        
         cell.topicDetail = dataEntityArray[indexPath.row]
-//        if dataEntityArray.count != 0  {
-//            
-//            cell.topicDetail = dataEntityArray[indexPath.row]
-////          TopicDetailTableViewCell.prepareForCell(&cell,entity: dataEntityArray[indexPath.row])
-//            (cell.view.subviews.first as! TYAttributedLabel).delegate = self
-//        }
-    (cell.view.subviews.first as! TYAttributedLabel).delegate = self
-
+       (cell.view.subviews.first as! TYAttributedLabel).delegate = self
         return cell
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-//  
+  
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
          return dataEntityArray[indexPath.row].cellHeight
     }
@@ -149,21 +121,16 @@ class TopicDetailViewController: UIViewController ,UITableViewDelegate, UITableV
         }
         
         if let  storage = textStorage as? TYImageStorage{
-            
-            
             let imageVC = ShowImageDetailViewController()
-            let image = storage.image
             
+//            let screenW = self.view.bounds.width
+          
+//            let scale = storage.image.size.width/storage.image.size.height
+            let image =  storage.image.scaleToSize()
             
-            let scale = image.size.width/image.size.height
-            
-            
-            imageVC.imageView = ImageDisplayView(frame: CGRectInset(self.view.frame, 0, self.view.bounds.height/4*scale), image: storage.image)
-            imageVC.originImage = image
+            imageVC.imageView =  ImageDisplayView(image:image)
+                imageVC.originImage = storage.image
                self.presentViewController(imageVC, animated: true, completion: nil)
-           
-//            self.navigationController?.pushViewController(imageVC, animated: true)
-            
         }
         
         print("Clicked at:\(point)")

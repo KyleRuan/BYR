@@ -10,7 +10,7 @@ import UIKit
 import SwiftyJSON
 import Kingfisher
 import RealmSwift
-
+import JGProgressHUD
 
 
 
@@ -86,6 +86,14 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
             config.path = NSURL.fileURLWithPath(config.path!).URLByDeletingLastPathComponent?.URLByAppendingPathComponent("\(type).realm").path
             
              typeRealm = try! Realm(configuration: config)
+        }else {
+            let hub = JGProgressHUD()
+            
+            hub.showInView(self.view)
+            hub.indicatorView = nil
+            hub.textLabel.text = "没有网络哦，请联网"
+            hub.dismissAfterDelay(1)
+            
         }
         
         
@@ -119,27 +127,28 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
         // if have network
         viewModel.type = self.type
         viewModel.thread = thread
-
-        
-        viewModel.loadData(typeRealm) { () -> Void in
-            
-            if self.type == "thread"{
+        if Reachability.isConnectedToNetwork() {
+            viewModel.loadData(typeRealm) { () -> Void in
                 
-             self.articles = self.typeRealm.objects(Topics)
-                
-                
-            }else{
-            self.articles = self.typeRealm.objects(Topics).sorted("last_reply_time", ascending: true)    
+                if self.type == "thread"{
+                    self.articles = self.typeRealm.objects(Topics)
+                }else{
+                    self.articles = self.typeRealm.objects(Topics).sorted("last_reply_time", ascending: true)
+                }
+                self.title = self.viewModel.title
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.tableView.reloadData()
+                })
             }
-            
-            self.title = self.viewModel.title
-            
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                self.tableView.reloadData()
-            })
-            
-            
+ 
+        }  else {
+            let hub = JGProgressHUD()
+            hub.showInView(self.view)
+            hub.textLabel.text = "没有网络哦，请联网"
+            hub.dismissAfterDelay(1)
+
         }
+        
         
     }
     

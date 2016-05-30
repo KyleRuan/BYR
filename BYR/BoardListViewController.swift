@@ -18,25 +18,17 @@ class BoardListViewController: UIViewController, UITableViewDelegate,UITableView
     var  sub_section:Array<JSON> = []
     var subModelSource:Array<BoardListModel> = []
     var dataModelSource:Array<BoardListModel> = []
+    var  boards:Array<Board> = []
     var  selectedNum:String!
-    var listTitle:String = ""
-    
-    
-//http://bbs.byr.cn/open/section/0/BBSLOG/Advice.json?oauth_token=c1ba1dcbdc7716146ba5d72c5beeceff
+    var listTitle:String!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let token = UserAngent.sharedInstance.getAccessToken()!
         APIClinet.sharedInstance.getSectionInfo(token, name:selectedNum , success: { (json) -> Void in
-
-            
             if !json["sub_section"].isEmpty{
                 self.sub_section.append(json["sub_section"])
                 self.subModelSource = BoardListModel.initWithArray(json["sub_section"])
-                
             }
-            
-
             let arr = json["board"]
             self.dataModelSource = BoardListModel.initWithArray(arr)
             self.tableview.reloadData()
@@ -77,7 +69,7 @@ class BoardListViewController: UIViewController, UITableViewDelegate,UITableView
             return 0
            
         }
-//        return dataSource[0].count
+
         return dataModelSource.count
     }
     
@@ -105,8 +97,10 @@ class BoardListViewController: UIViewController, UITableViewDelegate,UITableView
             //没有子分区，那么就直接跳到文章页面
 //            let name = dataSource[0][indexPath.row]["name"].stringValue
              let name = dataModelSource[indexPath.row].name
+             listTitle = dataModelSource[indexPath.row].board
 //            dataModelSource
             selectedNum  = name
+         
             self.performSegueWithIdentifier(SEGUE_FROM_SECTION_T0_TOPICLIST, sender: indexPath.row)
             return
         }else{
@@ -114,14 +108,13 @@ class BoardListViewController: UIViewController, UITableViewDelegate,UITableView
             if indexPath.section == 0{
                 let name = "\(sub_section[0][indexPath.row])"
                      selectedNum  = name
-//                selectedNum = selectedNum.
-                
                 self.performSegueWithIdentifier(SEGUE_FROM_SECTION_TO_SUBSECTION, sender: self)
                 return
             }else{
 //                let name = "\(dataSource[0][indexPath.row]["name"].stringValue)"
                 
                 let name = dataModelSource[indexPath.row].name
+                 listTitle = dataModelSource[indexPath.row].board
                    selectedNum  = name
                 self.performSegueWithIdentifier(SEGUE_FROM_SECTION_T0_TOPICLIST, sender: self)
                 return 
@@ -151,8 +144,10 @@ class BoardListViewController: UIViewController, UITableViewDelegate,UITableView
         // Pass the selected object to the new view controller.
         
         if segue.identifier == SEGUE_FROM_SECTION_TO_SUBSECTION{
-            let vc = segue.destinationViewController  as! BoardListViewController
+            let vc = segue.destinationViewController  as! SubBoradListViewController
             vc.selectedNum = "\(selectedNum)"
+            
+            vc.title = listTitle
         }
         if segue.identifier == SEGUE_FROM_SECTION_T0_TOPICLIST{
             let vc = segue.destinationViewController  as! TopicListModelController
