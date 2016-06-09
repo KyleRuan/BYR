@@ -95,19 +95,11 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
             hub.dismissAfterDelay(1)
             
         }
-        
-        
-        
         navigationController?.delegate = self
-        //          self.articles = realm.objects(Topics)
-        
-        
-        
     }
     
-    //TODO : toLoadmore
+
     func loadMore(){
-//        viewModel.nextPage
     }
     
     
@@ -129,7 +121,6 @@ class TopicListModelController:UITableViewController,TYAttributedLabelDelegate,U
         viewModel.thread = thread
         if Reachability.isConnectedToNetwork() {
             viewModel.loadData(typeRealm) { () -> Void in
-                
                 if self.type == "thread"{
                     self.articles = self.typeRealm.objects(Topics)
                 }else{

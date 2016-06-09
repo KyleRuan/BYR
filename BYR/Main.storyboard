@@ -196,7 +196,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nkb-Gz-qVd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1541" y="75"/>
+            <point key="canvasLocation" x="-2054" y="8"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mCf-qf-0O4">
@@ -483,7 +483,7 @@
         <scene sceneID="4un-Ip-2vm">
             <objects>
                 <viewControllerPlaceholder storyboardName="Setting" id="BVj-5N-cPz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我" id="00p-AX-ezX"/>
+                    <tabBarItem key="tabBarItem" title="我" image="Setting" id="00p-AX-ezX"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jhj-9O-Ruz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -514,6 +514,7 @@
         <image name="AlbumLikeHL" width="20" height="20"/>
         <image name="LogBackground" width="600" height="600"/>
         <image name="Logo" width="816" height="219"/>
+        <image name="Setting" width="25" height="25"/>
         <image name="braceletLiked" width="16" height="16"/>
         <image name="face_default_f" width="120" height="120"/>
         <image name="passwordIcon" width="22" height="22"/>

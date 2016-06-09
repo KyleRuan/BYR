@@ -31,10 +31,7 @@ class RichTextView: UIView ,TYAttributedLabelDelegate{
     
 
     func Draw()->UIView{
-        
-//        let size = CGSizeMake(UIScreen.mainScreen().bounds.width-5,378*(cell.bounds.width)/600)
         let size = CGSizeMake(375*self.cell.frame.width/600, self.cell.frame.height/2)
-        
         bsRun.analyseText(&text!, entity: entity)
         var tmpArray = bsRun.drawRichText(size)
         
@@ -45,7 +42,7 @@ class RichTextView: UIView ,TYAttributedLabelDelegate{
         let label = TYAttributedLabel(frame: CGRectMake(0,0,CGRectGetWidth(cell.frame),0))
 //        label.delegate = self
         attStringCreater.addTextStorageArray(tmpArray)
-        attStringCreater.createTextContainerWithTextWidth(UIScreen.mainScreen().bounds.width-5)
+        attStringCreater.createTextContainerWithTextWidth(Screen.width-5)
         label.textContainer = attStringCreater
         label.sizeToFit()
 

@@ -79,36 +79,6 @@ class RKImageRichTextRun:RKBaseRichTextRun{
             imageStorage.size = CGSizeMake(size.width,size.width)
             tmpArray.append(imageStorage)
         }
-      
         return tmpArray
         }
-
-    
 }
-
-
-//
-//extension UIImage{
-//    func scaleToSize()->UIImage{
-//        
-//        let width = min(UIScreen.mainScreen().bounds.width, self.size.width )
-//        
-//        let scale:CGFloat =  self.size.height/self.size.width
-//
-//        
-//        let height:CGFloat = width*scale
-//       
-//        UIGraphicsBeginImageContext(CGSizeMake(width, height))
-//        
-//        self.drawInRect(CGRectMake(0, 0, width, height))
-//        
-//        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
-//        UIGraphicsEndImageContext()
-//        
-//        
-//        return scaledImage
-//        
-//        
-//        
-//    }
-//}

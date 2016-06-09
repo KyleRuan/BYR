@@ -23,7 +23,7 @@ class ShowImageDetailViewController: UIViewController,UIGestureRecognizerDelegat
         super.viewDidLoad()
 //    
 //        imageView = ImageDisplayView(frame: CGRectInset(self.view.frame, 0, self.view.bounds.height/4))
-        imageView.frame = CGRectMake(0, UIScreen.mainScreen().bounds.height/2-self.imageView.frame.height/2, self.imageView.frame.width, self.imageView.frame.height)
+        imageView.frame = CGRectMake(0, Screen.height/2-self.imageView.frame.height/2, self.imageView.frame.width, self.imageView.frame.height)
          self.view.addSubview(imageView!)
         imageView.userInteractionEnabled = true
        let   tapGusture = UITapGestureRecognizer(target: self, action: Selector("tap"))

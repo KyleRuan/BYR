@@ -9,14 +9,10 @@
 import UIKit
 
 class userAvatarView: UIView {
-        
-        //    let screenW = UIScreen.mainScreen().bounds.width
-        let screenH = UIScreen.mainScreen().bounds.height
-        //
-        
+
+        let screenH = Screen.height
         var ImageBG:UIImage!{
             didSet{
-            
                 let scaleImgae = UIImage.scaleTosizeImage(ImageBG, size: CGSizeMake(self.bounds.width,self.bounds.height))
               ImageBG = scaleImgae
                 
@@ -43,15 +39,11 @@ class userAvatarView: UIView {
         override  init(frame: CGRect) {
             super.init(frame: frame)
             addAvatar()
-            
-//            self.bounds.c
-            
         }
         
     
         //
-    convenience init(frame:CGRect,backgroundImage:UIImage,avatarImage:UIImage,avatarRadius:CGFloat = 40) {
-            //      let screenW = UIScreen.mainScreen().bounds.width
+    convenience init(frame:CGRect,backgroundImage:UIImage,avatarImage:UIImage,userId:String,avatarRadius:CGFloat = 40) {
             self.init(frame: frame)
             ImageBG = UIImage.scaleTosizeImage(backgroundImage, size: CGSizeMake(self.bounds.width,self.bounds.height))
             self.avatarRadius = avatarRadius
@@ -69,7 +61,7 @@ class userAvatarView: UIView {
             if avatar == nil {
                 avatar = UIImage(named: "face_default_m")
             }
-            let imageViewSizeX = UIScreen.mainScreen().bounds.midX-(avatarRadius+borderWidth)
+            let imageViewSizeX = Screen.bounds.midX-(avatarRadius+borderWidth)
             let imageViewSizeY = self.bounds.maxY
             let imageView = UIImageView(frame: CGRectMake(imageViewSizeX, imageViewSizeY-2*(avatarRadius+borderWidth),2*(avatarRadius+borderWidth), 2*(avatarRadius+borderWidth)))
             let scaleImgae = UIImage.scaleTosizeImage(avatar, size: CGSizeMake(avatarRadius*2,avatarRadius*2))
@@ -94,9 +86,19 @@ class userAvatarView: UIView {
                 // backgroundView
                 ImageBG = UIImage(named: "userInfBackground")
             }
-            
-            
             ImageBG?.drawInRect(self.bounds)
+            let path = UIBezierPath()
+            
+            let pathY = self.bounds.maxY-avatarRadius-borderWidth
+            path.moveToPoint(CGPointMake(0, pathY))
+            path.addLineToPoint(CGPointMake(Screen.width,pathY))
+            path.lineWidth = borderWidth
+            rectColor.set()
+            path.stroke()
+//            CGPathMoveToPoint(path, nil, 0, self.bounds.maxY)
+            
+            
+            
         }
         
         

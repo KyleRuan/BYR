@@ -294,7 +294,7 @@
                   moduleName = "BYR"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/TopicModelEntity.swift"
-                  timestampString = "486264031.74492"
+                  timestampString = "487185422.068802"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "37"
@@ -309,7 +309,7 @@
                   moduleName = "BYR"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/TopicModelEntity.swift"
-                  timestampString = "486264031.74514"
+                  timestampString = "487185422.068964"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "37"
@@ -342,11 +342,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BYR/TopicListModelController.swift"
-            timestampString = "486228459.962747"
+            timestampString = "487174448.727241"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
             landmarkName = "scrollViewWillBeginDragging(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -501,69 +501,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BYR/TYAttributedLabel/userAvatarView.swift"
-            timestampString = "485628271.566707"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "userAvatarView"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "@objc BYR.userAvatarView.avatar.setter : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIImage&gt;"
-                  moduleName = "BYR"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/TYAttributedLabel/userAvatarView.swift"
-                  timestampString = "486264031.750808"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "65">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BYR.userAvatarView.(avatar.materializeForSet : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIImage&gt;).(closure #1)"
-                  moduleName = "BYR"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/TYAttributedLabel/userAvatarView.swift"
-                  timestampString = "486264031.752231"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "53">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BYR.userAvatarView.(addAvatar in _801161212A46C748DE017C8566B1BD35) () -&gt; ()"
-                  moduleName = "BYR"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/TYAttributedLabel/userAvatarView.swift"
-                  timestampString = "486264031.753065"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "267">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "BYR/BoardListViewController.swift"
             timestampString = "485805062.63027"
             startingColumnNumber = "9223372036854775807"
@@ -597,11 +534,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BYR/TopicListModelController.swift"
-            timestampString = "486228459.962747"
+            timestampString = "487174448.727241"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "317"
-            endingLineNumber = "317"
+            startingLineNumber = "308"
+            endingLineNumber = "308"
             landmarkName = "animationPop()"
             landmarkType = "5">
          </BreakpointContent>
@@ -613,11 +550,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BYR/TopicListModelController.swift"
-            timestampString = "486228459.962747"
+            timestampString = "487174448.727241"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "320"
-            endingLineNumber = "320"
+            startingLineNumber = "311"
+            endingLineNumber = "311"
             landmarkName = "animationPop()"
             landmarkType = "5">
          </BreakpointContent>
@@ -740,88 +677,73 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BYR/RKImageRichTextRun.swift"
-            timestampString = "486226964.634899"
+            filePath = "BYR/APIClient.swift"
+            timestampString = "486234673.608287"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88">
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "APIClinet"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BYR/TYAttributedLabel/userAvatarView.swift"
-            timestampString = "486227978.283801"
+            filePath = "BYR/AppDelegate.swift"
+            timestampString = "487159834.015147"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "init(frame:)"
-            landmarkType = "5">
+            startingLineNumber = "15"
+            endingLineNumber = "15">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "BYR.userAvatarView.init (frame : __C.CGRect) -&gt; BYR.userAvatarView"
+                  symbolName = "globalinit_33_E5B1B594697FD019797128A083AE10AE_func0"
                   moduleName = "BYR"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/TYAttributedLabel/userAvatarView.swift"
-                  timestampString = "486264031.758454"
+                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/AppDelegate.swift"
+                  timestampString = "487159834.01802"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "44"
-                  endingLineNumber = "44"
-                  offsetFromSymbolStart = "280">
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "24">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "BYR.userAvatarView.__allocating_init (frame : __C.CGRect) -&gt; BYR.userAvatarView"
+                  symbolName = "BYR.realm.unsafeMutableAddressor : RealmSwift.Realm"
                   moduleName = "BYR"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/TYAttributedLabel/userAvatarView.swift"
-                  timestampString = "486264031.758957"
+                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/AppDelegate.swift"
+                  timestampString = "487159834.018207"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "44"
-                  endingLineNumber = "44"
-                  offsetFromSymbolStart = "308">
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "3">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "BYR.userAvatarView.init (frame : __C.CGRect, backgroundImage : __ObjC.UIImage, avatarImage : __ObjC.UIImage, avatarRadius : CoreGraphics.CGFloat) -&gt; BYR.userAvatarView"
+                  symbolName = "function signature specialization &lt;Arg[0] = Dead and Owned To Guaranteed, Arg[1] = Dead and Owned To Guaranteed&gt; of BYR.AppDelegate.application (__ObjC.UIApplication, didFinishLaunchingWithOptions : Swift.Optional&lt;Swift.Dictionary&lt;__ObjC.NSObject, Swift.AnyObject&gt;&gt;) -&gt; Swift.Bool"
                   moduleName = "BYR"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/TYAttributedLabel/userAvatarView.swift"
-                  timestampString = "486264031.759129"
+                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/AppDelegate.swift"
+                  timestampString = "487159834.01832"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "44"
-                  endingLineNumber = "44"
-                  offsetFromSymbolStart = "319">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BYR.userAvatarView.__allocating_init (frame : __C.CGRect, backgroundImage : __ObjC.UIImage, avatarImage : __ObjC.UIImage, avatarRadius : CoreGraphics.CGFloat) -&gt; BYR.userAvatarView"
-                  moduleName = "BYR"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/TYAttributedLabel/userAvatarView.swift"
-                  timestampString = "486264031.759331"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "44"
-                  endingLineNumber = "44"
-                  offsetFromSymbolStart = "353">
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "188">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -832,14 +754,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BYR/APIClient.swift"
-            timestampString = "486234673.608287"
+            filePath = "BYR/SettingTableViewController.swift"
+            timestampString = "487186859.554665"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "getUserInfo(_:userId:success:failure:)"
-            landmarkType = "5">
+            startingLineNumber = "211"
+            endingLineNumber = "211"
+            landmarkName = "SettingTableViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -848,14 +770,172 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BYR/APIClient.swift"
-            timestampString = "486234673.608287"
+            filePath = "BYR/TYAttributedLabel/userAvatarView.swift"
+            timestampString = "487183945.619475"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "init(frame:backgroundImage:avatarImage:userId:avatarRadius:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BYR.userAvatarView.__allocating_init (frame : __C.CGRect, backgroundImage : __ObjC.UIImage, avatarImage : __ObjC.UIImage, userId : Swift.String, avatarRadius : CoreGraphics.CGFloat) -&gt; BYR.userAvatarView"
+                  moduleName = "BYR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/TYAttributedLabel/userAvatarView.swift"
+                  timestampString = "487185422.073875"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "367">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "function signature specialization &lt;Arg[3] = Exploded&gt; of BYR.userAvatarView.init (frame : __C.CGRect, backgroundImage : __ObjC.UIImage, avatarImage : __ObjC.UIImage, userId : Swift.String, avatarRadius : CoreGraphics.CGFloat) -&gt; BYR.userAvatarView"
+                  moduleName = "BYR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/TYAttributedLabel/userAvatarView.swift"
+                  timestampString = "487185422.075803"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "336">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BYR/TopicDetailViewController.swift"
+            timestampString = "487163772.982433"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "init(nibName:bundle:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BYR.TopicDetailViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; BYR.TopicDetailViewController"
+                  moduleName = "BYR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/TopicDetailViewController.swift"
+                  timestampString = "487185422.079189"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "232">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BYR.TopicDetailViewController.__allocating_init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; BYR.TopicDetailViewController"
+                  moduleName = "BYR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/TopicDetailViewController.swift"
+                  timestampString = "487185422.081835"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "244">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BYR.TopicDetailViewController.init () -&gt; BYR.TopicDetailViewController"
+                  moduleName = "BYR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/TopicDetailViewController.swift"
+                  timestampString = "487185422.082045"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "282">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BYR.TopicDetailViewController.__allocating_init () -&gt; BYR.TopicDetailViewController"
+                  moduleName = "BYR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/TopicDetailViewController.swift"
+                  timestampString = "487185422.082219"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "310">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BYR/TopicDetailViewController.swift"
+            timestampString = "487163775.274477"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
             endingLineNumber = "31"
-            landmarkName = "getJSONData(_:parameters:success:failure:)"
+            landmarkName = "init(coder:)"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BYR.TopicDetailViewController.__allocating_init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;BYR.TopicDetailViewController&gt;"
+                  moduleName = "BYR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/TopicDetailViewController.swift"
+                  timestampString = "487185422.082588"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "237">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "function signature specialization &lt;Arg[0] = Owned To Guaranteed&gt; of BYR.TopicDetailViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;BYR.TopicDetailViewController&gt;"
+                  moduleName = "BYR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/TopicDetailViewController.swift"
+                  timestampString = "487185422.083245"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "209">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -864,14 +944,61 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BYR/APIClient.swift"
-            timestampString = "486229432.428088"
+            filePath = "BYR/TopicDetailViewController.swift"
+            timestampString = "487163779.669241"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "getJSONData(_:parameters:success:failure:)"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "init()"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BYR.TopicDetailViewController.init () -&gt; BYR.TopicDetailViewController"
+                  moduleName = "BYR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/TopicDetailViewController.swift"
+                  timestampString = "487185422.083483"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BYR.TopicDetailViewController.__allocating_init () -&gt; BYR.TopicDetailViewController"
+                  moduleName = "BYR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/TopicDetailViewController.swift"
+                  timestampString = "487185422.083746"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "46">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "@objc BYR.TopicDetailViewController.init () -&gt; BYR.TopicDetailViewController"
+                  moduleName = "BYR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/TopicDetailViewController.swift"
+                  timestampString = "487185422.083921"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "15">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -881,12 +1008,338 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BYR/RoundImageView.swift"
-            timestampString = "486263849.34066"
+            timestampString = "487178466.376956"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "hitTest(_:withEvent:)"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "modalToUserInfo(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BYR/SettingTableViewController.swift"
+            timestampString = "487182783.871748"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "init(style:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BYR.SettingTableViewController.__allocating_init (style : __C.UITableViewStyle) -&gt; BYR.SettingTableViewController"
+                  moduleName = "BYR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/SettingTableViewController.swift"
+                  timestampString = "487185422.085028"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "150">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BYR.SettingTableViewController.init (userType : BYR.UserType, user : BYR.User) -&gt; BYR.SettingTableViewController"
+                  moduleName = "BYR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/SettingTableViewController.swift"
+                  timestampString = "487185422.090424"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "175">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BYR.SettingTableViewController.__allocating_init (userType : BYR.UserType, user : BYR.User) -&gt; BYR.SettingTableViewController"
+                  moduleName = "BYR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/SettingTableViewController.swift"
+                  timestampString = "487185422.09079"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "203">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "function signature specialization &lt;Arg[0] = Dead&gt; of BYR.SettingTableViewController.init (style : __C.UITableViewStyle) -&gt; BYR.SettingTableViewController"
+                  moduleName = "BYR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/SettingTableViewController.swift"
+                  timestampString = "487185422.091027"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "144">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BYR/SettingTableViewController.swift"
+            timestampString = "487182783.871748"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "init(coder:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BYR.SettingTableViewController.__allocating_init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;BYR.SettingTableViewController&gt;"
+                  moduleName = "BYR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/SettingTableViewController.swift"
+                  timestampString = "487185422.091431"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "154">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "function signature specialization &lt;Arg[0] = Owned To Guaranteed&gt; of BYR.SettingTableViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;BYR.SettingTableViewController&gt;"
+                  moduleName = "BYR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/SettingTableViewController.swift"
+                  timestampString = "487185422.09264"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "144">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BYR/SettingTableViewController.swift"
+            timestampString = "487182783.871748"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "init(userType:user:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BYR.SettingTableViewController.init (userType : BYR.UserType, user : BYR.User) -&gt; BYR.SettingTableViewController"
+                  moduleName = "BYR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/SettingTableViewController.swift"
+                  timestampString = "487185422.092911"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BYR.SettingTableViewController.__allocating_init (userType : BYR.UserType, user : BYR.User) -&gt; BYR.SettingTableViewController"
+                  moduleName = "BYR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/SettingTableViewController.swift"
+                  timestampString = "487185422.093086"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "46">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BYR/SettingTableViewController.swift"
+            timestampString = "487182783.871748"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BYR.SettingTableViewController.viewDidLoad () -&gt; ()"
+                  moduleName = "BYR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/SettingTableViewController.swift"
+                  timestampString = "487185422.093277"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "74">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "@objc BYR.SettingTableViewController.viewDidLoad () -&gt; ()"
+                  moduleName = "BYR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/SettingTableViewController.swift"
+                  timestampString = "487185422.093451"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "85">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.SwiftErrorBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BYR/SettingTableViewController.swift"
+            timestampString = "487182783.871748"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BYR/UIViewControllerExtension.swift"
+            timestampString = "487173949.151378"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "touchesBegan(_:withEvent:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BYR/SettingTableViewController.swift"
+            timestampString = "487186859.554665"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "viewDidAppear(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BYR.SettingTableViewController.viewDidAppear (Swift.Bool) -&gt; ()"
+                  moduleName = "BYR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/SettingTableViewController.swift"
+                  timestampString = "487185422.112553"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "102"
+                  endingLineNumber = "102"
+                  offsetFromSymbolStart = "26">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "@objc BYR.SettingTableViewController.viewDidAppear (Swift.Bool) -&gt; ()"
+                  moduleName = "BYR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruankai/Documents/%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE/BYR_BBS/BYR/BYR/SettingTableViewController.swift"
+                  timestampString = "487185422.112786"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "102"
+                  endingLineNumber = "102"
+                  offsetFromSymbolStart = "47">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BYR/SettingTableViewController.swift"
+            timestampString = "487186859.554665"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "viewWillAppear(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

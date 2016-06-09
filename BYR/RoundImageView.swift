@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 @IBDesignable
 class RoundImageView: UIImageView {
 
@@ -73,11 +75,31 @@ class RoundImageView: UIImageView {
         APIClinet.sharedInstance.getUserInfo(token!, userId: userId, success: { (json) in
             print(json)
                let user = User.mj_objectWithKeyValues(json.object)
-            print(user)
+            self.modalToUserInfo(user)
             }) { (error) in
                 print(error)
         }
      
+    }
+    
+    
+    func modalToUserInfo(user:User?) {
+        guard let userInfo = user else {
+            return
+        }
+        
+        let story = UIStoryboard(name: "Setting", bundle: nil)
+        guard let  vc = story.instantiateViewControllerWithIdentifier("SettingTableViewController") as? SettingTableViewController else {
+            return
+        }
+        
+        let navigator = UINavigationController(rootViewController: vc)
+        vc.type = .Others
+        vc.user = userInfo
+        UserInfowindow.rootViewController = navigator
+        UserInfowindow.windowLevel = UIWindowLevelAlert+1
+        UserInfowindow.makeKeyAndVisible()
+ 
     }
 }
 

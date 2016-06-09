@@ -58,3 +58,11 @@ let  SEGUE_FROM_SECTION_T0_TOPICLIST = "toTopicList"
 //let backgroundColor = UIColor(red: 100, green: 127, blue: 127, alpha: 1)
 
 
+struct Screen {
+static let width = UIScreen.mainScreen().bounds.width
+    static let height =  UIScreen.mainScreen().bounds.height
+    static let bounds =  UIScreen.mainScreen().bounds
+}
+
+var UserInfowindow = UIWindow(frame: Screen.bounds)
+

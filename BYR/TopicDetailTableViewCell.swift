@@ -40,7 +40,7 @@ class TopicDetailTableViewCell: UITableViewCell {
                 avatar.image = UIImage(named: "face_default_m")
             }
             
-            
+            avatar.userId = topicDetail.userName
             let  label = RichTextView(cell: self, entity: topicDetail)
             label.sizeToFit()
             
@@ -73,17 +73,7 @@ class TopicDetailTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization co
-//          self.bounds = UIScreen.mainScreen().bounds
-        
-        print("from nib")
-        
          }
-
-    
-
-
-  ///
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         

@@ -47,7 +47,7 @@ extension UIImage {
     
     func scaleToSize()->UIImage{
         
-        let width = min(UIScreen.mainScreen().bounds.width, self.size.width )
+        let width = min(Screen.width, self.size.width )
         
         let scale:CGFloat =  self.size.height/self.size.width
         
