@@ -66,11 +66,8 @@ class SettingTableViewController: UITableViewController {
             btn.addTarget(self, action: #selector(SettingTableViewController.back), forControlEvents: UIControlEvents.TouchUpInside)
             let item = UIBarButtonItem(customView: btn)
             self.navigationItem.leftBarButtonItem = item
-//            self.navigationBar.backgroundColor = UIColor(red: 49, green: 183, blue: 254, alpha: 1)
-
-            self.navigationController?.navigationBar.backgroundColor = UIColor(red: 49, green: 183, blue: 254, alpha: 1)
-            self.navigationController?.navigationBar.hidden = false
-            self.navigationController?.navigationBar.barTintColor = UIColor(red: 49, green: 183, blue: 254, alpha: 1)
+//            self.navigationController?.navigationBar.hidden = false
+            self.navigationController?.navigationBar.barTintColor = UIColor(red: 49/255, green: 183/255, blue: 254/255, alpha: 1)
 
         } else {
             // 退出

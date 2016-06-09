@@ -61,13 +61,13 @@ class RoundImageView: UIImageView {
     
     
     
-    override func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
-        if self.userId != "" {
-            return self
-        } else {
-            return super.hitTest(point, withEvent: event)
-        }
-    }
+//    override func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
+//        if self.userId != "" {
+//            return self
+//        } else {
+//            return super.hitTest(point, withEvent: event)
+//        }
+//    }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
@@ -94,6 +94,9 @@ class RoundImageView: UIImageView {
         }
         
         let navigator = UINavigationController(rootViewController: vc)
+        navigator.navigationBar.backgroundColor = UIColor(red: 49, green: 183, blue: 254, alpha: 1)
+       navigator.navigationBar.barTintColor = UIColor(red: 49, green: 183, blue: 254, alpha: 1)
+
         vc.type = .Others
         vc.user = userInfo
         UserInfowindow.rootViewController = navigator
