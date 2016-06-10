@@ -18,6 +18,6 @@ class Reminding:NSObject {
     var title:String? //提醒文章的标题
     var user:User? //提醒文章的发信人，此为user元数据，如果user不存在则为用户id
     var time:Int? //发出提醒的时间
- /// "1"true
+    /// "1"true
     var is_read:String? //提醒是否已读
 }

@@ -10,14 +10,12 @@ import UIKit
 
 class TopicListTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var avatar: RoundImageView!
+    @IBOutlet weak var avatar: AvatarView!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var reply_count: UILabel!
     @IBOutlet weak var post_time: UILabel!
     @IBOutlet weak var board: UILabel!
-    
-    
     var topic:Topics = Topics(){
         didSet {
             title.text = topic.title
@@ -42,21 +40,15 @@ class TopicListTableViewCell: UITableViewCell {
                 avatar.userId =  userInfo.id
                 avatar.cornerRadius = avatar.bounds.size.width/2
             }
-
         }
-        
     }
-    
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
     
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
 

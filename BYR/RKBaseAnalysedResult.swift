@@ -14,10 +14,8 @@ struct RKBaseAnalysedResult{
     var data:AnyObject?
     var type:RKRichTextRunType!
     var file :AttachmentFile?
+
     init(type:RKRichTextRunType){
         self.type = type
-    
     }
-//    var text:NSString?
-    
 }

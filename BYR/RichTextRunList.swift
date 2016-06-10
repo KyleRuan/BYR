@@ -11,32 +11,26 @@ import Foundation
 
 //组合
 class RichTextRunList:RKBaseRichTextRun{
-    var runList:Array<RKBaseRichTextRun> = []
+  var runList:Array<RKBaseRichTextRun> = []
+  var result:[RKBaseAnalysedResult] = []
 
-    var result:[RKBaseAnalysedResult] = []
-    
-    init(){
-        
+  init(){}
+
+  func add(run:RKBaseRichTextRun){
+    runList.append(run)
+  }
+
+  func analyseText(inout text: NSString, entity: TopicModelEnity?) {
+    for run in runList {
+      run.analyseText(&text, entity: entity)
     }
-    func add(run:RKBaseRichTextRun){
-        runList.append(run)
+  }
+
+  func drawRichText( size: CGSize) -> [AnyObject] {
+    var tmpArray:Array<AnyObject> = []
+    for one in runList {
+      tmpArray.appendContentsOf(one.drawRichText( size))
     }
-  
-    func analyseText(inout text: NSString, entity: TopicModelEnity?) {
-        
-        for run in runList {
-           run.analyseText(&text, entity: entity)
-        }
-    
-        
-    }
-    
-    func drawRichText( size: CGSize) -> [AnyObject] {
-        var tmpArray:Array<AnyObject> = []
-        for one in runList {
-            tmpArray.appendContentsOf(one.drawRichText( size))
-        }
-         return  tmpArray
-    }
-   
+    return  tmpArray
+  }
 }

@@ -9,22 +9,22 @@
 import Foundation
 
 class SegueToViewController{
-    static let sharedInstance = SegueToViewController()
-     func  implementationSegue(selfViewController:AnyObject,segueTo:String){
-        if let startViewController = selfViewController as? UIViewController{
-            let story = UIStoryboard(name: "Main", bundle: nil)
-            let vc = story.instantiateViewControllerWithIdentifier(segueTo)
-            startViewController.view.window?.rootViewController = vc
-            return
-        }
-        
-        if let startViewController = selfViewController as?  AppDelegate {
-            let story = UIStoryboard(name: "Main", bundle: nil)
-            let vc = story.instantiateViewControllerWithIdentifier(segueTo)
-            startViewController.window?.rootViewController = vc
-            return
-        }
-        
-    
+  static let sharedInstance = SegueToViewController()
+  func  implementationSegue(selfViewController:AnyObject,segueTo:String){
+    if let startViewController = selfViewController as? UIViewController{
+      let story = UIStoryboard(name: "Main", bundle: nil)
+      let vc = story.instantiateViewControllerWithIdentifier(segueTo)
+      startViewController.view.window?.rootViewController = vc
+      return
     }
+
+    if let startViewController = selfViewController as?  AppDelegate {
+      let story = UIStoryboard(name: "Main", bundle: nil)
+      let vc = story.instantiateViewControllerWithIdentifier(segueTo)
+      startViewController.window?.rootViewController = vc
+      return
+    }
+
+
+  }
 }

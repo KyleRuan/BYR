@@ -7,11 +7,9 @@
 //
 
 import Foundation
-
 /**
 *  用户信箱元数据
 */
-
 class UserMail:NSObject{
  /// "1"true有新邮件
     var new_mail:String?  //是否有新邮件

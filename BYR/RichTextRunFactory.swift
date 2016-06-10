@@ -8,20 +8,17 @@
 
 import Foundation
 
-
 class RichTextRunFactory{
-    
-    
+
     func createImageRun()->RKBaseRichTextRun {
         return RKImageRichTextRun()
     }
-    
+
     func createUrlRun()->RKBaseRichTextRun{
         return RKURLRichTextRun()
     }
-    
+
     func createEmojiRun() ->RKBaseRichTextRun{
         return RKEmojiRichTextRun()
     }
-    
 }

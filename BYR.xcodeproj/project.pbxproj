@@ -36,6 +36,7 @@
 		B70ED8A51CE4EA6D003D830D /* TYLinkTextStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = B70ED8841CE4EA6D003D830D /* TYLinkTextStorage.m */; };
 		B70ED8A61CE4EA6D003D830D /* TYTextContainer+Extended.m in Sources */ = {isa = PBXBuildFile; fileRef = B70ED8851CE4EA6D003D830D /* TYTextContainer+Extended.m */; };
 		B70ED8A91CE4EA6D003D830D /* TYViewStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = B70ED88C1CE4EA6D003D830D /* TYViewStorage.m */; };
+		B71E2DD41D0A8B3400396EE2 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71E2DD31D0A8B3400396EE2 /* AvatarView.swift */; };
 		B72459151BE9CED200F2C1C1 /* UserAngent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72459141BE9CED200F2C1C1 /* UserAngent.swift */; };
 		B731FD721BD8E3650050F215 /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B731FD711BD8E3650050F215 /* RoundImageView.swift */; };
 		B738F4F01CEF0A1000772E1D /* userAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B738F4EF1CEF0A1000772E1D /* userAvatarView.swift */; };
@@ -387,6 +388,7 @@
 		B70ED88A1CE4EA6D003D830D /* TYTextStorageProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYTextStorageProtocol.h; sourceTree = "<group>"; };
 		B70ED88B1CE4EA6D003D830D /* TYViewStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYViewStorage.h; sourceTree = "<group>"; };
 		B70ED88C1CE4EA6D003D830D /* TYViewStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYViewStorage.m; sourceTree = "<group>"; };
+		B71E2DD31D0A8B3400396EE2 /* AvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		B72459141BE9CED200F2C1C1 /* UserAngent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAngent.swift; sourceTree = "<group>"; };
 		B731FD711BD8E3650050F215 /* RoundImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
 		B738F4EF1CEF0A1000772E1D /* userAvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = userAvatarView.swift; path = TYAttributedLabel/userAvatarView.swift; sourceTree = "<group>"; };
@@ -1201,6 +1203,7 @@
 				B78773EE1BE9E2EC004566D5 /* PersonalAttributes.swift */,
 				B7A6A34D1C881ED50006AA6B /* Reachability.swift */,
 				B74966721CF057A3008AE3EB /* UIImageExtension.swift */,
+				B71E2DD31D0A8B3400396EE2 /* AvatarView.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -1659,6 +1662,7 @@
 				B70ED8991CE4EA6D003D830D /* MJRefreshNormalHeader.m in Sources */,
 				B7D7EEA51BF0A12500D2981C /* TopicModelEntity.swift in Sources */,
 				B7A6A34E1C881ED50006AA6B /* Reachability.swift in Sources */,
+				B71E2DD41D0A8B3400396EE2 /* AvatarView.swift in Sources */,
 				B77607151BD7EFDB003B3801 /* Board.swift in Sources */,
 				B70ED8981CE4EA6D003D830D /* MJRefreshGifHeader.m in Sources */,
 				B7009CA81C8F2CC1004A49F4 /* PostTopicViewController.swift in Sources */,

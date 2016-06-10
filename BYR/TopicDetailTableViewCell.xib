@@ -36,7 +36,7 @@
                             </label>
                         </subviews>
                     </stackView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="face_default_f" translatesAutoresizingMaskIntoConstraints="NO" id="L5P-J6-G6g" customClass="RoundImageView" customModule="BYR" customModuleProvider="target">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="face_default_f" translatesAutoresizingMaskIntoConstraints="NO" id="L5P-J6-G6g" customClass="AvatarView" customModule="BYR" customModuleProvider="target">
                         <rect key="frame" x="8" y="8" width="70" height="70"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="70" id="ANl-4W-xG3"/>

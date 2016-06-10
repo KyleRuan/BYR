@@ -10,26 +10,14 @@ import Foundation
 
 class setupLoadingView{
 //    init
-    
     class func markView( view:UIView)->UIView{
-        
-        
-        
         let maskLayer = CALayer()
-        
         maskLayer.position = view.center
         maskLayer.bounds = CGRectMake(0, 0, 120, 120)
         maskLayer.contents = UIImage(named: "LoadIN")?.CGImage
-        
-        
         let  maskBackgroundView = UIView(frame: view.bounds)
         maskBackgroundView.backgroundColor = UIColor.whiteColor()
-
-         view.layer.mask = maskLayer
-
-        
+        view.layer.mask = maskLayer
         return view
     }
-    
-    
 }

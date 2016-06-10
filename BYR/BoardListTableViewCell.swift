@@ -10,37 +10,26 @@ import UIKit
 
 class BoardListTableViewCell: UITableViewCell {
 
-    
-    @IBOutlet weak var board: UILabel!
-    
-    
-    @IBOutlet weak var boardManager: UILabel!
-    
-    
-    @IBOutlet weak var postToday: UILabel!
-    
-   var model:BoardListModel=BoardListModel(){
-       didSet{
-           board.text = model.board
-           boardManager.text = model.manager
-           postToday.text = model.postToday
-       }
-    
+  @IBOutlet weak var board: UILabel!
+  @IBOutlet weak var boardManager: UILabel!
+  @IBOutlet weak var postToday: UILabel!
+  var model:BoardListModel=BoardListModel(){
+    didSet{
+      board.text = model.board
+      boardManager.text = model.manager
+      postToday.text = model.postToday
     }
-    
-    class func cellWithTableView(tableView:UITableView)->BoardListTableViewCell {
-       return tableView.dequeueReusableCellWithIdentifier("BoardList") as! BoardListTableViewCell
-    }
+  }
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+  class func cellWithTableView(tableView:UITableView)->BoardListTableViewCell {
+    return tableView.dequeueReusableCellWithIdentifier("BoardList") as! BoardListTableViewCell
+  }
 
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+  override func awakeFromNib() {
+    super.awakeFromNib()
+  }
+  override func setSelected(selected: Bool, animated: Bool) {
+    super.setSelected(selected, animated: animated)
+  }
 
 }
