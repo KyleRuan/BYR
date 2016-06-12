@@ -1,0 +1,22 @@
+{
+  "name": "byr",
+  "version": "1.0.0",
+  "description": "byr forum",
+  "main": "index.js",
+  "scripts": {
+    "test": "none"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KyleRuan/BYR.git"
+  },
+  "keywords": [
+    "byr"
+  ],
+  "author": "kyleruan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KyleRuan/BYR/issues"
+  },
+  "homepage": "https://github.com/KyleRuan/BYR#readme"
+}

@@ -17,6 +17,7 @@ class APIClinet {
   private  func getJSONData(path:String,parameters:[String:AnyObject]?, success: (JSON) -> Void, failure: (NSError) -> Void){
     Alamofire.request(.GET, baseurl+path, parameters: parameters).responseSwiftyJSON{
       (request,response ,result ,error) in
+      print(request.URL)
       if let err = error {
         failure(err)
       } else {

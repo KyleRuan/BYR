@@ -50,7 +50,8 @@ class SettingTableViewController: UITableViewController {
       // here to
       btn.frame = CGRectMake(0, 0, 50, 100);
       btn.setTitle("返回", forState: .Normal)
-      btn.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+      btn.setImage(UIImage(named: "back_navigator"), forState: .Normal)
+//      btn.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
       btn.addTarget(self, action: #selector(SettingTableViewController.back), forControlEvents: UIControlEvents.TouchUpInside)
       let item = UIBarButtonItem(customView: btn)
       self.navigationItem.leftBarButtonItem = item
@@ -59,20 +60,14 @@ class SettingTableViewController: UITableViewController {
 
     } else {
       // 退出
-      let height:CGFloat = 100
-      btn.frame = CGRectMake(0, self.tableView.frame.height-height, Screen.width, 50)
+      let height:CGFloat = 50
+      btn.frame = CGRectMake(0, 0, Screen.width, 50)
       self.tableView.contentInset.bottom = height
-      //            let url = NSURL(string: user.face_url)
       btn.setTitle("退出登入", forState: .Normal)
       btn.backgroundColor =  UIColor.redColor()
-      //            btn.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
       btn.addTarget(self, action: #selector(SettingTableViewController.exitToLogin), forControlEvents: UIControlEvents.TouchUpInside)
-      self.tableView.addSubview(btn)
-//            let longPress = UILongPressGestureRecognizer(target: self, action: #selector(SettingTableViewController.longPress(_:)))
-//            self.view.addGestureRecognizer(longPress)
-
+      self.tableView.tableFooterView = btn
     }
-
   }
 
 //    func longPress(gesture:UILongPressGestureRecognizer) {
@@ -114,7 +109,6 @@ class SettingTableViewController: UITableViewController {
     }
     let attribute = PersonalAttributes()
     let (keyArray,valueArray) = attribute.keyValuePairs(user)
-    print(keyArray)
     for value in valueArray {
       if value.characters.count > 0 {
         let index = valueArray.indexOf(value)
@@ -139,7 +133,7 @@ class SettingTableViewController: UITableViewController {
 
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     // #warning Incomplete implementation, return the number of rows
-    return keys.count
+    return values.count
   }
 
   @IBAction func exitToLogin() {
@@ -171,7 +165,13 @@ class SettingTableViewController: UITableViewController {
     }
   }
 
-
+  override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+    
+  }
+  
+  override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    return 80
+  }
 
   override func scrollViewDidScroll(scrollView: UIScrollView) {
     var scale:CGFloat = 1
