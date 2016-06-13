@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4DD660FFE5F5452C27D9CB99 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D20BE0ED24ACC701A254FF3 /* Pods.framework */; };
 		B7009CA81C8F2CC1004A49F4 /* PostTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7009CA71C8F2CC1004A49F4 /* PostTopicViewController.swift */; };
 		B70B69921C4BF7DB00373971 /* TopicListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70B69911C4BF7DB00373971 /* TopicListViewModel.swift */; };
 		B70ED88D1CE4EA6D003D830D /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = B70ED84E1CE4EA6D003D830D /* MJRefreshAutoFooter.m */; };
@@ -320,14 +319,32 @@
 		B7E1EAED1C98308A0085E228 /* FeedMediaAddCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7E1EAE81C98308A0085E228 /* FeedMediaAddCell.xib */; };
 		B7E1EAEE1C98308A0085E228 /* FeedMediaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E1EAE91C98308A0085E228 /* FeedMediaCell.swift */; };
 		B7E1EAEF1C98308A0085E228 /* FeedMediaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7E1EAEA1C98308A0085E228 /* FeedMediaCell.xib */; };
+		B7EBC7D41D0DF05F00D99963 /* ExamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EBC7D31D0DF05F00D99963 /* ExamView.swift */; };
+		B7EBC7D91D0DF4D400D99963 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7EBC7D51D0DF46B00D99963 /* Realm.framework */; };
+		B7EBC7DA1D0DF4D400D99963 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B7EBC7D51D0DF46B00D99963 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B7FD03111C43872A00D68D77 /* CustomInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FD030F1C43872A00D68D77 /* CustomInteractionController.swift */; };
 		B7FD03121C43872A00D68D77 /* CustomNavigationAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FD03101C43872A00D68D77 /* CustomNavigationAnimationController.swift */; };
+		E9024974B18ED7BBCD329065 /* Pods_BYR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3E0ABED1DE07A4427DD2375 /* Pods_BYR.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B7EBC7DB1D0DF4D400D99963 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B7EBC7DA1D0DF4D400D99963 /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0D20BE0ED24ACC701A254FF3 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1A106F2EAE456E8AFDF2A1D2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		3B43955F829EAD6159AE1184 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		3F1859925805B3F0D5E42690 /* Pods-BYR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BYR.release.xcconfig"; path = "Pods/Target Support Files/Pods-BYR/Pods-BYR.release.xcconfig"; sourceTree = "<group>"; };
+		6A414B0F512B602C55A9FCF0 /* Pods-BYR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BYR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BYR/Pods-BYR.debug.xcconfig"; sourceTree = "<group>"; };
 		B7009CA71C8F2CC1004A49F4 /* PostTopicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTopicViewController.swift; sourceTree = "<group>"; };
 		B70B69911C4BF7DB00373971 /* TopicListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListViewModel.swift; sourceTree = "<group>"; };
 		B70ED84D1CE4EA6D003D830D /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
@@ -703,8 +720,12 @@
 		B7E1EAE81C98308A0085E228 /* FeedMediaAddCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedMediaAddCell.xib; sourceTree = "<group>"; };
 		B7E1EAE91C98308A0085E228 /* FeedMediaCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedMediaCell.swift; sourceTree = "<group>"; };
 		B7E1EAEA1C98308A0085E228 /* FeedMediaCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedMediaCell.xib; sourceTree = "<group>"; };
+		B7EBC7D31D0DF05F00D99963 /* ExamView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamView.swift; sourceTree = "<group>"; };
+		B7EBC7D51D0DF46B00D99963 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "../../../../Library/Developer/Xcode/DerivedData/BYR-hgodfmpmeszjqjcqnodhfwwhxmzw/Build/Products/Release-iphonesimulator/Realm/Realm.framework"; sourceTree = "<group>"; };
+		B7EBC7D71D0DF48A00D99963 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "../../../../Library/Developer/Xcode/DerivedData/BYR-hgodfmpmeszjqjcqnodhfwwhxmzw/Build/Products/Release-iphonesimulator/RealmSwift/RealmSwift.framework"; sourceTree = "<group>"; };
 		B7FD030F1C43872A00D68D77 /* CustomInteractionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInteractionController.swift; sourceTree = "<group>"; };
 		B7FD03101C43872A00D68D77 /* CustomNavigationAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationAnimationController.swift; sourceTree = "<group>"; };
+		F3E0ABED1DE07A4427DD2375 /* Pods_BYR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BYR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -712,18 +733,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DD660FFE5F5452C27D9CB99 /* Pods.framework in Frameworks */,
+				B7EBC7D91D0DF4D400D99963 /* Realm.framework in Frameworks */,
+				E9024974B18ED7BBCD329065 /* Pods_BYR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7B789AB77FB660C15AD5D00B /* Pods */ = {
+		08D260AEE1BE5DBEB5C3F444 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3B43955F829EAD6159AE1184 /* Pods.debug.xcconfig */,
-				1A106F2EAE456E8AFDF2A1D2 /* Pods.release.xcconfig */,
+				6A414B0F512B602C55A9FCF0 /* Pods-BYR.debug.xcconfig */,
+				3F1859925805B3F0D5E42690 /* Pods-BYR.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -731,7 +753,10 @@
 		943BE471D4141F1CCDE4AC46 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B7EBC7D71D0DF48A00D99963 /* RealmSwift.framework */,
+				B7EBC7D51D0DF46B00D99963 /* Realm.framework */,
 				0D20BE0ED24ACC701A254FF3 /* Pods.framework */,
+				F3E0ABED1DE07A4427DD2375 /* Pods_BYR.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1121,9 +1146,9 @@
 				B75F8F521C8C514F00076D19 /* Media.xcassets */,
 				B77606EA1BD7EF9E003B3801 /* BYR */,
 				B77606E91BD7EF9E003B3801 /* Products */,
-				7B789AB77FB660C15AD5D00B /* Pods */,
 				943BE471D4141F1CCDE4AC46 /* Frameworks */,
 				B7AF26541BD7F48C000E9448 /* BYR-Bridging-Header.h */,
+				08D260AEE1BE5DBEB5C3F444 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1138,6 +1163,7 @@
 		B77606EA1BD7EF9E003B3801 /* BYR */ = {
 			isa = PBXGroup;
 			children = (
+				B7EBC7D21D0DF03D00D99963 /* ReactNative */,
 				B70ED84B1CE4EA6D003D830D /* MJRefresh */,
 				B70ED8781CE4EA6D003D830D /* TYAttributedLabel */,
 				B788428E1C884C160077C4AB /* Extension */,
@@ -1295,6 +1321,14 @@
 			name = Cell;
 			sourceTree = "<group>";
 		};
+		B7EBC7D21D0DF03D00D99963 /* ReactNative */ = {
+			isa = PBXGroup;
+			children = (
+				B7EBC7D31D0DF05F00D99963 /* ExamView.swift */,
+			);
+			name = ReactNative;
+			sourceTree = "<group>";
+		};
 		B7FD030E1C4386FC00D68D77 /* Animation */ = {
 			isa = PBXGroup;
 			children = (
@@ -1313,12 +1347,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B77606FA1BD7EF9E003B3801 /* Build configuration list for PBXNativeTarget "BYR" */;
 			buildPhases = (
-				D651D5237404190693AD0C04 /* Check Pods Manifest.lock */,
+				91B92CAE8D09A5BDC7A402FF /* 📦 Check Pods Manifest.lock */,
 				B77606E41BD7EF9E003B3801 /* Sources */,
 				B77606E51BD7EF9E003B3801 /* Frameworks */,
 				B77606E61BD7EF9E003B3801 /* Resources */,
-				9CB0CA5B555579A798CD8C45 /* Embed Pods Frameworks */,
-				AC8BC18B566CDE01D58E80EB /* Copy Pods Resources */,
+				5FFEFC2E1A8F4C18A287FABE /* 📦 Embed Pods Frameworks */,
+				A72B74AE5720932860D182AB /* 📦 Copy Pods Resources */,
+				B7EBC7DB1D0DF4D400D99963 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1585,49 +1620,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		9CB0CA5B555579A798CD8C45 /* Embed Pods Frameworks */ = {
+		5FFEFC2E1A8F4C18A287FABE /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BYR/Pods-BYR-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AC8BC18B566CDE01D58E80EB /* Copy Pods Resources */ = {
+		91B92CAE8D09A5BDC7A402FF /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D651D5237404190693AD0C04 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A72B74AE5720932860D182AB /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BYR/Pods-BYR-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1660,6 +1695,7 @@
 				B75BF0EC1BE7C83200A4820C /* SettingTableViewCell.swift in Sources */,
 				B70ED88E1CE4EA6D003D830D /* MJRefreshBackFooter.m in Sources */,
 				B70ED8991CE4EA6D003D830D /* MJRefreshNormalHeader.m in Sources */,
+				B7EBC7D41D0DF05F00D99963 /* ExamView.swift in Sources */,
 				B7D7EEA51BF0A12500D2981C /* TopicModelEntity.swift in Sources */,
 				B7A6A34E1C881ED50006AA6B /* Reachability.swift in Sources */,
 				B71E2DD41D0A8B3400396EE2 /* AvatarView.swift in Sources */,
@@ -1780,6 +1816,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "/Users/ruankai/Documents/自己的项目/BYR_BBS/BYR/Pods/**";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1847,7 +1884,7 @@
 		};
 		B77606FB1BD7EF9E003B3801 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B43955F829EAD6159AE1184 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 6A414B0F512B602C55A9FCF0 /* Pods-BYR.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -1871,7 +1908,7 @@
 		};
 		B77606FC1BD7EF9E003B3801 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1A106F2EAE456E8AFDF2A1D2 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 3F1859925805B3F0D5E42690 /* Pods-BYR.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "21C461B0CAD90DE64B07A5D212C5F829"
-               BlueprintName = "PageMenu"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "PageMenu.framework">
+               BuildableIdentifier = 'primary'
+               BlueprintIdentifier = '21C461B0CAD90DE64B07A5D212C5F829'
+               BlueprintName = 'PageMenu'
+               ReferencedContainer = 'container:Pods.xcodeproj'
+               BuildableName = 'PageMenu.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

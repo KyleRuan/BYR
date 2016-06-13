@@ -51,8 +51,6 @@ NS_INLINE CGRect JGProgressHUD_CGRectIntegral(CGRect rect) {
     CFAbsoluteTime _displayTimestamp;
     
     JGProgressHUDIndicatorView *_indicatorViewAfterTransitioning;
-    
-    UIView *_HUDViewHost;
 }
 
 @end
@@ -117,7 +115,6 @@ static CGRect keyboardFrame = (CGRect){{0.0f, 0.0f}, {0.0f, 0.0f}};
     
     if (self) {
         _style = style;
-        _voiceOverEnabled = YES;
         
         self.hidden = YES;
         self.backgroundColor = [UIColor clearColor];
@@ -131,13 +128,7 @@ static CGRect keyboardFrame = (CGRect){{0.0f, 0.0f}, {0.0f, 0.0f}};
         
         _indicatorView = [[JGProgressHUDIndeterminateIndicatorView alloc] initWithHUDStyle:self.style];
         
-        _HUDViewHost = [[UIView alloc] init];
-        _HUDViewHost.backgroundColor = [UIColor clearColor];
-        _HUDViewHost.clipsToBounds = YES;
-        
-        [self addSubview:_HUDViewHost];
-        
-        self.cornerRadius = 10.0f;
+        _cornerRadius = 10.0f;
     }
     
     return self;
@@ -205,8 +196,7 @@ static CGRect keyboardFrame = (CGRect){{0.0f, 0.0f}, {0.0f, 0.0f}};
             break;
     }
     
-    _HUDViewHost.frame = JGProgressHUD_CGRectIntegral(frame);
-    self.HUDView.frame = _HUDViewHost.bounds;
+    self.HUDView.frame = JGProgressHUD_CGRectIntegral(frame);
 }
 
 - (void)updateHUDAnimated:(BOOL)animated animateIndicatorViewFrame:(BOOL)animateIndicator {
@@ -334,7 +324,12 @@ static CGRect keyboardFrame = (CGRect){{0.0f, 0.0f}, {0.0f, 0.0f}};
 }
 
 - (void)applyCornerRadius {
-    _HUDViewHost.layer.cornerRadius = self.cornerRadius;
+    self.HUDView.layer.cornerRadius = self.cornerRadius;
+    if (iOS8) {
+        for (UIView *sub in self.HUDView.subviews) {
+            sub.layer.cornerRadius = self.cornerRadius;
+        }
+    };
 }
 
 #pragma mark - Showing
@@ -348,7 +343,7 @@ static CGRect keyboardFrame = (CGRect){{0.0f, 0.0f}, {0.0f, 0.0f}};
     if (_indicatorViewAfterTransitioning) {
         self.indicatorView = _indicatorViewAfterTransitioning;
         _indicatorViewAfterTransitioning = nil;
-        _updateAfterAppear = NO; //Setting indicatorView always updateHUDAnimated:animateIndicatorViewFrame:
+        _updateAfterAppear = NO;
     }
     else if (_updateAfterAppear) {
         [self updateHUDAnimated:YES animateIndicatorViewFrame:YES];
@@ -365,7 +360,7 @@ static CGRect keyboardFrame = (CGRect){{0.0f, 0.0f}, {0.0f, 0.0f}};
         _dismissAfterTransitionFinishedWithAnimation = NO;
     }
     
-    if (self.voiceOverEnabled && UIAccessibilityIsVoiceOverRunning()) {
+    if (UIAccessibilityIsVoiceOverRunning()) {
         UIAccessibilityPostNotification(UIAccessibilityLayoutChangedNotification, self);
     }
 }
@@ -377,8 +372,7 @@ static CGRect keyboardFrame = (CGRect){{0.0f, 0.0f}, {0.0f, 0.0f}};
 - (void)showInView:(UIView *)view animated:(BOOL)animated {
     CGRect frame = [self fullFrameInView:view];
     
-    // !!!: Use UIApplicationDidChangeStatusBarFrameNotification since UIDeviceOrientationDidChangeNotification still gives the old bounds in orientationChanged selector for self.targetView on iPad unless it is called after a delay.
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientationChanged) name:UIApplicationDidChangeStatusBarFrameNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientationChanged) name:UIDeviceOrientationDidChangeNotification object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardFrameChanged:) name:UIKeyboardWillChangeFrameNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardFrameChanged:) name:UIKeyboardDidChangeFrameNotification object:nil];
@@ -614,7 +608,9 @@ NS_INLINE UIViewAnimationOptions UIViewAnimationOptionsFromUIViewAnimationCurve(
             _HUDView.motionEffects = @[x, y];
         }
         
-        [_HUDViewHost addSubview:_HUDView];
+        [self applyCornerRadius];
+        
+        [self addSubview:_HUDView];
         
         if (self.indicatorView) {
             [self.contentView addSubview:self.indicatorView];
@@ -816,7 +812,7 @@ NS_INLINE UIViewAnimationOptions UIViewAnimationOptionsFromUIViewAnimationCurve(
 }
 
 - (void)removeObservers {
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidChangeStatusBarFrameNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIDeviceOrientationDidChangeNotification object:nil];
     
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillChangeFrameNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidChangeFrameNotification object:nil];

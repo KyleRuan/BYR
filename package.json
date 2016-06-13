@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/KyleRuan/BYR/issues"
   },
-  "homepage": "https://github.com/KyleRuan/BYR#readme"
+  "homepage": "https://github.com/KyleRuan/BYR#readme",
+  "dependencies": {
+    "flow": "^0.2.3"
+  }
 }

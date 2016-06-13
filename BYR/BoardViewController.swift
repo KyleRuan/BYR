@@ -8,12 +8,20 @@
 
 import UIKit
 import SwiftyJSON
+import React
 class BoardViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
 
   @IBOutlet weak var sectionColletion: UICollectionView!
   var  selected = 0
   override func viewDidLoad() {
     super.viewDidLoad()
+   
+    let rootView: RCTRootView = RCTRootView(bundleURL: NSURL(string: "http://localhost:8081/index.ios.bundle?platform=ios"),
+                                            moduleName: "SimpleApp", initialProperties: nil, launchOptions: nil)
+    rootView.frame = self.view.bounds
+   
+    self.view.sendSubviewToBack(rootView)
+    self.view.addSubview(rootView)
     self.sectionColletion.delegate = self
     self.sectionColletion.dataSource = self
   }
